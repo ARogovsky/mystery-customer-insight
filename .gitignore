@@ -32,6 +32,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# local env files (секреты — НЕ коммитим; реальные значения держим здесь)
+.env*.local
+
 # Sentry Config File
 .env.sentry-build-plugin
 
@@ -58,13 +61,6 @@ build-archive.log
 /playwright-report/
 /playwright/.cache/
 
-# === Наши строгие правила ===
-# Секреты — никогда не коммитим (перекрывает .env-конвенцию бойлерплейта)
-.env
-.env.*
-!.env.example
-.env*.local
-
-# Внутренние артефакты ассистента и steering
+# === Внутренние артефакты ассистента и steering ===
 .kiro/
 AI/

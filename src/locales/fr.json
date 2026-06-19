@@ -99,9 +99,7 @@
   "DashboardLayout": {
     "meta_title": "Tableau de bord du SaaS Template",
     "meta_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec Next.js, TypeScript, Shadcn UI et Tailwind CSS.",
-    "home": "Accueil",
-    "members": "Membres",
-    "settings": "Réglages"
+    "home": "Accueil"
   },
   "DashboardIndexPage": {
     "title_bar": "Tableau de bord",
@@ -114,9 +112,5 @@
   "UserProfilePage": {
     "title_bar": "Profil utilisateur",
     "title_bar_description": "Afficher et gérer votre profil utilisateur"
-  },
-  "OrganizationProfilePage": {
-    "title_bar": "Gestion de l’organisation",
-    "title_bar_description": "Gérer votre organisation"
   }
 }

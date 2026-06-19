@@ -1,2 +1,15 @@
 .kiro/
 AI/
+
+# Secrets — никогда не коммитим
+.env
+.env.*
+!.env.example
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+.vercel/
+*.log

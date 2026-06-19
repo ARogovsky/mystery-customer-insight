@@ -1,6 +1,7 @@
 name: Checkly
 
-on: [deployment_status]
+on:
+  workflow_dispatch: # ОТКЛЮЧЕНО: Checkly не настроен; оставлен только ручной запуск
 
 env:
   CHECKLY_API_KEY: ${{ secrets.CHECKLY_API_KEY }}

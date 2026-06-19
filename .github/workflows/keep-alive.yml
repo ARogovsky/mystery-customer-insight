@@ -1,0 +1,25 @@
+name: Keep-alive
+
+on:
+  schedule:
+    - cron: '17 6 * * *' # ежедневно ~06:17 UTC (< 7 дней, чтобы Supabase free не уснул)
+  workflow_dispatch:
+
+jobs:
+  ping:
+    name: Ping /health
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Запускается только если задан URL:
+    # Settings → Secrets and variables → Actions → Variables → HEALTHCHECK_URL = https://<домен>/health
+    if: ${{ vars.HEALTHCHECK_URL != '' }}
+
+    steps:
+      - name: Ping health endpoint
+        run: |
+          set -euo pipefail
+          code=$(curl -fsS -o /dev/null -w '%{http_code}' "$HEALTHCHECK_URL")
+          echo "Health responded: $code"
+          test "$code" = '200'
+        env:
+          HEALTHCHECK_URL: ${{ vars.HEALTHCHECK_URL }}

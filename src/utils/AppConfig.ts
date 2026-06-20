@@ -1,7 +1,7 @@
 import type { LocalizationResource } from '@clerk/shared/types';
 import type { LocalePrefixMode } from 'next-intl/routing';
 import type { AppLocale } from '@/types/I18n';
-import { enUS, frFR } from '@clerk/localizations';
+import { enUS, ukUA } from '@clerk/localizations';
 
 /** Locale prefix strategy for next-intl routing. */
 const localePrefix: LocalePrefixMode = 'as-needed';
@@ -19,8 +19,8 @@ const locales = [
     name: 'English',
   },
   {
-    id: 'fr',
-    name: 'Français',
+    id: 'uk',
+    name: 'Українська',
   },
 ] satisfies AppLocale[];
 
@@ -40,7 +40,7 @@ export const AppConfig = {
 
 const supportedLocales: Record<string, LocalizationResource> = {
   en: enUS,
-  fr: frFR,
+  uk: ukUA,
 };
 
 export const ClerkLocalizations = {

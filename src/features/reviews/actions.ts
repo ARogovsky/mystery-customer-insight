@@ -29,5 +29,5 @@ export async function createReview(appId: string, formData: FormData) {
     rating: parsed.data.rating,
   });
 
-  revalidatePath('/campaigns');
+  revalidatePath('/apps');
 }

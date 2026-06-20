@@ -23,7 +23,7 @@ export default async function CampaignResultsPage(props: ResultsPageProps) {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <p>
-        <Link href={`/campaigns/${campaign.id}`} className="text-blue-500">
+        <Link href={`/apps/${campaign.id}`} className="text-blue-500">
           ← Back to app
         </Link>
       </p>

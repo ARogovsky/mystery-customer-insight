@@ -22,16 +22,27 @@ export async function getCurrentProfile() {
   return rows[0] ?? null;
 }
 
-/** Создаёт профиль для текущего пользователя с выбранной ролью (идемпотентно). */
-export async function createProfileWithRole(role: UserRole) {
+/**
+ * Создаёт профиль для текущего пользователя с выбранной ролью (идемпотентно).
+ * Если профиль уже есть и передан displayName — обновляет имя (роль не трогаем).
+ */
+export async function createProfileWithRole(role: UserRole, displayName?: string) {
   const { userId } = await auth();
 
   if (!userId) {
     throw new Error('Unauthorized');
   }
 
-  await db
+  const insert = db
     .insert(profiles)
-    .values({ clerkUserId: userId, role })
-    .onConflictDoNothing({ target: profiles.clerkUserId });
+    .values({ clerkUserId: userId, role, displayName: displayName ?? null });
+
+  if (displayName) {
+    await insert.onConflictDoUpdate({
+      target: profiles.clerkUserId,
+      set: { displayName },
+    });
+  } else {
+    await insert.onConflictDoNothing({ target: profiles.clerkUserId });
+  }
 }

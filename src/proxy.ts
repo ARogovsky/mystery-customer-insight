@@ -30,13 +30,6 @@ const isProtectedRoute = createRouteMatcher([
   '/:locale/onboarding(.*)',
 ]);
 
-const isAuthPage = createRouteMatcher([
-  '/sign-in(.*)',
-  '/:locale/sign-in(.*)',
-  '/sign-up(.*)',
-  '/:locale/sign-up(.*)',
-]);
-
 export default async function proxy(
   request: NextRequest,
   event: NextFetchEvent,
@@ -75,28 +68,22 @@ export default async function proxy(
     // обход активен → проваливаемся к реальному приложению (Clerk/i18n ниже)
   }
 
-  // Clerk keyless mode doesn't work with i18n, this is why we need to run the middleware conditionally
-  if (
-    isAuthPage(request) || isProtectedRoute(request)
-  ) {
-    return clerkMiddleware(async (auth, req) => {
-      // Check if the current route is protected and requires authentication
-      // If user is not authenticated, redirect them to the sign-in page with proper locale
-      if (isProtectedRoute(req)) {
-        const locale = req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? '';
+  // Ключи Clerk заданы (не keyless), поэтому clerkMiddleware запускаем на ВСЕХ роутах —
+  // иначе session-handshake после логина может попасть на необёрнутый роут и зациклиться.
+  return clerkMiddleware(async (auth, req) => {
+    // Protected-роуты требуют входа; иначе — на sign-in с нужной локалью.
+    if (isProtectedRoute(req)) {
+      const locale = req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? '';
 
-        const signInUrl = new URL(`${locale}/sign-in`, req.url);
+      const signInUrl = new URL(`${locale}/sign-in`, req.url);
 
-        await auth.protect({
-          unauthenticatedUrl: signInUrl.toString(),
-        });
-      }
+      await auth.protect({
+        unauthenticatedUrl: signInUrl.toString(),
+      });
+    }
 
-      return handleI18nRouting(req);
-    })(request, event);
-  }
-
-  return handleI18nRouting(request);
+    return handleI18nRouting(req);
+  })(request, event);
 }
 
 export const config = {

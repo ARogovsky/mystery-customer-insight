@@ -27,7 +27,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
 
       <nav className="mt-6 flex flex-wrap gap-2">
         <Link
-          href="/campaigns"
+          href="/apps"
           className={`
             rounded-full border px-3 py-1 text-sm
             ${platform
@@ -40,7 +40,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
         {PLATFORMS.map(p => (
           <Link
             key={p}
-            href={`/campaigns?platform=${p}`}
+            href={`/apps?platform=${p}`}
             className={`
               rounded-full border px-3 py-1 text-sm
               ${platform === p
@@ -64,7 +64,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
               {campaigns.map(c => (
                 <li key={c.id}>
                   <Link
-                    href={`/campaigns/${c.id}`}
+                    href={`/apps/${c.id}`}
                     className="
                       block rounded-lg border p-4
                       hover:bg-muted

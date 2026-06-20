@@ -24,19 +24,25 @@ export async function getMyReports() {
     .orderBy(desc(testSubmissions.createdAt));
 }
 
-/** Рейтинг текущего тестера (агрегат, без привязки к тестам). */
-export async function getMyRating() {
+/** Агрегаты текущего тестера: рейтинг (плюсы) и число завершённых тестов. */
+export async function getMyStats() {
   const profile = await getCurrentProfile();
 
   if (!profile) {
-    return 0;
+    return { ratingPoints: 0, testsCompleted: 0 };
   }
 
   const rows = await db
-    .select({ points: testerStats.ratingPoints })
+    .select({
+      ratingPoints: testerStats.ratingPoints,
+      testsCompleted: testerStats.testsCompleted,
+    })
     .from(testerStats)
     .where(eq(testerStats.profileId, profile.id))
     .limit(1);
 
-  return rows[0]?.points ?? 0;
+  return {
+    ratingPoints: rows[0]?.ratingPoints ?? 0,
+    testsCompleted: rows[0]?.testsCompleted ?? 0,
+  };
 }

@@ -18,7 +18,7 @@ export default async function NewReportPage(props: NewReportPageProps) {
   const profile = await getCurrentProfile();
 
   if (!profile) {
-    redirect('/onboarding/role');
+    redirect('/dashboard');
   }
 
   if (profile.role !== 'tester') {
@@ -65,6 +65,14 @@ export default async function NewReportPage(props: NewReportPageProps) {
                     <option value="">—</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
+                  </select>
+                )}
+                {q.type === 'choice' && (
+                  <select name={`a_${q.id}`} className={inputClass}>
+                    <option value="">—</option>
+                    {((q.options as string[] | null) ?? []).map(opt => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
                   </select>
                 )}
               </label>

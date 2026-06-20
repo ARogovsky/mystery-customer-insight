@@ -50,5 +50,5 @@ export async function rateSubmission(submissionId: string, testId: string) {
     }
   });
 
-  revalidatePath(`/dashboard/campaigns/${testId}/submissions`);
+  revalidatePath(`/dashboard/apps/${testId}/submissions`);
 }

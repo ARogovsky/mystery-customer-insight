@@ -27,7 +27,7 @@ const locales = [
 // FIXME: Customize this configuration for your product
 /** Centralized application configuration */
 export const AppConfig = {
-  name: 'SaaS Template',
+  name: 'Mystery Customer Insight',
   i18n: {
     locales,
     defaultLocale: 'en',

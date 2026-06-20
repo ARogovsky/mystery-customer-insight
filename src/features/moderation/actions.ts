@@ -70,5 +70,5 @@ export async function createReport(
     }
   });
 
-  revalidatePath('/campaigns');
+  revalidatePath('/apps');
 }

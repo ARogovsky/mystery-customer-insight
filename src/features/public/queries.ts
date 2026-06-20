@@ -71,7 +71,7 @@ export async function getPublicCampaign(id: string) {
   }
 
   const questions = await db
-    .select({ id: testQuestions.id, prompt: testQuestions.prompt, type: testQuestions.type })
+    .select({ id: testQuestions.id, prompt: testQuestions.prompt, type: testQuestions.type, options: testQuestions.options })
     .from(testQuestions)
     .where(eq(testQuestions.testId, id))
     .orderBy(testQuestions.position);

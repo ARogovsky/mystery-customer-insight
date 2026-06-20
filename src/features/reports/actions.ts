@@ -1,12 +1,12 @@
 'use server';
 
-import { and, eq } from 'drizzle-orm';
+import { and, eq, sql } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import * as z from 'zod';
 import { db } from '@/libs/DB';
 import { getCurrentProfile } from '@/libs/Profile';
-import { submissionAnswers, testQuestions, tests, testSubmissions } from '@/models/Schema';
+import { submissionAnswers, testerStats, testQuestions, tests, testSubmissions } from '@/models/Schema';
 
 type AnswerRow = {
   submissionId: string;
@@ -76,8 +76,17 @@ export async function createSubmission(testId: string, formData: FormData) {
     if (answers.length > 0) {
       await tx.insert(submissionAnswers).values(answers);
     }
+
+    // Учёт завершённого теста в агрегате тестера.
+    await tx
+      .insert(testerStats)
+      .values({ profileId: profile.id, testsCompleted: 1 })
+      .onConflictDoUpdate({
+        target: testerStats.profileId,
+        set: { testsCompleted: sql`${testerStats.testsCompleted} + 1` },
+      });
   });
 
-  revalidatePath('/dashboard/reports');
-  redirect('/dashboard/reports');
+  revalidatePath('/dashboard');
+  redirect('/dashboard');
 }

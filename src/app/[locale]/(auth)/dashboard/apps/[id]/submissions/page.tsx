@@ -15,7 +15,7 @@ export default async function SubmissionsPage(props: SubmissionsPageProps) {
   const profile = await getCurrentProfile();
 
   if (!profile) {
-    redirect('/onboarding/role');
+    redirect('/dashboard');
   }
 
   if (profile.role !== 'developer') {

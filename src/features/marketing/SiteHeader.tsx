@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 
 const LINKS = [
   { href: '/', label: 'Home' },
   { href: '/how-it-works', label: 'How it works' },
-  { href: '/campaigns', label: 'Browse' },
+  { href: '/apps', label: 'Browse' },
   { href: '/toplist', label: 'Toplist' },
   { href: '/faq', label: 'FAQ' },
 ];
 
-// Простой литеральный хедер для маркетинг-страниц (i18n — позже).
-export function MarketingHeader() {
+// Единый хедер для всех публичных страниц (i18n-переключатель включён).
+export function SiteHeader() {
   return (
     <header className="border-b">
       <div className="
@@ -31,6 +32,7 @@ export function MarketingHeader() {
             </Link>
           ))}
           <Link href="/sign-in" className="font-medium">Sign in</Link>
+          <LocaleSwitcher />
         </nav>
       </div>
     </header>

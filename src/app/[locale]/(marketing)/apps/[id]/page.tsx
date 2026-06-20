@@ -85,6 +85,12 @@ export default async function CampaignPage(props: CampaignPageProps) {
                   {q.type}
                   )
                 </span>
+                {q.type === 'choice' && (
+                  <span className="text-sm text-muted-foreground">
+                    {': '}
+                    {((q.options as string[] | null) ?? []).join(', ')}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -99,7 +105,7 @@ export default async function CampaignPage(props: CampaignPageProps) {
           Submit a report
         </Link>
         <Link
-          href={`/campaigns/${campaign.id}/results`}
+          href={`/apps/${campaign.id}/results`}
           className="text-blue-500"
         >
           View results

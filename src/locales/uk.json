@@ -2,15 +2,6 @@
   "LocaleSwitcher": {
     "button_label": "Змінити мову"
   },
-  "SponsorLogos": {
-    "sponsored_by": "Спонсори",
-    "clerk_logo": "Логотип Clerk",
-    "sentry_logo": "Логотип Sentry",
-    "crowdin_logo": "Логотип Crowdin",
-    "arcjet_logo": "Логотип Arcjet",
-    "coderabbit_logo": "Логотип CodeRabbit",
-    "nextjs_boilerplate_logo": "Логотип Next.js SaaS Boilerplate"
-  },
   "SignIn": {
     "meta_title": "Вхід",
     "meta_description": "Зручний вхід до вашого облікового запису."
@@ -23,14 +14,6 @@
     "meta_title": "Панель керування",
     "meta_description": "Панель керування Mystery Customer Insight.",
     "home": "Головна"
-  },
-  "DashboardIndexPage": {
-    "title_bar": "Панель керування",
-    "title_bar_description": "Ласкаво просимо до вашої панелі керування",
-    "message_state_title": "Почнімо",
-    "message_state_description": "Налаштуйте цю сторінку, відредагувавши файл <code>dashboard/page.tsx</code>.",
-    "message_state_alternative": "Потрібні розширені можливості? Next.js 16 та React 19, мультитенантність і команди, ролі та права, Shadcn UI,\nнаскрізна типобезпека з oRPC, оплата Stripe, світла / темна тема. Спробуйте <url></url>.",
-    "max_message": "Або потрібен self-hosted стек автентифікації (Better Auth)? Спробуйте <url></url>."
   },
   "UserProfilePage": {
     "title_bar": "Профіль користувача",

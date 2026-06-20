@@ -23,6 +23,7 @@
     "commit": "commit",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "test:seed": "playwright test --config playwright.seed.config.ts",
     "db-server:file": "pglite-server -m 100 --db=local.db --run 'npm run db:migrate'",
     "db-server:memory": "pglite-server -m 100 --run 'npm run db:migrate'",
     "db:generate": "drizzle-kit generate",

@@ -21,6 +21,7 @@ const config: KnipConfig = {
       'tests/**/*.@(integ|e2e).ts',
       'tests/**/*.setup.ts',
       'tests/**/*.teardown.ts',
+      'tests/**/*.seed.ts',
     ],
   },
   // Binaries to ignore during analysis

@@ -15,6 +15,10 @@ export const USERS = {
     email: 'mci-tester+clerk_test@example.com',
     role: 'tester' as const,
   },
+  dev2: {
+    email: 'mci-dev2+clerk_test@example.com',
+    role: 'developer' as const,
+  },
 };
 
 /** Ставит cookie обхода заглушки Coming Soon на весь контекст. */
@@ -53,6 +57,82 @@ export async function signOut(page: Page) {
   await clerk.signOut({ page });
 }
 
+// Минимальная типизация window.Clerk для evaluate (без any).
+type SignUpResource = {
+  create: (params: { emailAddress: string; password?: string }) => Promise<unknown>;
+  prepareEmailAddressVerification: (params: { strategy: string }) => Promise<unknown>;
+  attemptEmailAddressVerification: (
+    params: { code: string },
+  ) => Promise<{ status: string | null; createdSessionId: string | null | undefined; missingFields?: string[] }>;
+};
+type TestClerk = {
+  client: { signUp: SignUpResource };
+  setActive: (params: { session: string | null | undefined }) => Promise<void>;
+};
+
+// Пароль для регистрируемых тест-юзеров (инстанс требует пароль при sign-up).
+const SIGNUP_PASSWORD = 'SeedPass!2026xY';
+
+/**
+ * Регистрация нового тест-юзера. Любой +clerk_test email создаётся на лету
+ * (реальная почта не нужна, код подтверждения фиксированный — 424242).
+ */
+async function signUp(page: Page, email: string) {
+  await setupClerkTestingToken({ page });
+  await page.goto('/sign-up');
+  await page.waitForFunction(() => (window as unknown as { Clerk?: { loaded?: boolean } }).Clerk?.loaded);
+
+  await page.evaluate(async ({ emailAddress, password }) => {
+    const clerkObj = (window as unknown as { Clerk: TestClerk }).Clerk;
+    const su = clerkObj.client.signUp;
+    await su.create({ emailAddress, password });
+    await su.prepareEmailAddressVerification({ strategy: 'email_code' });
+    const res = await su.attemptEmailAddressVerification({ code: '424242' });
+
+    if (res.status === 'complete') {
+      await clerkObj.setActive({ session: res.createdSessionId });
+    } else {
+      throw new Error(
+        `Clerk sign-up status: ${res.status}; missing: ${(res.missingFields ?? []).join(',')}`,
+      );
+    }
+  }, { emailAddress: email, password: SIGNUP_PASSWORD });
+}
+
+/** Вход, а если юзера ещё нет — регистрация (идемпотентно между прогонами). */
+async function signInOrSignUp(page: Page, email: string) {
+  try {
+    await signIn(page, email);
+  } catch {
+    await signUp(page, email);
+  }
+}
+
+/** Онбординг роли на /dashboard (+ опц. display name). Идемпотентно. */
+async function onboardRole(
+  page: Page,
+  role: 'developer' | 'tester',
+  displayName?: string,
+) {
+  await page.goto('/dashboard');
+
+  const roleHeading = page.getByRole('heading', { name: 'Choose your role' });
+  const workHeading = role === 'developer'
+    ? page.getByRole('heading', { name: /Your apps|Submit your first app/ })
+    : page.getByRole('heading', { name: 'My reports' });
+
+  await roleHeading.or(workHeading).first().waitFor();
+
+  if (await roleHeading.isVisible()) {
+    if (displayName) {
+      await page.locator('input[name="displayName"]').fill(displayName);
+    }
+    const label = role === 'developer' ? 'I am a developer' : 'I am a tester';
+    await page.getByRole('button', { name: label }).click();
+    await workHeading.waitFor();
+  }
+}
+
 /**
  * Полный вход + онбординг роли. В e2e БД (PGLite) профилей нет, поэтому первый вход
  * любого юзера показывает экран выбора роли на /dashboard — выбираем нужную роль.
@@ -62,26 +142,23 @@ export async function signInAndOnboard(
   context: BrowserContext,
   page: Page,
   user: { email: string; role: 'developer' | 'tester' },
+  displayName?: string,
 ) {
   await bypassComingSoon(context);
   await signIn(page, user.email);
+  await onboardRole(page, user.role, displayName);
+}
 
-  await page.goto('/dashboard');
-
-  const roleHeading = page.getByRole('heading', { name: 'Choose your role' });
-  const workHeading = user.role === 'developer'
-    ? page.getByRole('heading', { name: /Your apps|Submit your first app/ })
-    : page.getByRole('heading', { name: 'My reports' });
-
-  // Дождаться, пока /dashboard прогрузится: либо выбор роли, либо рабочий вид.
-  await roleHeading.or(workHeading).first().waitFor();
-
-  if (await roleHeading.isVisible()) {
-    const label = user.role === 'developer' ? 'I am a developer' : 'I am a tester';
-    await page.getByRole('button', { name: label }).click();
-    // Дождаться рабочего вида дашборда после серверного действия (revalidate).
-    await workHeading.waitFor();
-  }
+/** Регистрация нового юзера + онбординг роли (для свежих +clerk_test адресов). */
+export async function signUpAndOnboard(
+  context: BrowserContext,
+  page: Page,
+  user: { email: string; role: 'developer' | 'tester' },
+  displayName?: string,
+) {
+  await bypassComingSoon(context);
+  await signInOrSignUp(page, user.email);
+  await onboardRole(page, user.role, displayName);
 }
 
 /**

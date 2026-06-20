@@ -5,6 +5,14 @@ import { enUS, frFR } from '@clerk/localizations';
 
 /** Locale prefix strategy for next-intl routing. */
 const localePrefix: LocalePrefixMode = 'as-needed';
+
+/**
+ * ВРЕМЕННАЯ заглушка «Coming Soon».
+ * Когда true — middleware показывает /coming-soon на ВСЕХ роутах (кроме /health).
+ * Это код-флаг (не серверная env). Для локальной разработки реальных страниц — поставь false.
+ */
+export const COMING_SOON: boolean = true;
+
 const locales = [
   {
     id: 'en',

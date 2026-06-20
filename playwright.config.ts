@@ -1,5 +1,13 @@
 import type { ChromaticConfig } from '@chromatic-com/playwright';
+import { existsSync } from 'node:fs';
 import { defineConfig, devices } from '@playwright/test';
+
+// Грузим локальные секреты (.env.local) в процесс Playwright, чтобы global.setup.ts
+// (clerkSetup) и хелперы видели CLERK_SECRET_KEY / publishable key / COMING_SOON_BYPASS.
+// next dev и так читает .env.local сам; здесь — для node-процесса тестов.
+if (existsSync('.env.local')) {
+  process.loadEnvFile('.env.local');
+}
 
 // Use process.env.PORT by default and fallback to port 3008
 // to avoid conflicts with the Next.js default port 3000.
@@ -15,26 +23,31 @@ export default defineConfig<ChromaticConfig>({
   testDir: './tests',
   // Look for files with the .integ.js or .e2e.js extension
   testMatch: '*.@(integ|e2e).?(c|m)[jt]s?(x)',
-  // Timeout per test, test running locally are slower due to database connections with PGLite
-  timeout: 30 * 1000,
+  // Timeout per test. В dev-режиме (локально) Next компилирует роуты по первому
+  // запросу — это медленно, поэтому таймаут щедрый. В CI используется собранный
+  // `start`, там быстрее.
+  timeout: (process.env.CI ? 30 : 120) * 1000,
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
+  // e2e делят один dev-сервер и одну in-memory БД PGLite + общий набор тестовых
+  // юзеров Clerk, поэтому гоняем последовательно (1 воркер), чтобы не было гонок.
+  workers: 1,
   // Reporter to use. See https://playwright.dev/docs/test-reporters
   reporter: process.env.CI ? 'github' : 'list',
 
   expect: {
     // Set timeout for async expect matchers
-    timeout: 15 * 1000,
+    timeout: (process.env.CI ? 15 : 30) * 1000,
   },
 
   // Run your local dev server before starting the tests:
   // https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests
   webServer: {
     command: process.env.CI
-      ? 'pglite-server -m 100 --run \'run-s db:migrate start\''
-      : 'pglite-server -m 100 --run \'run-s db:migrate dev:next\'',
+      ? 'pglite-server -m 100 --include-database-url --run \'run-s db:migrate start\''
+      : 'pglite-server -m 100 -p 5433 --include-database-url --run \'run-s db:migrate:e2e dev:next\'',
     url: baseURL,
-    timeout: 60 * 1000,
+    timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
     gracefulShutdown: { signal: 'SIGTERM', timeout: 2 * 1000 },
     env: {
@@ -42,6 +55,12 @@ export default defineConfig<ChromaticConfig>({
       NEXT_PUBLIC_SENTRY_DISABLED: 'true',
       NEXT_PUBLIC_APP_URL: baseURL,
       PORT,
+      // Coming Soon обходим preview-cookie (см. tests/helpers.ts). Прокидываем токен
+      // и Clerk-ключи явно, чтобы dev-сервер тестов точно их видел. DATABASE_URL НЕ
+      // трогаем — его задаёт pglite-server для изолированной БД тестов.
+      COMING_SOON_BYPASS: process.env.COMING_SOON_BYPASS ?? 'dev-preview-7x9',
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ?? '',
+      CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY ?? '',
     },
   },
 

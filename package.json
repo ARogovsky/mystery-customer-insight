@@ -27,6 +27,7 @@
     "db-server:memory": "pglite-server -m 100 --run 'npm run db:migrate'",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "dotenv -c -- drizzle-kit migrate",
+    "db:migrate:e2e": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "storybook": "storybook dev -p 6006",
     "storybook:test": "vitest run --config .storybook/vitest.config.ts",
@@ -59,6 +60,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.0.0",
     "@chromatic-com/playwright": "^0.14.2",
+    "@clerk/testing": "^2.1.5",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
     "@commitlint/prompt-cli": "^21.0.1",

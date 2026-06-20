@@ -17,7 +17,11 @@ const config: KnipConfig = {
   ],
   // Include custom Playwright test file suffixes
   playwright: {
-    entry: ['tests/**/*.@(integ|e2e).ts'],
+    entry: [
+      'tests/**/*.@(integ|e2e).ts',
+      'tests/**/*.setup.ts',
+      'tests/**/*.teardown.ts',
+    ],
   },
   // Binaries to ignore during analysis
   ignoreBinaries: [

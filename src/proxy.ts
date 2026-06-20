@@ -41,11 +41,36 @@ export default async function proxy(
 ) {
   // ВРЕМЕННО: заглушка Coming Soon на всех роутах (флаг COMING_SOON в AppConfig).
   // /health исключён в config.matcher ниже, поэтому keep-alive продолжает работать.
+  // Обход для проверки реального сайта: открой `…/?preview=<COMING_SOON_BYPASS>` —
+  // поставится cookie, и твой браузер увидит настоящее приложение (остальные — заглушку).
   if (COMING_SOON) {
-    return new NextResponse(COMING_SOON_HTML, {
-      status: 200,
-      headers: { 'content-type': 'text/html; charset=utf-8' },
-    });
+    const bypassToken = process.env.COMING_SOON_BYPASS;
+
+    // Активация обхода через query-параметр: ставим cookie и убираем ?preview из URL.
+    if (bypassToken && request.nextUrl.searchParams.get('preview') === bypassToken) {
+      const cleanUrl = new URL(request.url);
+      cleanUrl.searchParams.delete('preview');
+      const res = NextResponse.redirect(cleanUrl);
+      res.cookies.set('preview', bypassToken, {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        maxAge: 60 * 60 * 24 * 7,
+      });
+
+      return res;
+    }
+
+    const bypassed
+      = !!bypassToken && request.cookies.get('preview')?.value === bypassToken;
+
+    if (!bypassed) {
+      return new NextResponse(COMING_SOON_HTML, {
+        status: 200,
+        headers: { 'content-type': 'text/html; charset=utf-8' },
+      });
+    }
+    // обход активен → проваливаемся к реальному приложению (Clerk/i18n ниже)
   }
 
   // Clerk keyless mode doesn't work with i18n, this is why we need to run the middleware conditionally

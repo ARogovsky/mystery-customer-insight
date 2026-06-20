@@ -43,6 +43,12 @@ test.describe('Tester & social flow', () => {
     await expect(page.getByRole('heading', { name: 'My reports' })).toBeVisible();
     await expect(page.getByRole('link', { name: title })).toBeVisible();
 
+    // Отчёт виден на публичной странице результатов (тестер обезличен).
+    await page.goto(`${appUrl}/results`);
+
+    await expect(page.getByRole('heading', { name: new RegExp(`Results —\\s*${title}`) })).toBeVisible();
+    await expect(page.getByText(reportText)).toBeVisible();
+
     // 3. Анонимный отзыв на странице приложения.
     await page.goto(appUrl);
     const reviewBody = `Solid experience ${Date.now()}`;

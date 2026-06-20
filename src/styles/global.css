@@ -28,6 +28,8 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -36,33 +38,40 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  /* Fonts (CSS vars set by next/font on <body>) */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Design system — "mystery shopper / spotlight" (see design-reference.html) */
+  --radius: 0.5rem; /* 8px base; cards use rounded-xl (12px), hero rounded-2xl */
+  --background: #fbfaf8; /* warm off-white paper */
+  --foreground: #16182a; /* ink navy */
+  --card: #ffffff;
+  --card-foreground: #16182a;
+  --popover: #ffffff;
+  --popover-foreground: #16182a;
+  --primary: #4c3fcf; /* electric indigo-violet */
+  --primary-foreground: #ffffff;
+  --secondary: #eeebfb; /* primary tint surface */
+  --secondary-foreground: #3b2fb0;
+  --muted: #f2f0ec;
+  --muted-foreground: #4a4e63;
+  --accent: #ffb020; /* amber spotlight — use sparingly */
+  --accent-foreground: #16182a;
+  --destructive: #e0533d; /* failed / blocked */
+  --success: #1fa971; /* open / passed */
+  --success-foreground: #ffffff;
+  --border: #e9e6e0; /* hairline */
+  --input: #e9e6e0;
+  --ring: #4c3fcf;
+  --chart-1: #4c3fcf;
+  --chart-2: #ffb020;
+  --chart-3: #1fa971;
+  --chart-4: #e0533d;
+  --chart-5: #3b2fb0;
 }
 
 .dark {
@@ -97,5 +106,13 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }

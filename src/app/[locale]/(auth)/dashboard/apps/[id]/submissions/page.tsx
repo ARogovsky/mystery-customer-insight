@@ -44,28 +44,44 @@ export default async function SubmissionsPage(props: SubmissionsPageProps) {
                 const rate = rateSubmission.bind(null, s.id, id);
 
                 return (
-                  <li key={s.id} className="rounded-md border p-3">
+                  <li
+                    key={s.id}
+                    className="rounded-xl border bg-card p-4 shadow-sm"
+                  >
                     {s.freeText && <p className="whitespace-pre-wrap">{s.freeText}</p>}
                     {s.linkUrl && (
                       <a
                         href={s.linkUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-sm text-blue-500"
+                        className="
+                          text-sm text-primary
+                          hover:underline
+                        "
                       >
                         {s.linkUrl}
                       </a>
                     )}
-                    <div className="mt-2">
+                    <div className="mt-3 border-t pt-3">
                       {s.ratedId
-                        ? <span className="text-sm text-muted-foreground">Rated +1</span>
+                        ? (
+                            <span className="
+                              inline-flex items-center rounded-full
+                              bg-success/12 px-2.5 py-0.5 text-xs font-semibold
+                              text-success
+                            "
+                            >
+                              Rated +1
+                            </span>
+                          )
                         : (
                             <form action={rate}>
                               <button
                                 type="submit"
                                 className="
-                                  rounded-md border px-3 py-1 text-sm
-                                  hover:bg-muted
+                                  rounded-md border bg-card px-3 py-1.5 text-sm
+                                  font-medium transition
+                                  hover:bg-secondary
                                 "
                               >
                                 +1 to tester

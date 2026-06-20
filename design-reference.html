@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystery Customer Insight — Design Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DESIGN TOKENS  (map these onto shadcn CSS variables)
+     ============================================================ */
+  :root {
+    /* Color — raw palette */
+    --ink:        #16182A;   /* foreground / near-ink navy */
+    --ink-soft:   #4A4E63;   /* muted text */
+    --paper:      #FBFAF8;   /* warm off-white background */
+    --surface:    #FFFFFF;   /* cards / elevated */
+    --line:       #E9E6E0;   /* hairline borders */
+    --primary:    #4C3FCF;   /* electric indigo-violet */
+    --primary-700:#3B2FB0;
+    --primary-50: #EEEBFB;   /* primary tint surface */
+    --accent:     #FFB020;   /* amber — the "spotlight / insight" */
+    --accent-50:  #FFF3DC;
+    --good:       #1FA971;   /* status: passed / open */
+    --warn:       #E0533D;   /* status: failed / blocked */
+
+    /* Type scale (1.250 major third-ish, tuned) */
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+    --t-hero:   clamp(2.6rem, 5vw, 4rem);
+    --t-h1:     2.25rem;
+    --t-h2:     1.5rem;
+    --t-h3:     1.125rem;
+    --t-body:   1rem;
+    --t-small:  0.875rem;
+    --t-micro:  0.75rem;
+
+    /* Space scale (4px base) */
+    --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+    --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+
+    /* Radius & shadow */
+    --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-pill: 999px;
+    --shadow-sm: 0 1px 2px rgba(22,24,42,.06), 0 1px 3px rgba(22,24,42,.04);
+    --shadow-md: 0 4px 14px rgba(22,24,42,.08);
+    --shadow-lg: 0 18px 50px rgba(22,24,42,.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    font-size: var(--t-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.1; letter-spacing: -0.02em; }
+  .mono { font-family: var(--font-mono); }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---- doc scaffolding (the reference page itself, NOT the product) ---- */
+  .doc-bar {
+    background: var(--ink); color: #fff; padding: var(--s-4) var(--s-6);
+    display:flex; align-items:center; gap: var(--s-4); flex-wrap: wrap;
+  }
+  .doc-bar h1 { font-size: var(--t-h3); color:#fff; }
+  .doc-bar span { font-size: var(--t-small); color: #B9BAD0; }
+  .doc-tag { margin-left:auto; font-family: var(--font-mono); font-size: var(--t-micro);
+    background: rgba(255,255,255,.1); padding: var(--s-1) var(--s-3); border-radius: var(--r-pill); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: var(--s-8) var(--s-6); }
+  .section-label {
+    font-family: var(--font-mono); font-size: var(--t-micro); letter-spacing: .14em;
+    text-transform: uppercase; color: var(--primary); margin-bottom: var(--s-3);
+  }
+  .block { margin-bottom: var(--s-9); }
+  .block > h2.title { font-size: var(--t-h1); margin-bottom: var(--s-5); }
+  .hr { height:1px; background: var(--line); border:0; margin: var(--s-8) 0; }
+
+  /* ============================================================
+     STYLE TILE
+     ============================================================ */
+  .swatches { display:grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: var(--s-4); }
+  .swatch { border:1px solid var(--line); border-radius: var(--r-md); overflow:hidden; background:var(--surface); }
+  .swatch .chip { height: 72px; }
+  .swatch .meta { padding: var(--s-3); }
+  .swatch .meta b { display:block; font-size: var(--t-small); }
+  .swatch .meta code { font-family: var(--font-mono); font-size: var(--t-micro); color: var(--ink-soft); }
+
+  .typerow { padding: var(--s-4) 0; border-bottom: 1px dashed var(--line); display:flex; align-items:baseline; gap: var(--s-5); }
+  .typerow .lab { font-family: var(--font-mono); font-size: var(--t-micro); color: var(--ink-soft); width: 130px; flex-shrink:0; }
+
+  .comp-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: var(--s-5); }
+  .comp-card { background:var(--surface); border:1px solid var(--line); border-radius: var(--r-md); padding: var(--s-5); }
+  .comp-card h4 { font-size: var(--t-small); color: var(--ink-soft); margin-bottom: var(--s-4); font-family:var(--font-mono); font-weight:500; }
+
+  /* ---- shared product components ---- */
+  .btn { font-family: var(--font-body); font-weight:600; font-size: var(--t-small);
+    padding: 11px 20px; border-radius: var(--r-sm); border:1px solid transparent; cursor:pointer;
+    display:inline-flex; align-items:center; gap: var(--s-2); transition: .15s; }
+  .btn-primary { background: var(--primary); color:#fff; }
+  .btn-primary:hover { background: var(--primary-700); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-ghost:hover { background: var(--primary-50); border-color: var(--primary); color: var(--primary-700); }
+  .btn-accent { background: var(--accent); color: var(--ink); }
+
+  .badge { display:inline-flex; align-items:center; gap:6px; font-size: var(--t-micro); font-weight:600;
+    padding: 4px 10px; border-radius: var(--r-pill); font-family: var(--font-body); }
+  .badge.open  { background: rgba(31,169,113,.12); color: var(--good); }
+  .badge.fail  { background: rgba(224,83,61,.12); color: var(--warn); }
+  .badge.ios   { background: var(--primary-50); color: var(--primary-700); }
+  .badge.android { background: var(--accent-50); color: #B26B00; }
+  .badge.dot::before { content:''; width:6px; height:6px; border-radius:50%; background: currentColor; }
+
+  .input { width:100%; padding: 11px 14px; border:1px solid var(--line); border-radius: var(--r-sm);
+    font-family: var(--font-body); font-size: var(--t-small); background: var(--surface); color: var(--ink); }
+  .input:focus { outline:2px solid var(--primary); outline-offset:1px; border-color: var(--primary); }
+  label.field { display:block; }
+  label.field .lab { display:block; font-size: var(--t-small); font-weight:600; margin-bottom:6px; }
+  label.field .hint { font-size: var(--t-micro); color: var(--ink-soft); margin-top:6px; }
+
+  /* ============================================================
+     MOCKUP FRAME (a labelled "screen")
+     ============================================================ */
+  .screen { border:1px solid var(--line); border-radius: var(--r-lg); overflow:hidden;
+    box-shadow: var(--shadow-md); background: var(--surface); }
+  .screen-cap { font-family: var(--font-mono); font-size: var(--t-micro); color: var(--ink-soft);
+    margin-bottom: var(--s-3); display:flex; gap: var(--s-2); align-items:center; }
+  .screen-cap b { color: var(--primary); }
+
+  /* product top nav */
+  .pnav { display:flex; align-items:center; gap: var(--s-5); padding: var(--s-4) var(--s-5);
+    border-bottom:1px solid var(--line); background: var(--surface); }
+  .logo { display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; }
+  .logo .mark { width:28px; height:28px; border-radius:8px; background: var(--ink); position:relative; overflow:hidden; }
+  .logo .mark::after { content:''; position:absolute; inset:0;
+    background: radial-gradient(circle at 70% 25%, var(--accent) 0 18%, transparent 40%); }
+  .pnav .links { display:flex; gap: var(--s-5); font-size: var(--t-small); color: var(--ink-soft); }
+  .pnav .links a:hover { color: var(--primary); }
+  .pnav .spacer { margin-left:auto; }
+
+  /* HERO with spotlight signature */
+  .hero { position:relative; padding: var(--s-9) var(--s-7); overflow:hidden;
+    background:
+      radial-gradient(900px 380px at 78% -10%, rgba(255,176,32,.20), transparent 60%),
+      radial-gradient(700px 500px at 10% 120%, rgba(76,63,207,.10), transparent 60%),
+      var(--surface);
+  }
+  .hero .eyebrow { font-family:var(--font-mono); font-size:var(--t-micro); letter-spacing:.14em;
+    text-transform:uppercase; color: var(--primary); margin-bottom: var(--s-4); }
+  .hero h1 { font-size: var(--t-hero); max-width: 16ch; margin-bottom: var(--s-5); }
+  .hero h1 em { font-style:normal; color: var(--primary);
+    background: linear-gradient(transparent 62%, var(--accent-50) 0); padding: 0 4px; }
+  .hero p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; margin-bottom: var(--s-6); }
+  .hero .cta-row { display:flex; gap: var(--s-3); flex-wrap:wrap; align-items:center; }
+  .hero .free-note { font-size: var(--t-small); color: var(--ink-soft); display:inline-flex; gap:6px; align-items:center; }
+  .hero .stat-strip { display:flex; gap: var(--s-7); margin-top: var(--s-8); flex-wrap:wrap; }
+  .hero .stat b { font-family:var(--font-display); font-size: var(--t-h2); display:block; }
+  .hero .stat span { font-size: var(--t-small); color: var(--ink-soft); }
+
+  /* BROWSE grid (tester view) */
+  .panel { padding: var(--s-6) var(--s-5); background: var(--paper); }
+  .panel-head { display:flex; align-items:center; gap: var(--s-4); margin-bottom: var(--s-5); flex-wrap:wrap; }
+  .panel-head h3 { font-size: var(--t-h2); }
+  .panel-head .count { font-family:var(--font-mono); font-size:var(--t-small); color:var(--ink-soft); }
+  .filters { margin-left:auto; display:flex; gap: var(--s-2); }
+  .pill { font-size: var(--t-small); padding: 7px 14px; border-radius: var(--r-pill);
+    border:1px solid var(--line); background: var(--surface); cursor:pointer; }
+  .pill.active { background: var(--ink); color:#fff; border-color: var(--ink); }
+
+  .app-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: var(--s-4); }
+  .app-card { background: var(--surface); border:1px solid var(--line); border-radius: var(--r-md);
+    padding: var(--s-5); display:flex; flex-direction:column; gap: var(--s-3); transition:.15s; }
+  .app-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--primary-50); }
+  .app-card .top { display:flex; gap: var(--s-3); align-items:center; }
+  .app-icon { width:44px; height:44px; border-radius: var(--r-sm); flex-shrink:0;
+    display:grid; place-items:center; font-family:var(--font-display); font-weight:700; color:#fff; font-size:1.1rem; }
+  .app-card h4 { font-size: var(--t-h3); }
+  .app-card .by { font-size: var(--t-micro); color: var(--ink-soft); font-family:var(--font-mono); }
+  .app-card .scn { font-size: var(--t-small); color: var(--ink-soft); }
+  .app-card .row { display:flex; align-items:center; gap: var(--s-2); flex-wrap:wrap; }
+  .app-card .foot { display:flex; align-items:center; margin-top:auto; padding-top: var(--s-3); border-top:1px solid var(--line); }
+  .app-card .reward { font-family:var(--font-mono); font-size:var(--t-micro); color: var(--ink-soft); }
+
+  /* SUBMIT form (dev view) + detail */
+  .twocol { display:grid; grid-template-columns: 1.1fr .9fr; gap: var(--s-6); padding: var(--s-6) var(--s-5); }
+  .form-stack { display:flex; flex-direction:column; gap: var(--s-5); }
+  .platform-pick { display:flex; gap: var(--s-3); }
+  .plat { flex:1; border:1px solid var(--line); border-radius: var(--r-sm); padding: var(--s-4);
+    text-align:center; cursor:pointer; font-size: var(--t-small); font-weight:600; }
+  .plat.sel { border-color: var(--primary); background: var(--primary-50); color: var(--primary-700); }
+  .aside-card { background: var(--ink); color:#fff; border-radius: var(--r-md); padding: var(--s-6); align-self:start; }
+  .aside-card h4 { color:#fff; font-size: var(--t-h3); margin-bottom: var(--s-4); }
+  .aside-card ol { list-style:none; counter-reset: step; display:flex; flex-direction:column; gap: var(--s-4); }
+  .aside-card li { counter-increment: step; display:flex; gap: var(--s-3); font-size: var(--t-small); color:#C9CADD; }
+  .aside-card li::before { content: counter(step); font-family:var(--font-mono); font-size:var(--t-micro);
+    width:24px; height:24px; flex-shrink:0; border-radius:50%; background: var(--accent); color: var(--ink);
+    display:grid; place-items:center; font-weight:600; }
+  .aside-card li b { color:#fff; display:block; }
+
+  @media (max-width: 720px) {
+    .twocol { grid-template-columns: 1fr; }
+    .pnav .links { display:none; }
+    .hero { padding: var(--s-7) var(--s-5); }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-bar">
+  <h1>Mystery Customer Insight</h1>
+  <span>Design reference — palette, type, components & key screens</span>
+  <span class="doc-tag">handoff → coding agent</span>
+</div>
+
+<div class="wrap">
+
+  <!-- =========================== PALETTE =========================== -->
+  <section class="block">
+    <div class="section-label">01 — Palette</div>
+    <h2 class="title">Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--primary)"></div><div class="meta"><b>Primary</b><code>#4C3FCF</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--primary-700)"></div><div class="meta"><b>Primary 700</b><code>#3B2FB0</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--primary-50)"></div><div class="meta"><b>Primary 50</b><code>#EEEBFB</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--accent)"></div><div class="meta"><b>Accent (spotlight)</b><code>#FFB020</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Ink</b><code>#16182A</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink-soft)"></div><div class="meta"><b>Ink soft</b><code>#4A4E63</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--paper); border-bottom:1px solid var(--line)"></div><div class="meta"><b>Paper (bg)</b><code>#FBFAF8</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--good)"></div><div class="meta"><b>Good / open</b><code>#1FA971</code></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--warn)"></div><div class="meta"><b>Warn / failed</b><code>#E0533D</code></div></div>
+    </div>
+  </section>
+
+  <!-- =========================== TYPE =========================== -->
+  <section class="block">
+    <div class="section-label">02 — Typography</div>
+    <h2 class="title">Type scale</h2>
+    <div class="typerow"><span class="lab">Space Grotesk / Hero</span><span style="font-family:var(--font-display);font-size:var(--t-h1);font-weight:700">Find the bugs real users hit</span></div>
+    <div class="typerow"><span class="lab">Space Grotesk / H2</span><span style="font-family:var(--font-display);font-size:var(--t-h2);font-weight:600">Open apps to test</span></div>
+    <div class="typerow"><span class="lab">Inter / Body</span><span style="font-size:var(--t-body)">Human testers run your scenario on their own phones and report what actually breaks.</span></div>
+    <div class="typerow"><span class="lab">Inter / Small</span><span style="font-size:var(--t-small);color:var(--ink-soft)">Free to post. No subscriptions. No hidden fees.</span></div>
+    <div class="typerow"><span class="lab">JetBrains Mono / Data</span><span class="mono" style="font-size:var(--t-small)">iPhone 13 · iOS 17.4 · scenario #A4F9</span></div>
+  </section>
+
+  <!-- =========================== COMPONENTS =========================== -->
+  <section class="block">
+    <div class="section-label">03 — Components</div>
+    <h2 class="title">Building blocks</h2>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <h4>Buttons</h4>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <button class="btn btn-primary">Submit an app</button>
+          <button class="btn btn-ghost">Browse apps</button>
+          <button class="btn btn-accent">Start testing</button>
+        </div>
+      </div>
+      <div class="comp-card">
+        <h4>Status badges</h4>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="badge open dot">Open</span>
+          <span class="badge fail dot">Failed</span>
+          <span class="badge ios">iOS</span>
+          <span class="badge android">Android</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <h4>Input</h4>
+        <label class="field">
+          <span class="lab">App name</span>
+          <input class="input" placeholder="e.g. Habit Garden" value="Habit Garden">
+          <span class="hint">Shown to testers in the open-apps feed.</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <!-- =========================== SCREEN 1: HERO =========================== -->
+  <section class="block">
+    <div class="section-label">04 — Screen</div>
+    <h2 class="title">Landing — hero</h2>
+    <div class="screen-cap"><b>route</b> / &nbsp;·&nbsp; primary job: get a dev to submit, or a tester to browse</div>
+    <div class="screen">
+      <nav class="pnav">
+        <div class="logo"><span class="mark"></span> Mystery&nbsp;Insight</div>
+        <div class="links"><a>How it works</a><a>Open apps</a><a>For testers</a></div>
+        <div class="spacer"></div>
+        <button class="btn btn-ghost">Log in</button>
+        <button class="btn btn-primary">Submit an app</button>
+      </nav>
+      <div class="hero">
+        <div class="eyebrow">Crowdtesting · real devices · real people</div>
+        <h1>Find the bugs <em>real users</em> hit — before they do.</h1>
+        <p class="lede">Submit your app, write one scenario, and human testers try to complete it on their own phones. You get honest usability feedback, not emulator screenshots.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary">Submit an app — free</button>
+          <button class="btn btn-ghost">Browse open apps</button>
+          <span class="free-note"><span class="badge open dot"></span> No subscriptions, no hidden fees</span>
+        </div>
+        <div class="stat-strip">
+          <div class="stat"><b>iOS · Android</b><span>real hardware, not emulators</span></div>
+          <div class="stat"><b>$0</b><span>to post a test</span></div>
+          <div class="stat"><b>Junior QA</b><span>build real testing experience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== SCREEN 2: BROWSE =========================== -->
+  <section class="block">
+    <div class="section-label">05 — Screen</div>
+    <h2 class="title">Open apps — tester feed</h2>
+    <div class="screen-cap"><b>route</b> /apps &nbsp;·&nbsp; tester browses scenarios to pick up</div>
+    <div class="screen">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Open apps</h3>
+          <span class="count">24 scenarios live</span>
+          <div class="filters">
+            <button class="pill active">All</button>
+            <button class="pill">iOS</button>
+            <button class="pill">Android</button>
+          </div>
+        </div>
+        <div class="app-grid">
+          <!-- card 1 -->
+          <div class="app-card">
+            <div class="top">
+              <div class="app-icon" style="background:var(--primary)">HG</div>
+              <div><h4>Habit Garden</h4><div class="by">by @leafdev</div></div>
+            </div>
+            <div class="row"><span class="badge ios">iOS</span><span class="badge open dot">Open</span></div>
+            <p class="scn">Sign up, create a habit, and complete it once. Note anything confusing in onboarding.</p>
+            <div class="foot"><span class="reward">~5 min · scenario #A4F9</span><button class="btn btn-ghost" style="margin-left:auto;padding:7px 14px">Pick up</button></div>
+          </div>
+          <!-- card 2 -->
+          <div class="app-card">
+            <div class="top">
+              <div class="app-icon" style="background:var(--accent);color:var(--ink)">SP</div>
+              <div><h4>SplitPay</h4><div class="by">by @nadia.k</div></div>
+            </div>
+            <div class="row"><span class="badge android">Android</span><span class="badge open dot">Open</span></div>
+            <p class="scn">Add two friends, split a $40 bill, and send a payment request. Try to break the math.</p>
+            <div class="foot"><span class="reward">~8 min · scenario #C2B1</span><button class="btn btn-ghost" style="margin-left:auto;padding:7px 14px">Pick up</button></div>
+          </div>
+          <!-- card 3 -->
+          <div class="app-card">
+            <div class="top">
+              <div class="app-icon" style="background:var(--ink)">FM</div>
+              <div><h4>FocusMate</h4><div class="by">by @studio_okta</div></div>
+            </div>
+            <div class="row"><span class="badge ios">iOS</span><span class="badge android">Android</span><span class="badge open dot">Open</span></div>
+            <p class="scn">Start a 25-min focus session, get interrupted by a call, and resume. Does the timer survive?</p>
+            <div class="foot"><span class="reward">~6 min · scenario #91DE</span><button class="btn btn-ghost" style="margin-left:auto;padding:7px 14px">Pick up</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== SCREEN 3: SUBMIT =========================== -->
+  <section class="block">
+    <div class="section-label">06 — Screen</div>
+    <h2 class="title">Submit an app — dev form</h2>
+    <div class="screen-cap"><b>route</b> /submit &nbsp;·&nbsp; aside reinforces the 3-step model</div>
+    <div class="screen">
+      <div class="twocol">
+        <div class="form-stack">
+          <label class="field">
+            <span class="lab">App name</span>
+            <input class="input" placeholder="e.g. Habit Garden">
+          </label>
+          <div class="field">
+            <span class="lab">Platforms</span>
+            <div class="platform-pick">
+              <div class="plat sel">iOS</div>
+              <div class="plat">Android</div>
+              <div class="plat">Web</div>
+            </div>
+          </div>
+          <label class="field">
+            <span class="lab">Test scenario</span>
+            <textarea class="input" rows="4" placeholder="Describe one task a tester should complete, in plain language…">Sign up, create your first habit, and mark it done. Tell me where you hesitated.</textarea>
+            <span class="hint">One clear task works better than a checklist. Testers report where they got stuck.</span>
+          </label>
+          <button class="btn btn-primary" style="align-self:flex-start">Post test — free</button>
+        </div>
+        <div class="aside-card">
+          <h4>How it works</h4>
+          <ol>
+            <li><b>Submit an app</b>Pick platforms and write one scenario.</li>
+            <li><b>Test on real devices</b>Humans try it on their own phones.</li>
+            <li><b>Get results</b>Real usability feedback from real people.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

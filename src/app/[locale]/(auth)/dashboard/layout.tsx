@@ -48,7 +48,7 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
 
   return (
     <>
-      <div className="shadow-md">
+      <div className="border-b bg-background">
         <div className="
           mx-auto flex max-w-7xl items-center justify-between px-3 py-4
         "

@@ -33,37 +33,61 @@ export default async function Index(props: IndexProps) {
 
   return (
     <main>
-      <section className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <h1 className="
-          text-4xl font-semibold tracking-tight
-          sm:text-5xl
-        "
-        >
-          Real-device testing by real people
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-          A free crowdtesting portal connecting indie developers with human testers.
-          No subscriptions, no hidden fees.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link
-            href="/apps"
-            className="
-              rounded-md border bg-foreground px-5 py-2.5 font-medium
-              text-background
-            "
+      <section className="relative overflow-hidden border-b">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(900px 380px at 82% -12%, rgba(255,176,32,0.20), transparent 60%), radial-gradient(700px 500px at 8% 120%, rgba(76,63,207,0.10), transparent 60%)',
+          }}
+        />
+        <div className="relative mx-auto max-w-3xl px-4 py-24 text-center">
+          <p className="
+            mb-4 font-mono text-xs tracking-[0.14em] text-primary uppercase
+          "
           >
-            Browse apps
-          </Link>
-          <Link
-            href="/sign-up"
-            className="
-              rounded-md border px-5 py-2.5 font-medium
-              hover:bg-muted
-            "
+            Crowdtesting · real devices · real people
+          </p>
+          <h1 className="
+            text-4xl font-semibold tracking-tight
+            sm:text-5xl
+          "
           >
-            Become a tester
-          </Link>
+            Real-device testing by
+            {' '}
+            <span className="
+              bg-accent/25 box-decoration-clone px-1 text-primary
+            "
+            >
+              real people
+            </span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+            A free crowdtesting portal connecting indie developers with human testers.
+            No subscriptions, no hidden fees.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/apps"
+              className="
+                rounded-lg bg-primary px-5 py-2.5 font-medium
+                text-primary-foreground shadow-sm transition
+                hover:opacity-90
+              "
+            >
+              Browse apps
+            </Link>
+            <Link
+              href="/sign-up"
+              className="
+                rounded-lg border bg-card px-5 py-2.5 font-medium
+                hover:bg-secondary
+              "
+            >
+              Become a tester
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -74,13 +98,19 @@ export default async function Index(props: IndexProps) {
         "
         >
           {STEPS.map((s, i) => (
-            <div key={s.title} className="rounded-lg border p-5">
-              <div className="text-sm text-muted-foreground">
+            <div
+              key={s.title}
+              className="rounded-xl border bg-card p-6 shadow-sm"
+            >
+              <div className="
+                font-mono text-xs tracking-wider text-primary uppercase
+              "
+              >
                 Step
                 {' '}
                 {i + 1}
               </div>
-              <h2 className="mt-1 text-lg font-medium">{s.title}</h2>
+              <h2 className="mt-2 text-lg font-medium">{s.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
             </div>
           ))}

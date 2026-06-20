@@ -66,14 +66,17 @@ test.describe('Developer flow', () => {
 
     // Публичная лента показывает открытую кампанию, клик по карточке → страница приложения.
     await page.goto('/apps');
-    const card = page.getByRole('link', { name: new RegExp(title) });
+    const cardLink = page.getByRole('link', { name: new RegExp(title) });
 
-    await expect(card).toBeVisible();
+    await expect(cardLink).toBeVisible();
+
     // В листинге видны статус и число отчётов (публично).
-    await expect(card).toContainText('open');
-    await expect(card).toContainText('reports');
+    const cardItem = page.locator('li').filter({ has: cardLink });
 
-    await card.click();
+    await expect(cardItem).toContainText('open');
+    await expect(cardItem).toContainText('reports');
+
+    await cardLink.click();
     await page.waitForURL('**/apps/**');
 
     await expect(page.getByRole('heading', { name: title })).toBeVisible();

@@ -11,7 +11,7 @@ const localePrefix: LocalePrefixMode = 'as-needed';
  * Когда true — middleware показывает /coming-soon на ВСЕХ роутах (кроме /health).
  * Это код-флаг (не серверная env). Для локальной разработки реальных страниц — поставь false.
  */
-export const COMING_SOON: boolean = true;
+export const COMING_SOON: boolean = false;
 
 const locales = [
   {

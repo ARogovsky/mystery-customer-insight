@@ -36,8 +36,11 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
           className={`
             rounded-full border px-3 py-1 text-sm
             ${platform
-      ? ''
-      : `bg-muted`}
+      ? `
+        bg-card
+        hover:bg-secondary
+      `
+      : `border-foreground bg-foreground text-background`}
           `}
         >
           All
@@ -49,8 +52,11 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
             className={`
               rounded-full border px-3 py-1 text-sm
               ${platform === p
-            ? `bg-muted`
-            : ''}
+            ? `border-foreground bg-foreground text-background`
+            : `
+              bg-card
+              hover:bg-secondary
+            `}
             `}
           >
             {p}
@@ -67,38 +73,75 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
             "
             >
               {campaigns.map(c => (
-                <li key={c.id} className="rounded-lg border p-4">
-                  <Link
-                    href={`/apps/${c.id}`}
-                    className="
-                      block
-                      hover:underline
+                <li
+                  key={c.id}
+                  className="
+                    flex flex-col gap-3 rounded-xl border bg-card p-5 shadow-sm
+                    transition
+                    hover:-translate-y-0.5 hover:shadow-md
+                  "
+                >
+                  <Link href={`/apps/${c.id}`} className="block">
+                    <div className="
+                      text-lg font-medium
+                      hover:text-primary
                     "
-                  >
-                    <div className="font-medium">{c.title}</div>
-                    <div className="mt-1 text-sm text-muted-foreground">
+                    >
+                      {c.title}
+                    </div>
+                    <div className="
+                      mt-0.5 font-mono text-xs text-muted-foreground
+                    "
+                    >
                       {c.appName}
-                      {' · '}
-                      {c.platforms.join(', ')}
-                      {' · '}
-                      {c.status}
-                      {' · '}
-                      {c.submissionsCount}
-                      {' reports'}
                     </div>
                   </Link>
-                  {isTester && (
-                    <Link
-                      href={`/dashboard/reports/new/${c.id}`}
-                      className="
-                        mt-3 inline-block rounded-md border px-3 py-1 text-sm
-                        font-medium
-                        hover:bg-muted
-                      "
+
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span
+                      className={`
+                        inline-flex items-center gap-1.5 rounded-full px-2.5
+                        py-0.5 text-xs font-semibold
+                        ${c.status === 'open'
+                  ? `bg-success/12 text-success`
+                  : `bg-muted text-muted-foreground`}
+                      `}
                     >
-                      Submit a report
-                    </Link>
-                  )}
+                      {c.status}
+                    </span>
+                    {c.platforms.map(p => (
+                      <span
+                        key={p}
+                        className="
+                          rounded-full bg-secondary px-2.5 py-0.5 text-xs
+                          font-medium text-secondary-foreground
+                        "
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="
+                    mt-auto flex items-center justify-between border-t pt-3
+                  "
+                  >
+                    <span className="font-mono text-xs text-muted-foreground">
+                      {c.submissionsCount}
+                      {' reports'}
+                    </span>
+                    {isTester && (
+                      <Link
+                        href={`/dashboard/reports/new/${c.id}`}
+                        className="
+                          rounded-md border px-3 py-1 text-sm font-medium
+                          hover:bg-secondary
+                        "
+                      >
+                        Submit a report
+                      </Link>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>

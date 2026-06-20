@@ -4,7 +4,8 @@ import { getPublicCampaign } from '@/features/public/queries';
 import { createSubmission } from '@/features/reports/actions';
 import { getCurrentProfile } from '@/libs/Profile';
 
-const inputClass = 'rounded-md border px-3 py-2';
+const inputClass
+  = 'w-full rounded-lg border bg-card px-3 py-2 text-sm focus:outline-2 focus:outline-primary focus:outline-offset-1';
 const RATINGS = [1, 2, 3, 4, 5];
 
 type NewReportPageProps = {
@@ -35,14 +36,19 @@ export default async function NewReportPage(props: NewReportPageProps) {
 
   return (
     <div className="max-w-2xl space-y-6">
-      <h1 className="text-2xl font-semibold">Submit a report</h1>
-      <p className="text-muted-foreground">
-        {campaign.title}
-        {' · '}
-        {campaign.appName}
-      </p>
+      <div>
+        <h1 className="text-2xl font-semibold">Submit a report</h1>
+        <p className="mt-1 font-mono text-sm text-muted-foreground">
+          {campaign.title}
+          {' · '}
+          {campaign.appName}
+        </p>
+      </div>
 
-      <form action={submit} className="flex flex-col gap-5">
+      <form
+        action={submit}
+        className="flex flex-col gap-5 rounded-xl border bg-card p-6 shadow-sm"
+      >
         {campaign.questions.length > 0 && (
           <fieldset className="flex flex-col gap-4">
             <legend className="font-medium">Questions</legend>
@@ -98,8 +104,9 @@ export default async function NewReportPage(props: NewReportPageProps) {
         <button
           type="submit"
           className="
-            self-start rounded-md border px-4 py-2 font-medium
-            hover:bg-muted
+            self-start rounded-lg bg-primary px-5 py-2.5 font-medium
+            text-primary-foreground shadow-sm transition
+            hover:opacity-90
           "
         >
           Submit report

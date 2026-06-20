@@ -1,11 +1,10 @@
 import { UserButton } from '@clerk/nextjs';
 import { useLocale } from 'next-intl';
-import Link from 'next/link';
 import { ActiveLink } from '@/components/ActiveLink';
 import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 
 import { Separator } from '@/components/ui/separator';
-import { Logo } from '@/templates/Logo';
+import { BrandLogo } from '@/features/marketing/BrandLogo';
 import { getI18nPath } from '@/utils/Helpers';
 import { MobileNavigation } from './MobileNavigation';
 import { SlashIcon } from './SlashIcon';
@@ -21,9 +20,7 @@ export const DashboardHeader = (props: {
   return (
     <>
       <div className="flex items-center">
-        <Link href="/dashboard" className="max-sm:hidden">
-          <Logo />
-        </Link>
+        <BrandLogo className="max-sm:hidden" />
 
         <SlashIcon />
 

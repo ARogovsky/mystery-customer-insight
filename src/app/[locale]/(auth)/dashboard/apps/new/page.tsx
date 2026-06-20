@@ -22,7 +22,7 @@ export default async function NewCampaignPage(props: NewCampaignPageProps) {
   }
 
   return (
-    <div className="max-w-2xl space-y-6">
+    <div className="max-w-4xl space-y-6">
       <h1 className="text-2xl font-semibold">Submit an app</h1>
       <SubmitAppForm />
     </div>

@@ -69,6 +69,9 @@ test.describe('Developer flow', () => {
     const card = page.getByRole('link', { name: new RegExp(title) });
 
     await expect(card).toBeVisible();
+    // В листинге видны статус и число отчётов (публично).
+    await expect(card).toContainText('open');
+    await expect(card).toContainText('reports');
 
     await card.click();
     await page.waitForURL('**/apps/**');
@@ -76,6 +79,7 @@ test.describe('Developer flow', () => {
     await expect(page.getByRole('heading', { name: title })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Test scenario' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Submit a report' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'View results' })).toBeVisible();
+    // Отчёты приватны: публичной ссылки на результаты нет.
+    await expect(page.getByRole('link', { name: 'View results' })).toHaveCount(0);
   });
 });

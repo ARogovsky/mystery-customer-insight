@@ -1,4 +1,4 @@
-import { and, arrayContains, desc, eq } from 'drizzle-orm';
+import { and, arrayContains, desc, eq, sql } from 'drizzle-orm';
 import { db } from '@/libs/DB';
 import { apps, profiles, testQuestions, tests, testSubmissions } from '@/models/Schema';
 
@@ -27,9 +27,15 @@ export async function getOpenCampaigns(platform?: Platform) {
     .select({
       id: tests.id,
       title: tests.title,
+      status: tests.status,
       platforms: tests.platforms,
       createdAt: tests.createdAt,
       appName: apps.name,
+      submissionsCount: sql<number>`(
+        select count(*)::int from ${testSubmissions}
+        where ${testSubmissions.testId} = ${tests.id}
+          and ${testSubmissions.isHidden} = false
+      )`,
     })
     .from(tests)
     .innerJoin(apps, eq(tests.appId, apps.id))
@@ -77,22 +83,4 @@ export async function getPublicCampaign(id: string) {
     .orderBy(testQuestions.position);
 
   return { ...campaign, questions };
-}
-
-/** Публичные результаты кампании (тестеры обезличены). */
-export async function getCampaignResults(testId: string) {
-  if (!UUID_RE.test(testId)) {
-    return [];
-  }
-
-  return db
-    .select({
-      id: testSubmissions.id,
-      freeText: testSubmissions.freeText,
-      linkUrl: testSubmissions.linkUrl,
-      createdAt: testSubmissions.createdAt,
-    })
-    .from(testSubmissions)
-    .where(and(eq(testSubmissions.testId, testId), eq(testSubmissions.isHidden, false)))
-    .orderBy(desc(testSubmissions.createdAt));
 }

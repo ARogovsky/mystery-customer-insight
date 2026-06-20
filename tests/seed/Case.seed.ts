@@ -5,8 +5,9 @@ import { bypassComingSoon, signOut, signUpAndOnboard } from '../helpers';
 // SEED (против Docker-БД, данные ОСТАЮТСЯ): расширенный кейс для ручной проверки.
 // Свежий разработчик (с display name) публикует 3 приложения (ios/android/web) с
 // вопросами разных типов; 3 тестера шлют отчёты на одно приложение (multi-tester);
-// разработчик плюсует +1 ДВУМ разным тестерам (третьего оставляет без плюса); аноним
-// оставляет отзывы и репортит один отзыв 3 раза (автоскрытие). В конце печатаются доступы.
+// разработчик плюсует +1 ДВУМ разным тестерам (третьего оставляет без плюса); затем
+// (залогиненным) оставляет отзывы, и аноним репортит один отзыв 3 раза (автоскрытие).
+// В конце печатаются доступы.
 
 type SeededApp = { title: string; platform: string; href: string };
 
@@ -61,7 +62,6 @@ test('seed extended case into Docker DB', async ({ context, page }) => {
   const stamp = Date.now();
   const devEmail = `mci-seed-dev-${stamp}+clerk_test@example.com`;
   const devName = `SEED Developer ${stamp}`;
-  // Тестеры: существующий + два фиксированных (создаются один раз через sign-up).
   const testers = [
     'mci-tester+clerk_test@example.com',
     'mci-tester2+clerk_test@example.com',
@@ -79,7 +79,6 @@ test('seed extended case into Docker DB', async ({ context, page }) => {
     await createSeedCampaign(page, p.title, p.platform);
   }
 
-  // Собираем публичные ссылки.
   const apps: SeededApp[] = [];
   await page.goto('/apps');
   for (const p of plan) {
@@ -116,10 +115,8 @@ test('seed extended case into Docker DB', async ({ context, page }) => {
     await expect(page.getByText('Rated +1')).toHaveCount(i + 1);
   }
 
-  await signOut(page);
-
-  // 4) Аноним: 3 отзыва на третье приложение, затем репорт первого отзыва 3 раза (скрытие).
-  await bypassComingSoon(context);
+  // 4) Отзывы требуют авторизации — пишем под залогиненным разработчиком (любая роль
+  // подходит; отзывы анонимны). 3 отзыва на третье приложение.
   const reviewApp = apps[2]!;
   for (let i = 1; i <= 3; i++) {
     await page.goto(reviewApp.href);
@@ -129,6 +126,11 @@ test('seed extended case into Docker DB', async ({ context, page }) => {
 
     await expect(page.getByText(`Anonymous review #${i} (${stamp})`)).toBeVisible();
   }
+
+  await signOut(page);
+
+  // 5) Аноним (без логина): репорт первого отзыва 3 раза → автоскрытие.
+  await bypassComingSoon(context);
   for (let i = 0; i < 3; i++) {
     await page.goto(reviewApp.href);
     const reviewItem = page.locator('li').filter({ hasText: `Anonymous review #1 (${stamp})` });
@@ -160,10 +162,11 @@ test('seed extended case into Docker DB', async ({ context, page }) => {
   • [web]     ${plan[2]!.title}  -> ${base}${apps[2]!.href}
 
 Что проверить руками:
+  • В листинге /apps у карточек виден статус и число отчётов (без авторизации).
   • На iOS-приложении 3 отчёта от 3 тестеров; +1 стоит у двух, у третьего — кнопка «+1».
   • У тестеров 1 и 2 рейтинг +1; у каждого tests completed >= 1 (в их дашбордах).
   • На web-приложении 3 отзыва, но отзыв #1 скрыт после 3 репортов (видны #2 и #3).
-  • Фильтр /apps?platform=android показывает только android-приложение.
+  • Отзыв можно оставить только залогиненным (любая роль); анониму — ссылка на вход.
   • На странице приложения видно автора: "by ${devName}".
 =====================================================================
 `);

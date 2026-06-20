@@ -174,13 +174,27 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
         : (
             <ul className="space-y-2">
               {reports.map(r => (
-                <li key={r.id} className="rounded-md border p-3">
+                <li
+                  key={r.id}
+                  className="
+                    flex items-center justify-between rounded-md border p-3
+                  "
+                >
                   <Link
                     href={`/apps/${r.testId}`}
                     className="font-medium text-blue-500"
                   >
                     {r.title}
                   </Link>
+                  {r.rated && (
+                    <span className="
+                      rounded-full border px-2 py-0.5 text-xs font-medium
+                      text-green-600
+                    "
+                    >
+                      +1 received
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

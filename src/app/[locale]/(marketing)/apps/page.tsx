@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { getOpenCampaigns, parsePlatform } from '@/features/public/queries';
+import { getCurrentProfile } from '@/libs/Profile';
 
 const PLATFORMS = ['ios', 'android', 'web', 'other'] as const;
 
@@ -16,7 +17,11 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
   const { platform: rawPlatform } = await props.searchParams;
   const platform = parsePlatform(rawPlatform);
 
-  const campaigns = await getOpenCampaigns(platform);
+  const [campaigns, profile] = await Promise.all([
+    getOpenCampaigns(platform),
+    getCurrentProfile(),
+  ]);
+  const isTester = profile?.role === 'tester';
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
@@ -62,12 +67,12 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
             "
             >
               {campaigns.map(c => (
-                <li key={c.id}>
+                <li key={c.id} className="rounded-lg border p-4">
                   <Link
                     href={`/apps/${c.id}`}
                     className="
-                      block rounded-lg border p-4
-                      hover:bg-muted
+                      block
+                      hover:underline
                     "
                   >
                     <div className="font-medium">{c.title}</div>
@@ -75,8 +80,25 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
                       {c.appName}
                       {' · '}
                       {c.platforms.join(', ')}
+                      {' · '}
+                      {c.status}
+                      {' · '}
+                      {c.submissionsCount}
+                      {' reports'}
                     </div>
                   </Link>
+                  {isTester && (
+                    <Link
+                      href={`/dashboard/reports/new/${c.id}`}
+                      className="
+                        mt-3 inline-block rounded-md border px-3 py-1 text-sm
+                        font-medium
+                        hover:bg-muted
+                      "
+                    >
+                      Submit a report
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 'use server';
 
+import { auth } from '@clerk/nextjs/server';
 import { revalidatePath } from 'next/cache';
 import * as z from 'zod';
 import { db } from '@/libs/DB';
@@ -11,8 +12,15 @@ const ReviewSchema = z.object({
   rating: z.coerce.number().int().min(1).max(5).optional(),
 });
 
-// Анонимный отзыв (без автора), публикуется сразу.
+// Отзыв анонимный (без автора) и публикуется сразу, НО оставить его может только
+// авторизованный пользователь — любой роли (developer или tester).
 export async function createReview(appId: string, formData: FormData) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    throw new Error('Unauthorized');
+  }
+
   const parsed = ReviewSchema.safeParse({
     appId,
     body: formData.get('body'),

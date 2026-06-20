@@ -45,7 +45,12 @@ export default async function CampaignsPage(props: CampaignsPageProps) {
             <ul className="space-y-2">
               {campaigns.map(c => (
                 <li key={c.id} className="rounded-md border p-3">
-                  <div className="font-medium">{c.title}</div>
+                  <Link
+                    href={`/dashboard/campaigns/${c.id}/submissions`}
+                    className="font-medium text-blue-500"
+                  >
+                    {c.title}
+                  </Link>
                   <div className="text-sm text-muted-foreground">
                     {c.appName}
                     {' · '}

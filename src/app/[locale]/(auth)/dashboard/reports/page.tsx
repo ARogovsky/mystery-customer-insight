@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { getMyReports } from '@/features/reports/queries';
+import { getMyRating, getMyReports } from '@/features/reports/queries';
 import { getCurrentProfile } from '@/libs/Profile';
 
 type ReportsPageProps = {
@@ -23,11 +23,19 @@ export default async function ReportsPage(props: ReportsPageProps) {
   }
 
   const reports = await getMyReports();
+  const rating = await getMyRating();
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">My reports</h1>
+        <div>
+          <h1 className="text-2xl font-semibold">My reports</h1>
+          <p className="text-sm text-muted-foreground">
+            Rating:
+            {' '}
+            {rating}
+          </p>
+        </div>
         <Link
           href="/campaigns"
           className="

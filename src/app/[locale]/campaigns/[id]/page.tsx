@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ReportForm } from '@/features/moderation/ReportForm';
 import { getPublicCampaign } from '@/features/public/queries';
+import { createReview } from '@/features/reviews/actions';
+import { getAppReviews } from '@/features/reviews/queries';
 
 type CampaignPageProps = {
   params: Promise<{ locale: string; id: string }>;
@@ -31,6 +34,9 @@ export default async function CampaignPage(props: CampaignPageProps) {
   if (!campaign) {
     notFound();
   }
+
+  const reviews = await getAppReviews(campaign.appId);
+  const addReview = createReview.bind(null, campaign.appId);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
@@ -99,6 +105,57 @@ export default async function CampaignPage(props: CampaignPageProps) {
           View results
         </Link>
       </p>
+
+      <ReportForm targetType="test" targetId={campaign.id} />
+
+      <section className="mt-10">
+        <h2 className="text-xl font-medium">Reviews</h2>
+
+        {reviews.length === 0
+          ? <p className="mt-2 text-muted-foreground">No reviews yet.</p>
+          : (
+              <ul className="mt-3 space-y-3">
+                {reviews.map(r => (
+                  <li key={r.id} className="rounded-md border p-3">
+                    {r.rating != null && (
+                      <div className="text-sm text-muted-foreground">
+                        Rating:
+                        {' '}
+                        {r.rating}
+                        /5
+                      </div>
+                    )}
+                    <p className="whitespace-pre-wrap">{r.body}</p>
+                    <ReportForm targetType="review" targetId={r.id} />
+                  </li>
+                ))}
+              </ul>
+            )}
+
+        <form action={addReview} className="mt-4 flex max-w-lg flex-col gap-2">
+          <textarea
+            name="body"
+            required
+            placeholder="Leave an anonymous review"
+            className="rounded-md border px-3 py-2"
+          />
+          <select name="rating" className="max-w-28 rounded-md border px-3 py-2">
+            <option value="">Rating…</option>
+            {[1, 2, 3, 4, 5].map(n => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
+          <button
+            type="submit"
+            className="
+              self-start rounded-md border px-4 py-2 font-medium
+              hover:bg-muted
+            "
+          >
+            Post review
+          </button>
+        </form>
+      </section>
     </article>
   );
 }

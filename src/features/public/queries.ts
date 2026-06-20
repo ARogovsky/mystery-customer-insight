@@ -52,6 +52,7 @@ export async function getPublicCampaign(id: string) {
       status: tests.status,
       startsAt: tests.startsAt,
       endsAt: tests.endsAt,
+      appId: apps.id,
       appName: apps.name,
       appDescription: apps.description,
       appUrl: apps.appUrl,

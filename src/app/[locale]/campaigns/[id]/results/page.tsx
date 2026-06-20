@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ReportForm } from '@/features/moderation/ReportForm';
 import { getCampaignResults, getPublicCampaign } from '@/features/public/queries';
 
 type ResultsPageProps = {
@@ -50,6 +51,7 @@ export default async function CampaignResultsPage(props: ResultsPageProps) {
                       {r.linkUrl}
                     </a>
                   )}
+                  <ReportForm targetType="submission" targetId={r.id} />
                 </li>
               ))}
             </ul>

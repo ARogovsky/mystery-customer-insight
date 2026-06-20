@@ -55,6 +55,10 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
                 href: '/dashboard/apps',
                 label: 'Apps',
               },
+              {
+                href: '/dashboard/campaigns',
+                label: 'Campaigns',
+              },
             ]}
           />
         </div>

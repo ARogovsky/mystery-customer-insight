@@ -26,6 +26,8 @@ const COMING_SOON_HTML = `<!doctype html>
 const isProtectedRoute = createRouteMatcher([
   '/dashboard(.*)',
   '/:locale/dashboard(.*)',
+  '/onboarding(.*)',
+  '/:locale/onboarding(.*)',
 ]);
 
 const isAuthPage = createRouteMatcher([

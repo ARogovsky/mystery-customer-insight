@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { redirect } from 'next/navigation';
 import { DashboardHeader } from '@/features/dashboard/DashboardHeader';
+import { getCurrentProfile } from '@/libs/Profile';
 
 type DashboardLayoutProps = {
   params: Promise<{ locale: string }>;
@@ -23,6 +25,13 @@ export async function generateMetadata(props: DashboardLayoutProps): Promise<Met
 export default async function DashboardLayout(props: DashboardLayoutProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
+
+  // Гейт роли: нет профиля (роль не выбрана) → на онбординг.
+  const profile = await getCurrentProfile();
+
+  if (!profile) {
+    redirect('/onboarding/role');
+  }
 
   const t = await getTranslations({
     locale,

@@ -38,6 +38,17 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
     namespace: 'DashboardLayout',
   });
 
+  const menu = profile.role === 'developer'
+    ? [
+        { href: '/dashboard', label: t('home') },
+        { href: '/dashboard/apps', label: 'Apps' },
+        { href: '/dashboard/campaigns', label: 'Campaigns' },
+      ]
+    : [
+        { href: '/dashboard', label: t('home') },
+        { href: '/dashboard/reports', label: 'Reports' },
+      ];
+
   return (
     <>
       <div className="shadow-md">
@@ -45,22 +56,7 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
           mx-auto flex max-w-7xl items-center justify-between px-3 py-4
         "
         >
-          <DashboardHeader
-            menu={[
-              {
-                href: '/dashboard',
-                label: t('home'),
-              },
-              {
-                href: '/dashboard/apps',
-                label: 'Apps',
-              },
-              {
-                href: '/dashboard/campaigns',
-                label: 'Campaigns',
-              },
-            ]}
-          />
+          <DashboardHeader menu={menu} />
         </div>
       </div>
 

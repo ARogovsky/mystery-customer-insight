@@ -11,6 +11,8 @@ const config: KnipConfig = {
   // Dependencies to ignore during analysis
   ignoreDependencies: [
     '@clerk/shared',
+    '@radix-ui/react-accordion',
+    '@radix-ui/react-icons',
     '@swc/helpers', // Avoid error in CI: "`npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync."
   ],
   // Include custom Playwright test file suffixes

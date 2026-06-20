@@ -32,7 +32,12 @@ No subscriptions. No hidden fees.
 
 ## Contributing
 
-By contributing, you agree your contributions may be licensed by the maintainer under any terms, including commercial.
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
+
+All contributions require accepting the [Contributor License Agreement (CLA)](CLA.md):
+you keep ownership of your work, but grant the maintainer a broad, sublicensable
+license to use it under any terms — including proprietary and commercial/hosted
+offerings. An automated CLA check runs on your first pull request.
 
 ## License
 

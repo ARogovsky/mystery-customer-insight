@@ -6,12 +6,12 @@ import { MarketingHeader } from '@/features/marketing/MarketingHeader';
 export const metadata: Metadata = {
   title: 'Mystery Customer Insight — free crowdtesting for indie apps',
   description:
-    'Indie developers post free test campaigns. Human testers run them on real devices and report back. No subscriptions, no hidden fees.',
+    'Indie developers submit apps for testing. Human testers run them on real devices and report back. No subscriptions, no hidden fees.',
 };
 
 const STEPS = [
   {
-    title: 'Post a campaign',
+    title: 'Submit an app',
     text: 'Add your app link, target platforms, a test scenario, and a few questions. It is free.',
   },
   {
@@ -57,7 +57,7 @@ export default async function Index(props: IndexProps) {
                 text-background
               "
             >
-              Browse campaigns
+              Browse apps
             </Link>
             <Link
               href="/sign-up"

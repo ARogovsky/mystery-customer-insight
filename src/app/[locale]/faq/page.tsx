@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Who can submit reports?',
-    a: 'Signed-in testers complete a campaign scenario on their own device and submit answers plus comments.',
+    a: 'Signed-in testers complete an app test scenario on their own device and submit answers plus comments.',
   },
   {
     q: 'How is tester quality recognized?',

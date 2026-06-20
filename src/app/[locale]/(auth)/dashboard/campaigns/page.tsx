@@ -27,7 +27,7 @@ export default async function CampaignsPage(props: CampaignsPageProps) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Your campaigns</h1>
+        <h1 className="text-2xl font-semibold">Your apps</h1>
         <Link
           href="/dashboard/campaigns/new"
           className="
@@ -35,12 +35,12 @@ export default async function CampaignsPage(props: CampaignsPageProps) {
             hover:bg-muted
           "
         >
-          Post a campaign
+          Submit an app
         </Link>
       </div>
 
       {campaigns.length === 0
-        ? <p className="text-muted-foreground">No campaigns yet.</p>
+        ? <p className="text-muted-foreground">No apps yet.</p>
         : (
             <ul className="space-y-2">
               {campaigns.map(c => (

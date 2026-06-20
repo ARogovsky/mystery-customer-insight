@@ -16,7 +16,7 @@ export async function generateMetadata(props: CampaignPageProps): Promise<Metada
   const campaign = await getPublicCampaign(id);
 
   if (!campaign) {
-    return { title: 'Campaign not found' };
+    return { title: 'App not found' };
   }
 
   return {

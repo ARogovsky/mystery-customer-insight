@@ -29,7 +29,7 @@ export default async function NewCampaignPage(props: NewCampaignPageProps) {
 
   return (
     <div className="max-w-2xl space-y-6">
-      <h1 className="text-2xl font-semibold">Post a campaign</h1>
+      <h1 className="text-2xl font-semibold">Submit an app</h1>
 
       <form action={createCampaign} className="flex flex-col gap-6">
         <fieldset className="flex flex-col gap-3">
@@ -60,8 +60,8 @@ export default async function NewCampaignPage(props: NewCampaignPageProps) {
         </fieldset>
 
         <fieldset className="flex flex-col gap-3">
-          <legend className="font-medium">Campaign</legend>
-          <input name="title" required placeholder="Campaign title" className={inputClass} />
+          <legend className="font-medium">Test details</legend>
+          <input name="title" required placeholder="Test title" className={inputClass} />
           <textarea
             name="scenario"
             required
@@ -109,7 +109,7 @@ export default async function NewCampaignPage(props: NewCampaignPageProps) {
             hover:bg-muted
           "
         >
-          Post campaign
+          Submit app
         </button>
       </form>
     </div>

@@ -8,14 +8,14 @@ A crowdtesting social portal that connects indie developers with human testers f
 
 ## What it does
 
-Indie developers post free campaigns for their apps (iOS, Android, and more) and define a test scenario. Human testers pick up those campaigns and try to complete the scenario on their own devices, then report back.
+Indie developers submit their apps (iOS, Android, and more) for testing and define a test scenario. Human testers pick up those apps and try to complete the scenario on their own devices, then report back.
 
 No subscriptions. No hidden fees.
 
 ## How it works
 
-1. **Post a campaign** — A developer creates a free campaign, selects the target platforms (iOS, Android, etc.), and writes a test scenario.
-2. **Test on real devices** — Testers browse open campaigns and attempt to complete the scenario on their own phones and tablets.
+1. **Submit an app** — A developer submits an app for free, selects the target platforms (iOS, Android, etc.), and writes a test scenario.
+2. **Test on real devices** — Testers browse open apps and attempt to complete the scenario on their own phones and tablets.
 3. **Get results** — Developers receive real-world usability feedback from actual people on actual devices.
 
 ## Who it's for
@@ -25,7 +25,7 @@ No subscriptions. No hidden fees.
 
 ## Why it's different
 
-- **Free to post** — campaigns cost nothing to publish.
+- **Free to post** — submitting an app costs nothing.
 - **No subscriptions** — there's no recurring fee to use the platform.
 - **No hidden charges** — what you see is what you get.
 - **Real devices, real people** — feedback comes from human testers using their own devices, not emulators.

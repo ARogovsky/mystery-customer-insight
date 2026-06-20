@@ -41,8 +41,7 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
   const menu = profile.role === 'developer'
     ? [
         { href: '/dashboard', label: t('home') },
-        { href: '/dashboard/apps', label: 'Apps' },
-        { href: '/dashboard/campaigns', label: 'Campaigns' },
+        { href: '/dashboard/campaigns', label: 'Apps' },
       ]
     : [
         { href: '/dashboard', label: t('home') },

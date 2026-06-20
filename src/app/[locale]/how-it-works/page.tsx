@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 const STEPS = [
   {
-    title: '1. Post a campaign',
-    text: 'A developer posts a free campaign: app link, target platforms, a test scenario, and a few simple questions.',
+    title: '1. Submit an app',
+    text: 'A developer submits an app for free: app link, target platforms, a test scenario, and a few simple questions.',
   },
   {
     title: '2. Test on real devices',
-    text: 'Human testers browse open campaigns and complete the scenario on their own phones and tablets.',
+    text: 'Human testers browse open apps and complete the scenario on their own phones and tablets.',
   },
   {
     title: '3. Get results',
@@ -51,7 +51,7 @@ export default async function HowItWorksPage(props: PageProps) {
 
         <p className="mt-10">
           <Link href="/campaigns" className="font-medium text-blue-500">
-            Browse open campaigns →
+            Browse open apps →
           </Link>
         </p>
       </main>

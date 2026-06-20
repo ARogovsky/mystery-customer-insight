@@ -20,9 +20,9 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <h1 className="text-3xl font-semibold">Browse campaigns</h1>
+      <h1 className="text-3xl font-semibold">Browse apps</h1>
       <p className="mt-2 text-muted-foreground">
-        Pick a campaign and test it on your own device.
+        Pick an app and test it on your own device.
       </p>
 
       <nav className="mt-6 flex flex-wrap gap-2">
@@ -54,7 +54,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
       </nav>
 
       {campaigns.length === 0
-        ? <p className="mt-8 text-muted-foreground">No open campaigns.</p>
+        ? <p className="mt-8 text-muted-foreground">No open apps.</p>
         : (
             <ul className="
               mt-6 grid gap-4

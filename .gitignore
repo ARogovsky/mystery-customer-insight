@@ -70,3 +70,6 @@ build-archive.log
 # === Внутренние артефакты ассистента и steering ===
 .kiro/
 AI/
+
+# editor workspace files (локальные, не коммитим)
+*.code-workspace

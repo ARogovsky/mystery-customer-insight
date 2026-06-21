@@ -2,9 +2,11 @@
 
 import { and, eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
+import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import * as z from 'zod';
 import { db } from '@/libs/DB';
+import { hashId } from '@/libs/hashId';
 import { getCurrentProfile } from '@/libs/Profile';
 import { apps, testQuestions, tests } from '@/models/Schema';
 
@@ -87,6 +89,8 @@ export async function createCampaign(formData: FormData) {
 
   const data = parsed.data;
 
+  let createdTestId: string | undefined;
+
   await db.transaction(async (tx) => {
     const appRows = await tx
       .insert(apps)
@@ -124,6 +128,8 @@ export async function createCampaign(formData: FormData) {
       throw new Error('Failed to create campaign');
     }
 
+    createdTestId = test.id;
+
     if (data.questions.length > 0) {
       await tx.insert(testQuestions).values(
         data.questions.map((q, idx) => ({
@@ -136,6 +142,18 @@ export async function createCampaign(formData: FormData) {
       );
     }
   });
+
+  // Конверсия app_published ($1000) — сигнал клиенту через cookie (txn уникален и хеширован).
+  if (createdTestId) {
+    (await cookies()).set(
+      'mci_conv',
+      JSON.stringify({
+        type: 'app_published',
+        txn: hashId(createdTestId, profile.id),
+      }),
+      { path: '/', maxAge: 120, httpOnly: false, sameSite: 'lax' },
+    );
+  }
 
   revalidatePath('/dashboard');
   redirect('/dashboard');

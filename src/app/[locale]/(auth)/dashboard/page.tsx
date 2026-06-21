@@ -5,6 +5,7 @@ import { updateCampaignStatus } from '@/features/campaigns/actions';
 import { getMyCampaigns } from '@/features/campaigns/queries';
 import { SubmitAppForm } from '@/features/campaigns/SubmitAppForm';
 import { getMyReports, getMyStats } from '@/features/reports/queries';
+import { hashId } from '@/libs/hashId';
 import { createProfileWithRole, getCurrentProfile } from '@/libs/Profile';
 
 const inputClass
@@ -44,10 +45,24 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
     async function chooseRole(role: 'developer' | 'tester', formData: FormData) {
       'use server';
 
+      const { auth } = await import('@clerk/nextjs/server');
+      const { cookies } = await import('next/headers');
+
       const displayName
         = (formData.get('displayName') as string | null)?.trim() || undefined;
 
       await createProfileWithRole(role, displayName);
+
+      // Конверсия qualified_lead ($100) — txn = хеш Clerk userId (без раскрытия id).
+      const { userId } = await auth();
+      if (userId) {
+        (await cookies()).set(
+          'mci_conv',
+          JSON.stringify({ type: 'qualified_lead', txn: hashId(userId) }),
+          { path: '/', maxAge: 120, httpOnly: false, sameSite: 'lax' },
+        );
+      }
+
       revalidatePath('/dashboard');
     }
 

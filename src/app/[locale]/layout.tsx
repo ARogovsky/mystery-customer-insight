@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from 'next';
+import { auth } from '@clerk/nextjs/server';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { ConversionTracker } from '@/components/ConversionTracker';
 import { GoogleTag } from '@/components/GoogleTag';
+import { CookieConsent } from '@/features/marketing/CookieConsent';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
 
@@ -73,6 +76,8 @@ export default async function RootLayout(props: {
 
   setRequestLocale(locale);
 
+  const { userId } = await auth();
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
@@ -85,6 +90,8 @@ export default async function RootLayout(props: {
         <NextIntlClientProvider>
           {props.children}
         </NextIntlClientProvider>
+        <CookieConsent />
+        <ConversionTracker isSignedIn={!!userId} />
         <GoogleTag />
       </body>
     </html>

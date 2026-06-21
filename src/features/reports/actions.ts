@@ -2,9 +2,11 @@
 
 import { and, eq, sql } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
+import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import * as z from 'zod';
 import { db } from '@/libs/DB';
+import { hashId } from '@/libs/hashId';
 import { getCurrentProfile } from '@/libs/Profile';
 import { submissionAnswers, testerStats, testQuestions, tests, testSubmissions } from '@/models/Schema';
 
@@ -44,6 +46,8 @@ export async function createSubmission(testId: string, formData: FormData) {
     throw new Error('Invalid link');
   }
 
+  let createdSubmissionId: string | undefined;
+
   await db.transaction(async (tx) => {
     const subRows = await tx
       .insert(testSubmissions)
@@ -55,6 +59,8 @@ export async function createSubmission(testId: string, formData: FormData) {
     if (!submission) {
       throw new Error('Failed to create submission');
     }
+
+    createdSubmissionId = submission.id;
 
     const answers: AnswerRow[] = [];
 
@@ -86,6 +92,18 @@ export async function createSubmission(testId: string, formData: FormData) {
         set: { testsCompleted: sql`${testerStats.testsCompleted} + 1` },
       });
   });
+
+  // Конверсия report_submitted ($1000) — сигнал клиенту через cookie.
+  if (createdSubmissionId) {
+    (await cookies()).set(
+      'mci_conv',
+      JSON.stringify({
+        type: 'report_submitted',
+        txn: hashId(createdSubmissionId, profile.id),
+      }),
+      { path: '/', maxAge: 120, httpOnly: false, sameSite: 'lax' },
+    );
+  }
 
   revalidatePath('/dashboard');
   redirect('/dashboard');

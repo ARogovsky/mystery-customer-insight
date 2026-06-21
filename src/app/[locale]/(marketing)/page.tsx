@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Mystery Customer Insight — free crowdtesting for indie apps',
+  title: {
+    absolute: 'Mystery Customer Insight — free crowdtesting for indie apps',
+  },
   description:
     'Indie developers submit apps for testing. Human testers run them on real devices and report back. No subscriptions, no hidden fees.',
 };
@@ -89,6 +92,18 @@ export default async function Index(props: IndexProps) {
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 py-12">
+        <Image
+          src="/landscape.svg"
+          alt="How Mystery Customer Insight works"
+          width={2475}
+          height={1650}
+          unoptimized
+          priority
+          className="h-auto w-full rounded-2xl border shadow-sm"
+        />
       </section>
 
       <section className="mx-auto max-w-4xl px-4 pb-20">

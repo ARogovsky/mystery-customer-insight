@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer — Mystery Customer Insight',
+  title: 'Disclaimer',
   robots: { index: true, follow: true },
 };
 

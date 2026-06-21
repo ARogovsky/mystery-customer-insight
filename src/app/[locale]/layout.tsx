@@ -8,7 +8,12 @@ import { ConversionTracker } from '@/components/ConversionTracker';
 import { GoogleTag } from '@/components/GoogleTag';
 import { CookieConsent } from '@/features/marketing/CookieConsent';
 import { routing } from '@/libs/I18nRouting';
+import { getBaseUrl } from '@/utils/Helpers';
 import '@/styles/global.css';
+
+const SITE_NAME = 'Mystery Customer Insight';
+const SITE_DESCRIPTION
+  = 'A free crowdtesting platform connecting indie developers with human testers. Real-device testing by real people. No subscriptions, no hidden fees.';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,28 +36,41 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  icons: [
-    {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/favicon-32x32.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/favicon-16x16.png',
-    },
-    {
-      rel: 'icon',
-      url: '/favicon.ico',
-    },
-  ],
+  metadataBase: new URL(getBaseUrl()),
+  title: {
+    default: `${SITE_NAME} — free crowdtesting for indie apps`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — free crowdtesting for indie apps`,
+    description: SITE_DESCRIPTION,
+    url: '/',
+    locale: 'en_US',
+    images: [
+      { url: '/og-image.png', width: 1200, height: 800, alt: SITE_NAME },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} — free crowdtesting for indie apps`,
+    description: SITE_DESCRIPTION,
+    images: ['/og-image.png'],
+  },
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export const viewport: Viewport = {
@@ -77,6 +95,23 @@ export default async function RootLayout(props: {
   setRequestLocale(locale);
 
   const { userId } = await auth();
+  const baseUrl = getBaseUrl();
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': SITE_NAME,
+      'url': baseUrl,
+      'logo': `${baseUrl}/android-chrome-512x512.png`,
+      'description': SITE_DESCRIPTION,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': SITE_NAME,
+      'url': baseUrl,
+    },
+  ];
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -87,6 +122,10 @@ export default async function RootLayout(props: {
           ${jetbrainsMono.variable}
         `}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <NextIntlClientProvider>
           {props.children}
         </NextIntlClientProvider>

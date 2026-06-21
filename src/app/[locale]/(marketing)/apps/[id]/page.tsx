@@ -23,6 +23,14 @@ export async function generateMetadata(props: CampaignPageProps): Promise<Metada
   return {
     title: `${campaign.title} — ${campaign.appName}`,
     description: campaign.scenario.slice(0, 160),
+    alternates: { canonical: `/apps/${id}` },
+    openGraph: {
+      type: 'article',
+      title: `${campaign.title} — ${campaign.appName}`,
+      description: campaign.scenario.slice(0, 160),
+      url: `/apps/${id}`,
+      images: [{ url: '/og-image.png', width: 1200, height: 800 }],
+    },
   };
 }
 
@@ -41,8 +49,23 @@ export default async function CampaignPage(props: CampaignPageProps) {
   const { userId } = await auth();
   const isAuthenticated = !!userId;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': campaign.appName,
+    'operatingSystem': campaign.platforms.join(', '),
+    'applicationCategory': 'OtherApplication',
+    'url': campaign.appUrl,
+    'description': campaign.scenario.slice(0, 200),
+    'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+  };
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header>
         <h1 className="text-3xl font-semibold">{campaign.title}</h1>
         <p className="mt-1 text-muted-foreground">

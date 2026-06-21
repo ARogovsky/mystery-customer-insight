@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { CookieSettings } from '@/features/marketing/CookieSettings';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy — Mystery Customer Insight',
+  title: 'Cookie Policy',
   robots: { index: true, follow: true },
 };
 

@@ -1,0 +1,13 @@
+{
+  "name": "Mystery Customer Insight",
+  "short_name": "MCI",
+  "description": "A free crowdtesting platform connecting indie developers with human testers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFAF8",
+  "theme_color": "#FBFAF8",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

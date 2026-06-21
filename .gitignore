@@ -32,6 +32,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# Этот проект на npm (package-lock.json — источник истины; CI/Vercel юзают npm ci).
+# IDE/corepack иногда авто-ставит pnpm и плодит эти файлы — не коммитим, иначе
+# Vercel переключится на pnpm и сборка разойдётся с CI.
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
 # local env files (секреты — НЕ коммитим; реальные значения держим здесь)
 .env*.local
 

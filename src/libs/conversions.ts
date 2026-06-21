@@ -14,8 +14,19 @@ const CONVERSIONS: Record<
   ConversionType,
   { event: string; value: number; adSendTo?: string }
 > = {
-  page_view_anon: { event: 'page_view_anon', value: 1 },
-  qualified_lead: { event: 'qualified_lead', value: 100 },
+  // Bootstrap conversion (MAXIMIZE_CLICKS campaigns) — Google Ads "Consent Page view".
+  page_view_anon: {
+    event: 'page_view_anon',
+    value: 1,
+    adSendTo: 'AW-16555543061/o0aECLmLgqYcEJWUptY9',
+  },
+  // Primary conversion (MAXIMIZE_CONVERSIONS campaigns) — Google Ads "Sign-up".
+  qualified_lead: {
+    event: 'qualified_lead',
+    value: 100,
+    adSendTo: 'AW-16555543061/trmlCMum2pEcEJWUptY9',
+  },
+  // Secondary signals — GA4/gtag only, intentionally NOT sent to Google Ads.
   app_published: { event: 'app_published', value: 1000 },
   report_submitted: { event: 'report_submitted', value: 1000 },
 };

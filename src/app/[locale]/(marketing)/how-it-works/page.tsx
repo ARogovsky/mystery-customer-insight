@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'How it works — Mystery Customer Insight',
+  title: 'How it works',
   description: 'How developers submit apps and human testers run them on real devices.',
 };
 

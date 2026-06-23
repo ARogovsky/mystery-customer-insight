@@ -14,6 +14,7 @@ export function SiteFooter() {
           © Mystery Customer Insight · NGO "POGOVORIMO" (EDRPOU 44818137)
         </span>
         <nav className="flex flex-wrap gap-4">
+          <Link href="/about" className="hover:text-foreground">About</Link>
           <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
           <Link href="/cookies" className="hover:text-foreground">Cookies</Link>
           <Link href="/disclaimer" className="hover:text-foreground">Disclaimer</Link>

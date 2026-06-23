@@ -3,9 +3,12 @@ import { setRequestLocale } from 'next-intl/server';
 import { getTopTesters } from '@/features/toplist/queries';
 
 export const metadata: Metadata = {
-  title: 'Toplist — Mystery Customer Insight',
+  title: 'Toplist',
   description: 'Top human testers by reputation.',
 };
+
+// Тулист берёт данные из БД: ISR раз в час — быстро (статика) и не устаревает надолго.
+export const revalidate = 3600;
 
 type PageProps = {
   params: Promise<{ locale: string }>;

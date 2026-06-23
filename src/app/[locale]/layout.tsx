@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { auth } from '@clerk/nextjs/server';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
@@ -94,7 +93,6 @@ export default async function RootLayout(props: {
 
   setRequestLocale(locale);
 
-  const { userId } = await auth();
   const baseUrl = getBaseUrl();
   const jsonLd = [
     {
@@ -130,7 +128,7 @@ export default async function RootLayout(props: {
           {props.children}
         </NextIntlClientProvider>
         <CookieConsent />
-        <ConversionTracker isSignedIn={!!userId} />
+        <ConversionTracker />
         <GoogleTag />
       </body>
     </html>

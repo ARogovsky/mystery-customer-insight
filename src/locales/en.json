@@ -18,5 +18,41 @@
   "UserProfilePage": {
     "title_bar": "User Profile",
     "title_bar_description": "View and manage your user profile"
+  },
+  "About": {
+    "meta_title": "About — our mission",
+    "meta_description": "Mystery Customer Insight is a non-profit crowdtesting portal that makes real-people, real-device app testing free and accessible to every indie developer.",
+    "eyebrow": "Our mission",
+    "hero_title_before": "App testing should be",
+    "hero_title_highlight": "for everyone",
+    "hero_subtitle": "We believe an indie developer deserves the same honest, real-world feedback that big studios pay thousands for. So we built a place where anyone can get it — for free.",
+    "why_title": "Why we exist",
+    "why_p1": "Getting an app in front of real users used to mean an enterprise QA contract, a paid tester panel, or begging friends for feedback. Real usability testing — humans, real devices, honest answers — sat behind a price tag most indie developers simply cannot justify.",
+    "why_p2": "Mystery Customer Insight removes that barrier. A developer submits an app with a short scenario and a few questions; human testers run it on their own phones and tablets and report back what actually happened. No subscriptions, no hidden fees, no gatekeeping.",
+    "why_p3": "The platform is operated by the non-profit NGO “POGOVORIMO”. We are not here to sell testing seats — we are here to make honest product feedback a public good for the people who build software on their own.",
+    "principles_title": "What we stand for",
+    "principles": [
+      {
+        "title": "Free, and staying that way",
+        "text": "No subscriptions, no per-tester fees, no paywalled reports. Submitting an app and reading the results costs nothing — that is the whole point."
+      },
+      {
+        "title": "Real people, real devices",
+        "text": "Every test is run by a human on their own phone or tablet — not bots, not emulators, not synthetic scripts. You get honest reactions from actual users."
+      },
+      {
+        "title": "Built for indies",
+        "text": "Solo founders and small teams rarely have a QA lab or budget for a paid testing panel. We level that field so a one-person app can be tested like a funded one."
+      },
+      {
+        "title": "A community, not a vendor",
+        "text": "Testers try new apps and their feedback genuinely shapes what ships. Developers and testers help each other — the platform just connects them."
+      }
+    ],
+    "cta_title": "Join the people behind better apps",
+    "cta_subtitle": "Whether you build apps or love trying new ones, there is a place for you here. It is free to start.",
+    "cta_browse": "Browse apps",
+    "cta_tester": "Become a tester",
+    "cta_how": "How it works"
   }
 }

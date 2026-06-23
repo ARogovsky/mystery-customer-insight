@@ -5,6 +5,7 @@ import { BrandLogo } from './BrandLogo';
 const LINKS = [
   { href: '/', label: 'Home' },
   { href: '/how-it-works', label: 'How it works' },
+  { href: '/about', label: 'About' },
   { href: '/apps', label: 'Browse' },
   { href: '/toplist', label: 'Toplist' },
   { href: '/faq', label: 'FAQ' },

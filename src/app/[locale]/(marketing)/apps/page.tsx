@@ -5,6 +5,13 @@ import { getCurrentProfile } from '@/libs/Profile';
 
 const PLATFORMS = ['ios', 'android', 'web', 'other'] as const;
 
+export const metadata = {
+  title: 'Browse apps',
+  description:
+    'Browse open apps looking for testers. Pick one and test it on your own device — filter by platform.',
+  alternates: { canonical: '/apps' },
+};
+
 type CampaignsFeedProps = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ platform?: string }>;

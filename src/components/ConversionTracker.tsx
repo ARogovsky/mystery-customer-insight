@@ -29,7 +29,24 @@ function clearConvCookie() {
   document.cookie = `${CONV_COOKIE}=; Max-Age=0; path=/`;
 }
 
-export function ConversionTracker({ isSignedIn }: { isSignedIn: boolean }) {
+// Залогинен ли пользователь — определяем на клиенте по cookie Clerk `__client_uat`
+// (0 или отсутствует = аноним; >0 = есть сессия). Так корневой layout остаётся
+// статическим (без серверного auth()), что лучше для TTFB/Core Web Vitals.
+function isSignedInClient(): boolean {
+  const match = document.cookie
+    .split('; ')
+    .find(c => c.startsWith('__client_uat='));
+
+  if (!match) {
+    return false;
+  }
+
+  const value = match.slice('__client_uat='.length);
+
+  return value !== '' && value !== '0';
+}
+
+export function ConversionTracker() {
   const pathname = usePathname();
 
   // Конверсии действий (lead / app_published / report_submitted) — через cookie.
@@ -46,10 +63,10 @@ export function ConversionTracker({ isSignedIn }: { isSignedIn: boolean }) {
 
   // page_view_anon ($1) — только для НЕзалогиненных, на каждом переходе.
   useEffect(() => {
-    if (!isSignedIn) {
+    if (!isSignedInClient()) {
       fireConversion('page_view_anon');
     }
-  }, [pathname, isSignedIn]);
+  }, [pathname]);
 
   return null;
 }

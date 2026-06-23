@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'How it works',
-  description: 'How developers submit apps and human testers run them on real devices.',
+  description: 'How beta testing and usability testing work: developers submit apps and human testers run them on real devices.',
 };
 
 const STEPS = [
@@ -14,7 +14,7 @@ const STEPS = [
   },
   {
     title: '2. Test on real devices',
-    text: 'Human testers browse open apps and complete the scenario on their own phones and tablets.',
+    text: 'Human testers browse open apps and complete the scenario on their own phones and tablets — real user testing and usability testing, not bots.',
   },
   {
     title: '3. Get results',
@@ -34,7 +34,8 @@ export default async function HowItWorksPage(props: PageProps) {
     <main className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="text-3xl font-semibold">How it works</h1>
       <p className="mt-2 text-muted-foreground">
-        Free crowdtesting for indie developers and human testers. No subscriptions, no hidden fees.
+        Free crowdtesting, beta testing, and usability testing for indie developers.
+        See how user testing on real devices works — no subscriptions, no hidden fees.
       </p>
 
       <ol className="mt-8 space-y-6">

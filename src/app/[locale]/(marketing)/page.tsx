@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     absolute: 'Mystery Customer Insight — free crowdtesting for indie apps',
   },
   description:
-    'Indie developers submit apps for testing. Human testers run them on real devices and report back. No subscriptions, no hidden fees.',
+    'Free beta testing and usability testing for indie apps. Human testers run your app on real devices and report back. No subscriptions, no hidden fees.',
 };
 
 const STEPS = [
@@ -18,7 +18,7 @@ const STEPS = [
   },
   {
     title: 'Real people test it',
-    text: 'Human testers complete your scenario on their own phones and tablets.',
+    text: 'Human testers run your beta on their own phones and tablets — real usability testing, not bots.',
   },
   {
     title: 'Get honest results',
@@ -50,7 +50,7 @@ export default async function Index(props: IndexProps) {
             mb-4 font-mono text-xs tracking-[0.14em] text-primary uppercase
           "
           >
-            Crowdtesting · real devices · real people
+            Crowdtesting · beta testing · usability testing
           </p>
           <h1 className="
             text-4xl font-semibold tracking-tight
@@ -67,8 +67,8 @@ export default async function Index(props: IndexProps) {
             </span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            A free crowdtesting portal connecting indie developers with human testers.
-            No subscriptions, no hidden fees.
+            A free crowdtesting portal for indie developers — real-device beta testing
+            and usability testing by human testers. No subscriptions, no hidden fees.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link

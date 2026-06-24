@@ -1,18 +1,21 @@
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 import { BrandLogo } from './BrandLogo';
 
 const LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/how-it-works', label: 'How it works' },
-  { href: '/about', label: 'About' },
-  { href: '/apps', label: 'Browse' },
-  { href: '/toplist', label: 'Toplist' },
-  { href: '/faq', label: 'FAQ' },
-];
+  { href: '/', key: 'home' },
+  { href: '/how-it-works', key: 'how_it_works' },
+  { href: '/about', key: 'about' },
+  { href: '/apps', key: 'browse' },
+  { href: '/toplist', key: 'toplist' },
+  { href: '/faq', key: 'faq' },
+] as const;
 
 // Единый хедер для всех публичных страниц (i18n-переключатель включён).
 export function SiteHeader() {
+  const t = useTranslations('Nav');
+
   return (
     <header className="
       sticky top-0 z-40 border-b bg-background/80 backdrop-blur-sm
@@ -33,7 +36,7 @@ export function SiteHeader() {
                 hover:text-primary
               "
             >
-              {l.label}
+              {t(l.key)}
             </Link>
           ))}
           <Link
@@ -43,7 +46,7 @@ export function SiteHeader() {
               hover:text-primary
             "
           >
-            Sign in
+            {t('sign_in')}
           </Link>
           <LocaleSwitcher />
         </nav>

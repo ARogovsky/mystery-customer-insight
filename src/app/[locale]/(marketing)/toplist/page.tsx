@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getTopTesters } from '@/features/toplist/queries';
 
 export const metadata: Metadata = {
@@ -17,21 +17,22 @@ type PageProps = {
 export default async function ToplistPage(props: PageProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
+  const t = await getTranslations('Toplist');
 
   const testers = await getTopTesters();
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-12">
-      <h1 className="text-3xl font-semibold">Toplist</h1>
-      <p className="mt-2 text-muted-foreground">Top testers by reputation.</p>
+      <h1 className="text-3xl font-semibold">{t('title')}</h1>
+      <p className="mt-2 text-muted-foreground">{t('subtitle')}</p>
 
       {testers.length === 0
-        ? <p className="mt-8 text-muted-foreground">No rated testers yet.</p>
+        ? <p className="mt-8 text-muted-foreground">{t('empty')}</p>
         : (
             <ol className="mt-6 space-y-2">
-              {testers.map((t, i) => (
+              {testers.map((tester, i) => (
                 <li
-                  key={t.id}
+                  key={tester.id}
                   className="
                     flex items-center justify-between rounded-md border p-3
                   "
@@ -42,11 +43,12 @@ export default async function ToplistPage(props: PageProps) {
                       {i + 1}
                     </span>
                     {' '}
-                    {t.name ?? 'Tester'}
+                    {tester.name ?? t('tester')}
                   </span>
                   <span className="text-sm font-medium">
-                    {t.points}
-                    {' pts'}
+                    {tester.points}
+                    {' '}
+                    {t('points')}
                   </span>
                 </li>
               ))}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,21 +11,6 @@ export const metadata: Metadata = {
     'Free beta testing and usability testing for indie apps. Human testers run your app on real devices and report back. No subscriptions, no hidden fees.',
 };
 
-const STEPS = [
-  {
-    title: 'Submit an app',
-    text: 'Add your app link, target platforms, a test scenario, and a few questions. It is free.',
-  },
-  {
-    title: 'Real people test it',
-    text: 'Human testers run your beta on their own phones and tablets — real usability testing, not bots.',
-  },
-  {
-    title: 'Get honest results',
-    text: 'Read real-world answers, comments, and links from actual users.',
-  },
-];
-
 type IndexProps = {
   params: Promise<{ locale: string }>;
 };
@@ -33,6 +18,13 @@ type IndexProps = {
 export default async function Index(props: IndexProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
+  const t = await getTranslations('Home');
+
+  const STEPS = [
+    { title: t('step1_title'), text: t('step1_text') },
+    { title: t('step2_title'), text: t('step2_text') },
+    { title: t('step3_title'), text: t('step3_text') },
+  ];
 
   return (
     <main>
@@ -50,25 +42,24 @@ export default async function Index(props: IndexProps) {
             mb-4 font-mono text-xs tracking-[0.14em] text-primary uppercase
           "
           >
-            Crowdtesting · beta testing · usability testing
+            {t('eyebrow')}
           </p>
           <h1 className="
             text-4xl font-semibold tracking-tight
             sm:text-5xl
           "
           >
-            Real-device testing by
+            {t('hero_before')}
             {' '}
             <span className="
               bg-accent/25 box-decoration-clone px-1 text-primary
             "
             >
-              real people
+              {t('hero_highlight')}
             </span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            A free crowdtesting portal for indie developers — real-device beta testing
-            and usability testing by human testers. No subscriptions, no hidden fees.
+            {t('lede')}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
@@ -79,7 +70,7 @@ export default async function Index(props: IndexProps) {
                 hover:opacity-90
               "
             >
-              Browse apps
+              {t('browse_apps')}
             </Link>
             <Link
               href="/sign-up"
@@ -88,7 +79,7 @@ export default async function Index(props: IndexProps) {
                 hover:bg-secondary
               "
             >
-              Become a tester
+              {t('become_tester')}
             </Link>
           </div>
         </div>
@@ -121,7 +112,7 @@ export default async function Index(props: IndexProps) {
                 font-mono text-xs tracking-wider text-primary uppercase
               "
               >
-                Step
+                {t('step_label')}
                 {' '}
                 {i + 1}
               </div>
@@ -133,7 +124,7 @@ export default async function Index(props: IndexProps) {
 
         <p className="mt-10 text-center">
           <Link href="/how-it-works" className="font-medium text-blue-500">
-            Learn how it works →
+            {t('learn_more')}
           </Link>
         </p>
       </section>

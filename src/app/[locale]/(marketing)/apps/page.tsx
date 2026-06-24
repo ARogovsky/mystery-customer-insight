@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { getOpenCampaigns, parsePlatform } from '@/features/public/queries';
 import { getCurrentProfile } from '@/libs/Profile';
@@ -29,12 +29,13 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
     getCurrentProfile(),
   ]);
   const isTester = profile?.role === 'tester';
+  const t = await getTranslations('Apps');
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <h1 className="text-3xl font-semibold">Browse apps</h1>
+      <h1 className="text-3xl font-semibold">{t('title')}</h1>
       <p className="mt-2 text-muted-foreground">
-        Pick an app and test it on your own device.
+        {t('subtitle')}
       </p>
 
       <nav className="mt-6 flex flex-wrap gap-2">
@@ -50,7 +51,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
       : `border-foreground bg-foreground text-background`}
           `}
         >
-          All
+          {t('all')}
         </Link>
         {PLATFORMS.map(p => (
           <Link
@@ -72,7 +73,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
       </nav>
 
       {campaigns.length === 0
-        ? <p className="mt-8 text-muted-foreground">No open apps.</p>
+        ? <p className="mt-8 text-muted-foreground">{t('no_open')}</p>
         : (
             <ul className="
               mt-6 grid gap-4
@@ -135,7 +136,8 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
                   >
                     <span className="font-mono text-xs text-muted-foreground">
                       {c.submissionsCount}
-                      {' reports'}
+                      {' '}
+                      {t('reports')}
                     </span>
                     {isTester && (
                       <Link
@@ -145,7 +147,7 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
                           hover:bg-secondary
                         "
                       >
-                        Submit a report
+                        {t('submit_report')}
                       </Link>
                     )}
                   </div>

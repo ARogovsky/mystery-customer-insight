@@ -1,7 +1,11 @@
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 // Единый футер для всех публичных страниц.
 export function SiteFooter() {
+  const t = useTranslations('Footer');
+  const tn = useTranslations('Nav');
+
   return (
     <footer className="border-t">
       <div className="
@@ -10,14 +14,12 @@ export function SiteFooter() {
         sm:flex-row sm:items-center sm:justify-between
       "
       >
-        <span>
-          © Mystery Customer Insight · NGO "POGOVORIMO" (EDRPOU 44818137)
-        </span>
+        <span>{t('rights')}</span>
         <nav className="flex flex-wrap gap-4">
-          <Link href="/about" className="hover:text-foreground">About</Link>
-          <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
-          <Link href="/cookies" className="hover:text-foreground">Cookies</Link>
-          <Link href="/disclaimer" className="hover:text-foreground">Disclaimer</Link>
+          <Link href="/about" className="hover:text-foreground">{tn('about')}</Link>
+          <Link href="/privacy" className="hover:text-foreground">{t('privacy')}</Link>
+          <Link href="/cookies" className="hover:text-foreground">{t('cookies')}</Link>
+          <Link href="/disclaimer" className="hover:text-foreground">{t('disclaimer')}</Link>
         </nav>
       </div>
     </footer>

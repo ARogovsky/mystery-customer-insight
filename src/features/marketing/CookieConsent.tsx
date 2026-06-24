@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { applyConsent, readConsent, saveConsent } from '@/libs/consent';
@@ -7,6 +8,7 @@ import { applyConsent, readConsent, saveConsent } from '@/libs/consent';
 // Простой баннер согласия (Consent Mode v2). По умолчанию всё denied (в GoogleTag);
 // здесь пользователь принимает/отклоняет аналитику и рекламу.
 export function CookieConsent() {
+  const t = useTranslations('CookieConsent');
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -38,8 +40,7 @@ export function CookieConsent() {
       "
       >
         <p className="text-sm text-muted-foreground">
-          We use cookies for analytics and ads measurement to improve the site.
-          You can accept or decline.
+          {t('text')}
           {' '}
           <Link
             href="/cookies"
@@ -48,7 +49,7 @@ export function CookieConsent() {
               hover:underline
             "
           >
-            Cookie Policy
+            {t('cookie_policy')}
           </Link>
         </p>
         <div className="flex shrink-0 gap-2">
@@ -60,7 +61,7 @@ export function CookieConsent() {
               hover:bg-secondary
             "
           >
-            Decline
+            {t('decline')}
           </button>
           <button
             type="button"
@@ -71,7 +72,7 @@ export function CookieConsent() {
               hover:opacity-90
             "
           >
-            Accept
+            {t('accept')}
           </button>
         </div>
       </div>

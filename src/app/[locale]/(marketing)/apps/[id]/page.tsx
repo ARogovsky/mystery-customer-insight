@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { auth } from '@clerk/nextjs/server';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ReportForm } from '@/features/moderation/ReportForm';
@@ -48,6 +48,7 @@ export default async function CampaignPage(props: CampaignPageProps) {
   const addReview = createReview.bind(null, campaign.appId);
   const { userId } = await auth();
   const isAuthenticated = !!userId;
+  const t = await getTranslations('AppDetail');
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -74,7 +75,7 @@ export default async function CampaignPage(props: CampaignPageProps) {
           {campaign.platforms.join(', ')}
           {' · '}
           {campaign.status}
-          {campaign.developerName ? ` · by ${campaign.developerName}` : ''}
+          {campaign.developerName ? ` · ${t('by')} ${campaign.developerName}` : ''}
         </p>
       </header>
 
@@ -89,18 +90,18 @@ export default async function CampaignPage(props: CampaignPageProps) {
           rel="noreferrer"
           className="text-blue-500"
         >
-          Open the app
+          {t('open_app')}
         </a>
       </p>
 
       <section className="mt-8">
-        <h2 className="text-xl font-medium">Test scenario</h2>
+        <h2 className="text-xl font-medium">{t('scenario')}</h2>
         <p className="mt-2 whitespace-pre-wrap">{campaign.scenario}</p>
       </section>
 
       {campaign.questions.length > 0 && (
         <section className="mt-8">
-          <h2 className="text-xl font-medium">You will be asked</h2>
+          <h2 className="text-xl font-medium">{t('will_be_asked')}</h2>
           <ul className="mt-2 list-disc pl-5">
             {campaign.questions.map(q => (
               <li key={q.id}>
@@ -128,17 +129,17 @@ export default async function CampaignPage(props: CampaignPageProps) {
           href={`/dashboard/reports/new/${campaign.id}`}
           className="text-blue-500"
         >
-          Submit a report
+          {t('submit_report')}
         </Link>
       </p>
 
       <ReportForm targetType="test" targetId={campaign.id} />
 
       <section className="mt-10">
-        <h2 className="text-xl font-medium">Reviews</h2>
+        <h2 className="text-xl font-medium">{t('reviews')}</h2>
 
         {reviews.length === 0
-          ? <p className="mt-2 text-muted-foreground">No reviews yet.</p>
+          ? <p className="mt-2 text-muted-foreground">{t('no_reviews')}</p>
           : (
               <ul className="mt-3 space-y-3">
                 {reviews.map(r => (
@@ -162,11 +163,11 @@ export default async function CampaignPage(props: CampaignPageProps) {
           <textarea
             name="body"
             required
-            placeholder="Leave an anonymous review"
+            placeholder={t('leave_review')}
             className="rounded-md border px-3 py-2"
           />
           <select name="rating" className="max-w-28 rounded-md border px-3 py-2">
-            <option value="">Rating…</option>
+            <option value="">{t('rating_placeholder')}</option>
             {[1, 2, 3, 4, 5].map(n => (
               <option key={n} value={n}>{n}</option>
             ))}
@@ -180,13 +181,13 @@ export default async function CampaignPage(props: CampaignPageProps) {
               disabled:cursor-not-allowed disabled:opacity-50
             "
           >
-            Post review
+            {t('post_review')}
           </button>
           {!isAuthenticated && (
             <p className="text-sm text-muted-foreground">
-              <Link href="/sign-in" className="text-blue-500">Sign in</Link>
+              <Link href="/sign-in" className="text-blue-500">{t('sign_in')}</Link>
               {' '}
-              to leave a review. Reviews stay anonymous.
+              {t('sign_in_suffix')}
             </p>
           )}
         </form>

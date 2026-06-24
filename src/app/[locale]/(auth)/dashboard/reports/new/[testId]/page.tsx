@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound, redirect } from 'next/navigation';
 import { getPublicCampaign } from '@/features/public/queries';
 import { createSubmission } from '@/features/reports/actions';
@@ -22,8 +22,10 @@ export default async function NewReportPage(props: NewReportPageProps) {
     redirect('/dashboard');
   }
 
+  const t = await getTranslations('NewReport');
+
   if (profile.role !== 'tester') {
-    return <p className="text-muted-foreground">Only testers can submit reports.</p>;
+    return <p className="text-muted-foreground">{t('only_testers')}</p>;
   }
 
   const campaign = await getPublicCampaign(testId);
@@ -37,7 +39,7 @@ export default async function NewReportPage(props: NewReportPageProps) {
   return (
     <div className="max-w-2xl space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold">Submit a report</h1>
+        <h1 className="text-2xl font-semibold">{t('title')}</h1>
         <p className="mt-1 font-mono text-sm text-muted-foreground">
           {campaign.title}
           {' · '}
@@ -51,7 +53,7 @@ export default async function NewReportPage(props: NewReportPageProps) {
       >
         {campaign.questions.length > 0 && (
           <fieldset className="flex flex-col gap-4">
-            <legend className="font-medium">Questions</legend>
+            <legend className="font-medium">{t('questions')}</legend>
             {campaign.questions.map(q => (
               <label key={q.id} className="flex flex-col gap-1 text-sm">
                 {q.prompt}
@@ -87,16 +89,16 @@ export default async function NewReportPage(props: NewReportPageProps) {
         )}
 
         <label className="flex flex-col gap-1 text-sm">
-          Overall comments
+          {t('overall_comments')}
           <textarea name="freeText" rows={4} className={inputClass} />
         </label>
 
         <label className="flex flex-col gap-1 text-sm">
-          Attachment link (optional)
+          {t('attachment_link')}
           <input
             name="linkUrl"
             type="url"
-            placeholder="https://… screenshot or video"
+            placeholder={t('attachment_placeholder')}
             className={inputClass}
           />
         </label>
@@ -109,7 +111,7 @@ export default async function NewReportPage(props: NewReportPageProps) {
             hover:opacity-90
           "
         >
-          Submit report
+          {t('submit_report')}
         </button>
       </form>
     </div>

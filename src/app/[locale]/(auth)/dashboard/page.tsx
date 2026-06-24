@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { revalidatePath } from 'next/cache';
 import Link from 'next/link';
 import { updateCampaignStatus } from '@/features/campaigns/actions';
@@ -38,6 +38,7 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
 
+  const t = await getTranslations('Dashboard');
   const profile = await getCurrentProfile();
 
   // Онбординг роли инлайн (без редиректа — иначе зависает сразу после логина).
@@ -73,14 +74,14 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
           text-center
         `}
         >
-          <h1 className="text-2xl font-semibold">Choose your role</h1>
+          <h1 className="text-2xl font-semibold">{t('choose_role')}</h1>
           <p className="mt-2 text-muted-foreground">
-            How will you use Mystery Customer Insight?
+            {t('choose_role_subtitle')}
           </p>
           <form className="mt-6 flex flex-col gap-3">
             <input
               name="displayName"
-              placeholder="Display name (optional)"
+              placeholder={t('display_name')}
               className={inputClass}
             />
             <button
@@ -88,14 +89,14 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
               formAction={chooseRole.bind(null, 'developer')}
               className={ghostBtn}
             >
-              I am a developer
+              {t('i_am_developer')}
             </button>
             <button
               type="submit"
               formAction={chooseRole.bind(null, 'tester')}
               className={ghostBtn}
             >
-              I am a tester
+              {t('i_am_tester')}
             </button>
           </form>
         </div>
@@ -110,7 +111,7 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
     if (apps.length === 0) {
       return (
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-2xl font-semibold">Submit your first app</h1>
+          <h1 className="text-2xl font-semibold">{t('submit_first_app')}</h1>
           <SubmitAppForm />
         </div>
       );
@@ -119,9 +120,9 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-semibold">Your apps</h1>
+          <h1 className="text-2xl font-semibold">{t('your_apps')}</h1>
           <Link href="/dashboard/apps/new" className={ghostBtn}>
-            Submit an app
+            {t('submit_an_app')}
           </Link>
         </div>
 
@@ -170,7 +171,7 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
                     w-auto
                     ${inputClass}
                   `}
-                  aria-label={`Status for ${c.title}`}
+                  aria-label={t('status_for', { title: c.title })}
                 >
                   <option value="draft">draft</option>
                   <option value="open">open</option>
@@ -184,7 +185,7 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
                     hover:bg-secondary
                   "
                 >
-                  Update status
+                  {t('update_status')}
                 </button>
               </form>
             </li>
@@ -199,9 +200,9 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">My reports</h1>
+        <h1 className="text-2xl font-semibold">{t('my_reports')}</h1>
         <Link href="/apps" className={ghostBtn}>
-          Browse apps
+          {t('browse_apps')}
         </Link>
       </div>
 
@@ -220,7 +221,7 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
             font-mono text-xs tracking-wider text-primary uppercase
           "
           >
-            Rating
+            {t('rating')}
           </div>
           <div className="mt-1 font-mono text-2xl font-semibold">{stats.ratingPoints}</div>
         </div>
@@ -233,14 +234,14 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
             font-mono text-xs tracking-wider text-primary uppercase
           "
           >
-            Tests completed
+            {t('tests_completed')}
           </div>
           <div className="mt-1 font-mono text-2xl font-semibold">{stats.testsCompleted}</div>
         </div>
       </div>
 
       {reports.length === 0
-        ? <p className="text-muted-foreground">No reports yet.</p>
+        ? <p className="text-muted-foreground">{t('no_reports')}</p>
         : (
             <ul className="space-y-3">
               {reports.map(r => (
@@ -266,7 +267,7 @@ export default async function DashboardIndexPage(props: DashboardPageProps) {
                       py-0.5 text-xs font-semibold text-success
                     "
                     >
-                      +1 received
+                      {t('plus_received')}
                     </span>
                   )}
                 </li>

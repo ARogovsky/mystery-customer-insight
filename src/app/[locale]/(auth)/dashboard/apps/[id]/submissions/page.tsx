@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound, redirect } from 'next/navigation';
 import { getCampaignSubmissionsForOwner } from '@/features/campaigns/queries';
 import { rateSubmission } from '@/features/rating/actions';
@@ -18,8 +18,10 @@ export default async function SubmissionsPage(props: SubmissionsPageProps) {
     redirect('/dashboard');
   }
 
+  const t = await getTranslations('Submissions');
+
   if (profile.role !== 'developer') {
-    return <p className="text-muted-foreground">Only developers can view submissions.</p>;
+    return <p className="text-muted-foreground">{t('only_developers')}</p>;
   }
 
   const data = await getCampaignSubmissionsForOwner(id);
@@ -31,13 +33,11 @@ export default async function SubmissionsPage(props: SubmissionsPageProps) {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-semibold">
-        Submissions —
-        {' '}
-        {data.title}
+        {t('title', { title: data.title })}
       </h1>
 
       {data.submissions.length === 0
-        ? <p className="text-muted-foreground">No submissions yet.</p>
+        ? <p className="text-muted-foreground">{t('no_submissions')}</p>
         : (
             <ul className="space-y-3">
               {data.submissions.map((s) => {
@@ -71,7 +71,7 @@ export default async function SubmissionsPage(props: SubmissionsPageProps) {
                               text-success
                             "
                             >
-                              Rated +1
+                              {t('rated')}
                             </span>
                           )
                         : (
@@ -84,7 +84,7 @@ export default async function SubmissionsPage(props: SubmissionsPageProps) {
                                   hover:bg-secondary
                                 "
                               >
-                                +1 to tester
+                                {t('plus_to_tester')}
                               </button>
                             </form>
                           )}

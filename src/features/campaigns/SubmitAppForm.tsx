@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { createCampaign } from './actions';
 
 const PLATFORMS = ['ios', 'android', 'web', 'other'] as const;
@@ -7,13 +8,15 @@ const QUESTION_ROWS = [0, 1, 2, 3, 4];
 const inputClass
   = 'w-full rounded-lg border bg-card px-3 py-2 text-sm focus:outline-2 focus:outline-primary focus:outline-offset-1';
 
-const STEPS = [
-  { title: 'Submit an app', text: 'Pick platforms and write one clear scenario.' },
-  { title: 'Real people test it', text: 'Humans try it on their own phones and tablets.' },
-  { title: 'Get honest results', text: 'Read real-world answers, comments, and links.' },
-];
-
 export function SubmitAppForm() {
+  const t = useTranslations('SubmitApp');
+
+  const steps = [
+    { title: t('step1_title'), text: t('step1_text') },
+    { title: t('step2_title'), text: t('step2_text') },
+    { title: t('step3_title'), text: t('step3_text') },
+  ];
+
   return (
     <div className="
       grid gap-6
@@ -22,22 +25,22 @@ export function SubmitAppForm() {
     >
       <form action={createCampaign} className="flex flex-col gap-6">
         <fieldset className="flex flex-col gap-3">
-          <legend className="mb-1 font-medium">App</legend>
-          <input name="appName" required placeholder="App name" className={inputClass} />
+          <legend className="mb-1 font-medium">{t('app')}</legend>
+          <input name="appName" required placeholder={t('app_name')} className={inputClass} />
           <input
             name="appUrl"
             type="url"
             required
-            placeholder="https://… store or web link"
+            placeholder={t('app_url')}
             className={inputClass}
           />
           <textarea
             name="description"
-            placeholder="Short description (optional)"
+            placeholder={t('description')}
             className={inputClass}
           />
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm text-muted-foreground">Platforms:</span>
+            <span className="text-sm text-muted-foreground">{t('platforms')}</span>
             {PLATFORMS.map(p => (
               <label
                 key={p}
@@ -56,17 +59,17 @@ export function SubmitAppForm() {
         </fieldset>
 
         <fieldset className="flex flex-col gap-3">
-          <legend className="mb-1 font-medium">Test details</legend>
-          <input name="title" required placeholder="Test title" className={inputClass} />
+          <legend className="mb-1 font-medium">{t('test_details')}</legend>
+          <input name="title" required placeholder={t('test_title')} className={inputClass} />
           <textarea
             name="scenario"
             required
-            placeholder="Test scenario / tasks for the tester"
+            placeholder={t('scenario')}
             className={inputClass}
             rows={4}
           />
           <label className="flex flex-col gap-1 text-sm">
-            Status
+            {t('status')}
             <select name="status" className={inputClass} defaultValue="open">
               <option value="draft">draft</option>
               <option value="open">open</option>
@@ -75,23 +78,23 @@ export function SubmitAppForm() {
           </label>
           <div className="flex gap-3">
             <label className="flex flex-1 flex-col gap-1 text-sm">
-              Starts
+              {t('starts')}
               <input name="startsAt" type="date" className={inputClass} />
             </label>
             <label className="flex flex-1 flex-col gap-1 text-sm">
-              Ends
+              {t('ends')}
               <input name="endsAt" type="date" className={inputClass} />
             </label>
           </div>
         </fieldset>
 
         <fieldset className="flex flex-col gap-3">
-          <legend className="mb-1 font-medium">Questions (optional, up to 5)</legend>
+          <legend className="mb-1 font-medium">{t('questions')}</legend>
           {QUESTION_ROWS.map(i => (
             <div key={i} className="flex flex-wrap gap-2">
               <input
                 name={`q_prompt_${i}`}
-                placeholder={`Question ${i + 1}`}
+                placeholder={t('question', { n: i + 1 })}
                 className={`
                   grow
                   ${inputClass}
@@ -104,13 +107,13 @@ export function SubmitAppForm() {
                   ${inputClass}
                 `}
               >
-                {QUESTION_TYPES.map(t => (
-                  <option key={t} value={t}>{t}</option>
+                {QUESTION_TYPES.map(qt => (
+                  <option key={qt} value={qt}>{qt}</option>
                 ))}
               </select>
               <input
                 name={`q_options_${i}`}
-                placeholder="Options for choice (comma-separated)"
+                placeholder={t('options_for_choice')}
                 className={`
                   grow
                   ${inputClass}
@@ -128,7 +131,7 @@ export function SubmitAppForm() {
             hover:opacity-90
           "
         >
-          Submit app
+          {t('submit_app')}
         </button>
       </form>
 
@@ -137,9 +140,9 @@ export function SubmitAppForm() {
         lg:sticky lg:top-24
       "
       >
-        <h2 className="text-lg font-semibold text-background">How it works</h2>
+        <h2 className="text-lg font-semibold text-background">{t('how_it_works')}</h2>
         <ol className="mt-4 flex flex-col gap-4">
-          {STEPS.map((s, i) => (
+          {steps.map((s, i) => (
             <li key={s.title} className="flex gap-3 text-sm">
               <span
                 className="
@@ -157,7 +160,7 @@ export function SubmitAppForm() {
           ))}
         </ol>
         <p className="mt-6 text-sm text-background/70">
-          Free to post. No subscriptions, no hidden fees.
+          {t('free_note')}
         </p>
       </aside>
     </div>

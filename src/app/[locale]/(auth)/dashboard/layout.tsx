@@ -32,15 +32,20 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
     namespace: 'DashboardLayout',
   });
 
+  const tDash = await getTranslations({
+    locale,
+    namespace: 'Dashboard',
+  });
+
   const menu = profile?.role === 'developer'
     ? [
         { href: '/dashboard', label: t('home') },
-        { href: '/dashboard/apps/new', label: 'Submit an app' },
+        { href: '/dashboard/apps/new', label: tDash('submit_an_app') },
       ]
     : profile?.role === 'tester'
       ? [
           { href: '/dashboard', label: t('home') },
-          { href: '/apps', label: 'Browse apps' },
+          { href: '/apps', label: tDash('browse_apps') },
         ]
       : [
           { href: '/dashboard', label: t('home') },

@@ -1,10 +1,13 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { clearConsent } from '@/libs/consent';
 
 // Кнопка «изменить выбор cookie»: сбрасывает сохранённое согласие и перезагружает —
 // баннер появится снова.
 export function CookieSettings() {
+  const t = useTranslations('CookieConsent');
+
   return (
     <button
       type="button"
@@ -17,7 +20,7 @@ export function CookieSettings() {
         hover:bg-secondary
       "
     >
-      Change cookie preferences
+      {t('change')}
     </button>
   );
 }

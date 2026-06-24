@@ -122,12 +122,13 @@ export default async function RootLayout(props: {
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          // Экранируем "<" → \u003c (защита от XSS-инъекций в JSON-LD; рекомендация Next.js).
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
         <NextIntlClientProvider>
           {props.children}
+          <CookieConsent />
         </NextIntlClientProvider>
-        <CookieConsent />
         <ConversionTracker />
         <GoogleTag />
       </body>

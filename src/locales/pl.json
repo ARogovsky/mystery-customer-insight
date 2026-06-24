@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Zmień język"
+  },
+  "SignIn": {
+    "meta_title": "Zaloguj się",
+    "meta_description": "Wygodne logowanie do Twojego konta."
+  },
+  "SignUp": {
+    "meta_title": "Zarejestruj się",
+    "meta_description": "Szybkie tworzenie konta dzięki prostemu procesowi rejestracji."
+  },
+  "DashboardLayout": {
+    "meta_title": "Panel",
+    "meta_description": "Panel Mystery Customer Insight.",
+    "home": "Strona główna"
+  },
+  "UserProfilePage": {
+    "title_bar": "Profil użytkownika",
+    "title_bar_description": "Przeglądaj i zarządzaj swoim profilem"
+  },
+  "Nav": {
+    "home": "Strona główna",
+    "how_it_works": "Jak to działa",
+    "browse": "Przeglądaj",
+    "toplist": "Ranking",
+    "faq": "FAQ",
+    "about": "O nas",
+    "sign_in": "Zaloguj się"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Prywatność",
+    "cookies": "Pliki cookie",
+    "disclaimer": "Zastrzeżenia"
+  },
+  "Home": {
+    "eyebrow": "Crowdtesting · testy beta · testy użyteczności",
+    "hero_before": "Testy na prawdziwych urządzeniach przez",
+    "hero_highlight": "prawdziwych ludzi",
+    "lede": "Bezpłatny portal crowdtestingu dla niezależnych deweloperów — testy beta na prawdziwych urządzeniach i testy użyteczności wykonywane przez ludzi. Bez subskrypcji, bez ukrytych opłat.",
+    "browse_apps": "Przeglądaj aplikacje",
+    "become_tester": "Zostań testerem",
+    "step_label": "Krok",
+    "step1_title": "Dodaj aplikację",
+    "step1_text": "Dodaj link do aplikacji, platformy docelowe, scenariusz testu i kilka pytań. To bezpłatne.",
+    "step2_title": "Prawdziwi ludzie ją testują",
+    "step2_text": "Testerzy uruchamiają Twoją wersję beta na własnych telefonach i tabletach — prawdziwe testy użyteczności, nie boty.",
+    "step3_title": "Otrzymaj szczere wyniki",
+    "step3_text": "Czytaj prawdziwe odpowiedzi, komentarze i linki od rzeczywistych użytkowników.",
+    "learn_more": "Dowiedz się, jak to działa →"
+  },
+  "HowItWorks": {
+    "title": "Jak to działa",
+    "subtitle": "Bezpłatny crowdtesting dla niezależnych deweloperów i testerów. Bez subskrypcji, bez ukrytych opłat.",
+    "step1_title": "1. Dodaj aplikację",
+    "step1_text": "Deweloper bezpłatnie dodaje aplikację: link, platformy docelowe, scenariusz testu i kilka prostych pytań.",
+    "step2_title": "2. Testy na prawdziwych urządzeniach",
+    "step2_text": "Testerzy przeglądają otwarte aplikacje i wykonują scenariusz na własnych telefonach i tabletach.",
+    "step3_title": "3. Otrzymaj wyniki",
+    "step3_text": "Deweloperzy otrzymują rzeczywiste opinie o użyteczności od prawdziwych ludzi — odpowiedzi, komentarze i linki.",
+    "browse_open": "Przeglądaj otwarte aplikacje →"
+  },
+  "Faq": {
+    "title": "FAQ",
+    "q1": "Czy to naprawdę bezpłatne?",
+    "a1": "Tak. Dodawanie i testowanie aplikacji jest bezpłatne. Bez subskrypcji, bez ukrytych opłat.",
+    "q2": "Jak testerzy otrzymują aplikację?",
+    "a2": "Deweloperzy udostępniają link (App Store, Google Play, TestFlight lub web). Nie przechowujemy przesłanych plików.",
+    "q3": "Kto może przesyłać raporty?",
+    "a3": "Zalogowani testerzy wykonują scenariusz testu na własnym urządzeniu i przesyłają odpowiedzi oraz komentarze.",
+    "q4": "Jak doceniana jest jakość testerów?",
+    "a4": "Deweloperzy mogą przyznać testerowi +1 za pomocny raport. Z czasem oceny budują reputację testera.",
+    "q5": "Jak obsługiwane są nadużycia?",
+    "a5": "Każdą aplikację, wynik lub recenzję można zgłosić. Po wystarczającej liczbie zgłoszeń treść jest automatycznie ukrywana."
+  },
+  "Toplist": {
+    "title": "Ranking",
+    "subtitle": "Najlepsi testerzy według reputacji.",
+    "empty": "Brak ocenionych testerów.",
+    "tester": "Tester",
+    "points": "pkt"
+  },
+  "Apps": {
+    "title": "Przeglądaj aplikacje",
+    "subtitle": "Wybierz aplikację i przetestuj ją na własnym urządzeniu.",
+    "all": "Wszystkie",
+    "no_open": "Brak otwartych aplikacji.",
+    "submit_report": "Prześlij raport",
+    "reports": "raportów"
+  },
+  "AppDetail": {
+    "by": "autor",
+    "open_app": "Otwórz aplikację",
+    "scenario": "Scenariusz testu",
+    "will_be_asked": "Zostaniesz zapytany",
+    "submit_report": "Prześlij raport",
+    "reviews": "Recenzje",
+    "no_reviews": "Brak recenzji.",
+    "leave_review": "Zostaw anonimową recenzję",
+    "rating_placeholder": "Ocena…",
+    "post_review": "Opublikuj recenzję",
+    "sign_in": "Zaloguj się",
+    "sign_in_suffix": "aby zostawić recenzję. Recenzje pozostają anonimowe."
+  },
+  "Dashboard": {
+    "choose_role": "Wybierz swoją rolę",
+    "choose_role_subtitle": "Jak będziesz korzystać z Mystery Customer Insight?",
+    "display_name": "Nazwa wyświetlana (opcjonalnie)",
+    "i_am_developer": "Jestem deweloperem",
+    "i_am_tester": "Jestem testerem",
+    "submit_first_app": "Dodaj swoją pierwszą aplikację",
+    "your_apps": "Twoje aplikacje",
+    "submit_an_app": "Dodaj aplikację",
+    "update_status": "Zaktualizuj status",
+    "status_for": "Status dla {title}",
+    "my_reports": "Moje raporty",
+    "rating": "Ocena",
+    "tests_completed": "Ukończone testy",
+    "no_reports": "Brak raportów.",
+    "browse_apps": "Przeglądaj aplikacje",
+    "plus_received": "Otrzymano +1",
+    "only_developers": "Tylko deweloperzy mogą dodawać aplikacje."
+  },
+  "SubmitApp": {
+    "app": "Aplikacja",
+    "app_name": "Nazwa aplikacji",
+    "app_url": "https://… link do sklepu lub strony",
+    "description": "Krótki opis (opcjonalnie)",
+    "platforms": "Platformy:",
+    "test_details": "Szczegóły testu",
+    "test_title": "Tytuł testu",
+    "scenario": "Scenariusz testu / zadania dla testera",
+    "status": "Status",
+    "starts": "Początek",
+    "ends": "Koniec",
+    "questions": "Pytania (opcjonalnie, do 5)",
+    "question": "Pytanie {n}",
+    "options_for_choice": "Opcje wyboru (oddzielone przecinkami)",
+    "submit_app": "Dodaj aplikację",
+    "how_it_works": "Jak to działa",
+    "step1_title": "Dodaj aplikację",
+    "step1_text": "Wybierz platformy i napisz jeden jasny scenariusz.",
+    "step2_title": "Prawdziwi ludzie ją testują",
+    "step2_text": "Ludzie wypróbowują ją na własnych telefonach i tabletach.",
+    "step3_title": "Otrzymaj szczere wyniki",
+    "step3_text": "Czytaj prawdziwe odpowiedzi, komentarze i linki.",
+    "free_note": "Publikacja bezpłatna. Bez subskrypcji, bez ukrytych opłat."
+  },
+  "NewReport": {
+    "title": "Prześlij raport",
+    "questions": "Pytania",
+    "overall_comments": "Ogólne komentarze",
+    "attachment_link": "Link do załącznika (opcjonalnie)",
+    "attachment_placeholder": "https://… zrzut ekranu lub wideo",
+    "submit_report": "Prześlij raport",
+    "only_testers": "Tylko testerzy mogą przesyłać raporty."
+  },
+  "Submissions": {
+    "title": "Zgłoszenia — {title}",
+    "no_submissions": "Brak zgłoszeń.",
+    "rated": "Oceniono +1",
+    "plus_to_tester": "+1 dla testera",
+    "only_developers": "Tylko deweloperzy mogą przeglądać zgłoszenia."
+  },
+  "ModerationReport": {
+    "report": "Zgłoś",
+    "reason_placeholder": "Powód…",
+    "reason_spam": "spam",
+    "reason_inappropriate": "nieodpowiednie",
+    "reason_broken": "nie działa",
+    "reason_other": "inne",
+    "details_placeholder": "Szczegóły (wymagane)",
+    "email_placeholder": "E-mail (opcjonalnie)",
+    "send_report": "Wyślij zgłoszenie"
+  },
+  "CookieConsent": {
+    "text": "Używamy plików cookie do analityki i pomiaru reklam, aby ulepszać witrynę. Możesz zaakceptować lub odrzucić.",
+    "cookie_policy": "Polityka plików cookie",
+    "decline": "Odrzuć",
+    "accept": "Akceptuj",
+    "change": "Zmień ustawienia plików cookie"
+  },
+  "About": {
+    "meta_title": "O nas — nasza misja",
+    "meta_description": "Mystery Customer Insight to non-profitowy portal crowdtestingu, który udostępnia bezpłatne testy aplikacji przez prawdziwych ludzi na prawdziwych urządzeniach każdemu niezależnemu deweloperowi.",
+    "eyebrow": "Nasza misja",
+    "hero_title_before": "Testowanie aplikacji powinno być",
+    "hero_title_highlight": "dla każdego",
+    "hero_subtitle": "Wierzymy, że niezależny deweloper zasługuje na te same szczere opinie ze świata rzeczywistego, za które duże studia płacą tysiące. Dlatego stworzyliśmy miejsce, gdzie każdy może je uzyskać — bezpłatnie.",
+    "why_title": "Dlaczego istniejemy",
+    "why_p1": "Dawniej pokazanie aplikacji prawdziwym użytkownikom oznaczało korporacyjny kontrakt QA, płatny panel testerów albo proszenie znajomych o opinię. Prawdziwe testy użyteczności — ludzie, prawdziwe urządzenia, szczere odpowiedzi — były za ceną, na którą większość niezależnych deweloperów po prostu nie mogła sobie pozwolić.",
+    "why_p2": "Mystery Customer Insight usuwa tę barierę. Deweloper dodaje aplikację z krótkim scenariuszem i kilkoma pytaniami; testerzy uruchamiają ją na własnych telefonach i tabletach i raportują, co naprawdę się wydarzyło. Bez subskrypcji, bez ukrytych opłat, bez ograniczeń.",
+    "why_p3": "Platformę prowadzi organizacja non-profit NGO „POGOVORIMO”. Nie sprzedajemy miejsc testowych — chcemy, by szczere opinie o produktach stały się dobrem publicznym dla tych, którzy tworzą oprogramowanie samodzielnie.",
+    "principles_title": "Za czym się opowiadamy",
+    "principles": [
+      {
+        "title": "Bezpłatnie — i tak pozostanie",
+        "text": "Bez subskrypcji, bez opłat za testera, bez raportów za paywallem. Dodanie aplikacji i odczytanie wyników nic nie kosztuje — o to właśnie chodzi."
+      },
+      {
+        "title": "Prawdziwi ludzie, prawdziwe urządzenia",
+        "text": "Każdy test wykonuje człowiek na własnym telefonie lub tablecie — nie boty, nie emulatory, nie syntetyczne skrypty. Otrzymujesz szczere reakcje rzeczywistych użytkowników."
+      },
+      {
+        "title": "Stworzone dla niezależnych",
+        "text": "Pojedynczy założyciele i małe zespoły rzadko mają laboratorium QA czy budżet na płatny panel testerów. Wyrównujemy szanse, aby aplikacja jednej osoby była testowana jak finansowana."
+      },
+      {
+        "title": "Społeczność, nie dostawca",
+        "text": "Testerzy wypróbowują nowe aplikacje, a ich opinie realnie kształtują to, co trafia do użytkowników. Deweloperzy i testerzy pomagają sobie nawzajem — platforma tylko ich łączy."
+      }
+    ],
+    "cta_title": "Dołącz do ludzi tworzących lepsze aplikacje",
+    "cta_subtitle": "Niezależnie od tego, czy tworzysz aplikacje, czy lubisz wypróbowywać nowe — jest tu miejsce dla Ciebie. Zaczynasz bezpłatnie.",
+    "cta_browse": "Przeglądaj aplikacje",
+    "cta_tester": "Zostań testerem",
+    "cta_how": "Jak to działa"
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Keisti kalbą"
+  },
+  "SignIn": {
+    "meta_title": "Prisijungimas",
+    "meta_description": "Patogus prisijungimas prie jūsų paskyros."
+  },
+  "SignUp": {
+    "meta_title": "Registracija",
+    "meta_description": "Greitas paskyros sukūrimas paprastu registracijos procesu."
+  },
+  "DashboardLayout": {
+    "meta_title": "Valdymo skydas",
+    "meta_description": "Mystery Customer Insight valdymo skydas.",
+    "home": "Pradžia"
+  },
+  "UserProfilePage": {
+    "title_bar": "Naudotojo profilis",
+    "title_bar_description": "Peržiūrėkite ir tvarkykite savo profilį"
+  },
+  "Nav": {
+    "home": "Pradžia",
+    "how_it_works": "Kaip tai veikia",
+    "browse": "Naršyti",
+    "toplist": "Reitingas",
+    "faq": "DUK",
+    "about": "Apie",
+    "sign_in": "Prisijungti"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Privatumas",
+    "cookies": "Slapukai",
+    "disclaimer": "Atsakomybės atsisakymas"
+  },
+  "Home": {
+    "eyebrow": "Minios testavimas · beta testavimas · naudojamumo testavimas",
+    "hero_before": "Testavimas tikruose įrenginiuose",
+    "hero_highlight": "tikrų žmonių",
+    "lede": "Nemokamas minios testavimo portalas nepriklausomiems kūrėjams — beta testavimas tikruose įrenginiuose ir naudojamumo testavimas, kurį atlieka tikri testuotojai. Be prenumeratų, be paslėptų mokesčių.",
+    "browse_apps": "Naršyti programėles",
+    "become_tester": "Tapkite testuotoju",
+    "step_label": "Žingsnis",
+    "step1_title": "Pridėkite programėlę",
+    "step1_text": "Pridėkite programėlės nuorodą, tikslines platformas, testavimo scenarijų ir kelis klausimus. Tai nemokama.",
+    "step2_title": "Tikri žmonės ją testuoja",
+    "step2_text": "Testuotojai paleidžia jūsų beta versiją savo telefonuose ir planšetėse — tikras naudojamumo testavimas, ne botai.",
+    "step3_title": "Gaukite sąžiningus rezultatus",
+    "step3_text": "Skaitykite tikrus atsakymus, komentarus ir nuorodas iš realių naudotojų.",
+    "learn_more": "Sužinokite, kaip tai veikia →"
+  },
+  "HowItWorks": {
+    "title": "Kaip tai veikia",
+    "subtitle": "Nemokamas minios testavimas nepriklausomiems kūrėjams ir testuotojams. Be prenumeratų, be paslėptų mokesčių.",
+    "step1_title": "1. Pridėkite programėlę",
+    "step1_text": "Kūrėjas nemokamai prideda programėlę: nuorodą, tikslines platformas, testavimo scenarijų ir kelis paprastus klausimus.",
+    "step2_title": "2. Testavimas tikruose įrenginiuose",
+    "step2_text": "Testuotojai naršo atviras programėles ir atlieka scenarijų savo telefonuose ir planšetėse.",
+    "step3_title": "3. Gaukite rezultatus",
+    "step3_text": "Kūrėjai gauna tikrą naudojamumo grįžtamąjį ryšį iš realių žmonių — atsakymus, komentarus ir nuorodas.",
+    "browse_open": "Naršyti atviras programėles →"
+  },
+  "Faq": {
+    "title": "DUK",
+    "q1": "Ar tikrai nemokama?",
+    "a1": "Taip. Programėlių pridėjimas ir testavimas yra nemokami. Be prenumeratų, be paslėptų mokesčių.",
+    "q2": "Kaip testuotojai gauna programėlę?",
+    "a2": "Kūrėjai dalijasi nuoroda (App Store, Google Play, TestFlight arba žiniatinklis). Įkeltų failų nesaugome.",
+    "q3": "Kas gali pateikti ataskaitas?",
+    "a3": "Prisijungę testuotojai atlieka testavimo scenarijų savo įrenginyje ir pateikia atsakymus bei komentarus.",
+    "q4": "Kaip pripažįstama testuotojų kokybė?",
+    "a4": "Kūrėjai gali skirti testuotojui +1 už naudingą ataskaitą. Laikui bėgant įvertinimai kuria testuotojo reputaciją.",
+    "q5": "Kaip tvarkomas netinkamas turinys?",
+    "a5": "Bet kurią programėlę, rezultatą ar atsiliepimą galima pranešti. Sulaukus pakankamai pranešimų, turinys automatiškai paslepiamas."
+  },
+  "Toplist": {
+    "title": "Reitingas",
+    "subtitle": "Geriausi testuotojai pagal reputaciją.",
+    "empty": "Kol kas nėra įvertintų testuotojų.",
+    "tester": "Testuotojas",
+    "points": "tšk."
+  },
+  "Apps": {
+    "title": "Naršyti programėles",
+    "subtitle": "Pasirinkite programėlę ir išbandykite ją savo įrenginyje.",
+    "all": "Visos",
+    "no_open": "Atvirų programėlių nėra.",
+    "submit_report": "Pateikti ataskaitą",
+    "reports": "ataskaitų"
+  },
+  "AppDetail": {
+    "by": "autorius",
+    "open_app": "Atidaryti programėlę",
+    "scenario": "Testavimo scenarijus",
+    "will_be_asked": "Jūsų bus paklausta",
+    "submit_report": "Pateikti ataskaitą",
+    "reviews": "Atsiliepimai",
+    "no_reviews": "Kol kas atsiliepimų nėra.",
+    "leave_review": "Palikite anoniminį atsiliepimą",
+    "rating_placeholder": "Įvertinimas…",
+    "post_review": "Skelbti atsiliepimą",
+    "sign_in": "Prisijunkite",
+    "sign_in_suffix": "kad paliktumėte atsiliepimą. Atsiliepimai lieka anonimiški."
+  },
+  "Dashboard": {
+    "choose_role": "Pasirinkite savo vaidmenį",
+    "choose_role_subtitle": "Kaip naudosite Mystery Customer Insight?",
+    "display_name": "Rodomas vardas (nebūtina)",
+    "i_am_developer": "Esu kūrėjas",
+    "i_am_tester": "Esu testuotojas",
+    "submit_first_app": "Pridėkite savo pirmąją programėlę",
+    "your_apps": "Jūsų programėlės",
+    "submit_an_app": "Pridėti programėlę",
+    "update_status": "Atnaujinti būseną",
+    "status_for": "{title} būsena",
+    "my_reports": "Mano ataskaitos",
+    "rating": "Įvertinimas",
+    "tests_completed": "Atlikti testai",
+    "no_reports": "Kol kas ataskaitų nėra.",
+    "browse_apps": "Naršyti programėles",
+    "plus_received": "+1 gauta",
+    "only_developers": "Tik kūrėjai gali pridėti programėles."
+  },
+  "SubmitApp": {
+    "app": "Programėlė",
+    "app_name": "Programėlės pavadinimas",
+    "app_url": "https://… parduotuvės arba žiniatinklio nuoroda",
+    "description": "Trumpas aprašymas (nebūtina)",
+    "platforms": "Platformos:",
+    "test_details": "Testo informacija",
+    "test_title": "Testo pavadinimas",
+    "scenario": "Testavimo scenarijus / užduotys testuotojui",
+    "status": "Būsena",
+    "starts": "Pradžia",
+    "ends": "Pabaiga",
+    "questions": "Klausimai (nebūtina, iki 5)",
+    "question": "{n} klausimas",
+    "options_for_choice": "Pasirinkimo parinktys (atskirtos kableliais)",
+    "submit_app": "Pridėti programėlę",
+    "how_it_works": "Kaip tai veikia",
+    "step1_title": "Pridėkite programėlę",
+    "step1_text": "Pasirinkite platformas ir parašykite vieną aiškų scenarijų.",
+    "step2_title": "Tikri žmonės ją testuoja",
+    "step2_text": "Žmonės išbando ją savo telefonuose ir planšetėse.",
+    "step3_title": "Gaukite sąžiningus rezultatus",
+    "step3_text": "Skaitykite tikrus atsakymus, komentarus ir nuorodas.",
+    "free_note": "Skelbimas nemokamas. Be prenumeratų, be paslėptų mokesčių."
+  },
+  "NewReport": {
+    "title": "Pateikti ataskaitą",
+    "questions": "Klausimai",
+    "overall_comments": "Bendri komentarai",
+    "attachment_link": "Priedo nuoroda (nebūtina)",
+    "attachment_placeholder": "https://… ekrano nuotrauka arba vaizdo įrašas",
+    "submit_report": "Pateikti ataskaitą",
+    "only_testers": "Tik testuotojai gali pateikti ataskaitas."
+  },
+  "Submissions": {
+    "title": "Pateikimai — {title}",
+    "no_submissions": "Kol kas pateikimų nėra.",
+    "rated": "Įvertinta +1",
+    "plus_to_tester": "+1 testuotojui",
+    "only_developers": "Tik kūrėjai gali peržiūrėti pateikimus."
+  },
+  "ModerationReport": {
+    "report": "Pranešti",
+    "reason_placeholder": "Priežastis…",
+    "reason_spam": "šlamštas",
+    "reason_inappropriate": "netinkamas",
+    "reason_broken": "neveikia",
+    "reason_other": "kita",
+    "details_placeholder": "Išsami informacija (privaloma)",
+    "email_placeholder": "El. paštas (nebūtina)",
+    "send_report": "Siųsti pranešimą"
+  },
+  "CookieConsent": {
+    "text": "Naudojame slapukus analitikai ir reklamos matavimui, kad pagerintume svetainę. Galite sutikti arba atsisakyti.",
+    "cookie_policy": "Slapukų politika",
+    "decline": "Atsisakyti",
+    "accept": "Sutikti",
+    "change": "Keisti slapukų nustatymus"
+  },
+  "About": {
+    "meta_title": "Apie — mūsų misija",
+    "meta_description": "Mystery Customer Insight yra ne pelno siekiantis minios testavimo portalas, kuris programėlių testavimą tikrų žmonių tikruose įrenginiuose daro nemokamą ir prieinamą kiekvienam nepriklausomam kūrėjui.",
+    "eyebrow": "Mūsų misija",
+    "hero_title_before": "Programėlių testavimas turėtų būti",
+    "hero_title_highlight": "visiems",
+    "hero_subtitle": "Tikime, kad nepriklausomas kūrėjas nusipelno tokio paties sąžiningo, realaus grįžtamojo ryšio, už kurį didelės studijos moka tūkstančius. Todėl sukūrėme vietą, kur jį gali gauti kiekvienas — nemokamai.",
+    "why_title": "Kodėl egzistuojame",
+    "why_p1": "Anksčiau parodyti programėlę realiems naudotojams reiškė įmonės QA sutartį, mokamą testuotojų grupę arba prašymą draugų atsiliepimų. Tikras naudojamumo testavimas — žmonės, tikri įrenginiai, sąžiningi atsakymai — turėjo kainą, kurios dauguma nepriklausomų kūrėjų tiesiog negalėjo sau leisti.",
+    "why_p2": "Mystery Customer Insight pašalina šią kliūtį. Kūrėjas prideda programėlę su trumpu scenarijumi ir keliais klausimais; testuotojai paleidžia ją savo telefonuose ir planšetėse ir praneša, kas iš tikrųjų įvyko. Be prenumeratų, be paslėptų mokesčių, be apribojimų.",
+    "why_p3": "Platformą valdo ne pelno siekianti organizacija NGO „POGOVORIMO“. Mes čia ne tam, kad parduotume testavimo vietas — esame čia tam, kad sąžiningą grįžtamąjį ryšį apie produktus paverstume viešąja gėrybe tiems, kurie kuria programinę įrangą patys.",
+    "principles_title": "Už ką pasisakome",
+    "principles": [
+      {
+        "title": "Nemokama ir tokia išliks",
+        "text": "Be prenumeratų, be mokesčių už testuotoją, be ataskaitų už mokamos sienos. Programėlės pridėjimas ir rezultatų skaitymas nieko nekainuoja — būtent tame ir esmė."
+      },
+      {
+        "title": "Tikri žmonės, tikri įrenginiai",
+        "text": "Kiekvieną testą atlieka žmogus savo telefone ar planšetėje — ne botai, ne emuliatoriai, ne sintetiniai skriptai. Gaunate sąžiningas realių naudotojų reakcijas."
+      },
+      {
+        "title": "Sukurta nepriklausomiems",
+        "text": "Pavieniai įkūrėjai ir mažos komandos retai turi QA laboratoriją ar biudžetą mokamai testuotojų grupei. Suvienodiname sąlygas, kad vieno žmogaus programėlė būtų testuojama kaip finansuojama."
+      },
+      {
+        "title": "Bendruomenė, o ne tiekėjas",
+        "text": "Testuotojai išbando naujas programėles, o jų atsiliepimai iš tikrųjų formuoja tai, kas išleidžiama. Kūrėjai ir testuotojai padeda vieni kitiems — platforma juos tik sujungia."
+      }
+    ],
+    "cta_title": "Prisijunkite prie žmonių, kuriančių geresnes programėles",
+    "cta_subtitle": "Nesvarbu, ar kuriate programėles, ar mėgstate išbandyti naujas — čia yra vieta jums. Pradėti nemokama.",
+    "cta_browse": "Naršyti programėles",
+    "cta_tester": "Tapkite testuotoju",
+    "cta_how": "Kaip tai veikia"
+  }
+}

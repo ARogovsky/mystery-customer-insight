@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Schimbă limba"
+  },
+  "SignIn": {
+    "meta_title": "Autentificare",
+    "meta_description": "Autentificare comodă în contul tău."
+  },
+  "SignUp": {
+    "meta_title": "Înregistrare",
+    "meta_description": "Creează un cont rapid printr-un proces simplu de înregistrare."
+  },
+  "DashboardLayout": {
+    "meta_title": "Panou de control",
+    "meta_description": "Panoul de control Mystery Customer Insight.",
+    "home": "Acasă"
+  },
+  "UserProfilePage": {
+    "title_bar": "Profil utilizator",
+    "title_bar_description": "Vizualizează și gestionează profilul tău"
+  },
+  "Nav": {
+    "home": "Acasă",
+    "how_it_works": "Cum funcționează",
+    "browse": "Explorează",
+    "toplist": "Top",
+    "faq": "Întrebări frecvente",
+    "about": "Despre",
+    "sign_in": "Autentificare"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Confidențialitate",
+    "cookies": "Cookie-uri",
+    "disclaimer": "Declinare a răspunderii"
+  },
+  "Home": {
+    "eyebrow": "Crowdtesting · testare beta · testare a utilizabilității",
+    "hero_before": "Testare pe dispozitive reale de către",
+    "hero_highlight": "oameni reali",
+    "lede": "Un portal gratuit de crowdtesting pentru dezvoltatorii independenți — testare beta pe dispozitive reale și testare a utilizabilității de către testeri umani. Fără abonamente, fără taxe ascunse.",
+    "browse_apps": "Explorează aplicații",
+    "become_tester": "Devino tester",
+    "step_label": "Pasul",
+    "step1_title": "Adaugă o aplicație",
+    "step1_text": "Adaugă linkul aplicației, platformele țintă, un scenariu de testare și câteva întrebări. Este gratuit.",
+    "step2_title": "Oameni reali o testează",
+    "step2_text": "Testerii umani rulează versiunea beta pe propriile telefoane și tablete — testare reală a utilizabilității, nu boți.",
+    "step3_title": "Primește rezultate sincere",
+    "step3_text": "Citește răspunsuri, comentarii și linkuri reale de la utilizatori adevărați.",
+    "learn_more": "Află cum funcționează →"
+  },
+  "HowItWorks": {
+    "title": "Cum funcționează",
+    "subtitle": "Crowdtesting gratuit pentru dezvoltatori independenți și testeri umani. Fără abonamente, fără taxe ascunse.",
+    "step1_title": "1. Adaugă o aplicație",
+    "step1_text": "Un dezvoltator adaugă gratuit o aplicație: link, platforme țintă, un scenariu de testare și câteva întrebări simple.",
+    "step2_title": "2. Testare pe dispozitive reale",
+    "step2_text": "Testerii umani explorează aplicațiile deschise și parcurg scenariul pe propriile telefoane și tablete.",
+    "step3_title": "3. Primește rezultate",
+    "step3_text": "Dezvoltatorii primesc feedback real despre utilizabilitate de la oameni adevărați — răspunsuri, comentarii și linkuri.",
+    "browse_open": "Explorează aplicațiile deschise →"
+  },
+  "Faq": {
+    "title": "Întrebări frecvente",
+    "q1": "Este într-adevăr gratuit?",
+    "a1": "Da. Adăugarea și testarea aplicațiilor este gratuită. Fără abonamente, fără taxe ascunse.",
+    "q2": "Cum primesc testerii aplicația?",
+    "a2": "Dezvoltatorii partajează un link (App Store, Google Play, TestFlight sau web). Nu găzduim fișiere încărcate.",
+    "q3": "Cine poate trimite rapoarte?",
+    "a3": "Testerii autentificați parcurg scenariul de testare pe propriul dispozitiv și trimit răspunsuri și comentarii.",
+    "q4": "Cum este recunoscută calitatea testerilor?",
+    "a4": "Dezvoltatorii pot acorda unui tester +1 pentru un raport util. În timp, evaluările construiesc reputația testerului.",
+    "q5": "Cum este gestionat conținutul abuziv?",
+    "a5": "Orice aplicație, rezultat sau recenzie poate fi raportată. Conținutul este ascuns automat după suficiente raportări."
+  },
+  "Toplist": {
+    "title": "Top",
+    "subtitle": "Cei mai buni testeri după reputație.",
+    "empty": "Încă nu există testeri evaluați.",
+    "tester": "Tester",
+    "points": "pct"
+  },
+  "Apps": {
+    "title": "Explorează aplicații",
+    "subtitle": "Alege o aplicație și testeaz-o pe propriul dispozitiv.",
+    "all": "Toate",
+    "no_open": "Nicio aplicație deschisă.",
+    "submit_report": "Trimite un raport",
+    "reports": "rapoarte"
+  },
+  "AppDetail": {
+    "by": "de",
+    "open_app": "Deschide aplicația",
+    "scenario": "Scenariu de testare",
+    "will_be_asked": "Vei fi întrebat",
+    "submit_report": "Trimite un raport",
+    "reviews": "Recenzii",
+    "no_reviews": "Încă nu există recenzii.",
+    "leave_review": "Lasă o recenzie anonimă",
+    "rating_placeholder": "Evaluare…",
+    "post_review": "Publică recenzia",
+    "sign_in": "Autentifică-te",
+    "sign_in_suffix": "pentru a lăsa o recenzie. Recenziile rămân anonime."
+  },
+  "Dashboard": {
+    "choose_role": "Alege-ți rolul",
+    "choose_role_subtitle": "Cum vei folosi Mystery Customer Insight?",
+    "display_name": "Nume afișat (opțional)",
+    "i_am_developer": "Sunt dezvoltator",
+    "i_am_tester": "Sunt tester",
+    "submit_first_app": "Adaugă prima ta aplicație",
+    "your_apps": "Aplicațiile tale",
+    "submit_an_app": "Adaugă o aplicație",
+    "update_status": "Actualizează statusul",
+    "status_for": "Status pentru {title}",
+    "my_reports": "Rapoartele mele",
+    "rating": "Evaluare",
+    "tests_completed": "Teste finalizate",
+    "no_reports": "Încă nu există rapoarte.",
+    "browse_apps": "Explorează aplicații",
+    "plus_received": "+1 primit",
+    "only_developers": "Doar dezvoltatorii pot adăuga aplicații."
+  },
+  "SubmitApp": {
+    "app": "Aplicație",
+    "app_name": "Numele aplicației",
+    "app_url": "https://… link către magazin sau web",
+    "description": "Descriere scurtă (opțional)",
+    "platforms": "Platforme:",
+    "test_details": "Detalii test",
+    "test_title": "Titlul testului",
+    "scenario": "Scenariu de testare / sarcini pentru tester",
+    "status": "Status",
+    "starts": "Începe",
+    "ends": "Se termină",
+    "questions": "Întrebări (opțional, până la 5)",
+    "question": "Întrebarea {n}",
+    "options_for_choice": "Opțiuni de alegere (separate prin virgulă)",
+    "submit_app": "Adaugă aplicația",
+    "how_it_works": "Cum funcționează",
+    "step1_title": "Adaugă o aplicație",
+    "step1_text": "Alege platformele și scrie un scenariu clar.",
+    "step2_title": "Oameni reali o testează",
+    "step2_text": "Oamenii o încearcă pe propriile telefoane și tablete.",
+    "step3_title": "Primește rezultate sincere",
+    "step3_text": "Citește răspunsuri, comentarii și linkuri reale.",
+    "free_note": "Publicare gratuită. Fără abonamente, fără taxe ascunse."
+  },
+  "NewReport": {
+    "title": "Trimite un raport",
+    "questions": "Întrebări",
+    "overall_comments": "Comentarii generale",
+    "attachment_link": "Link atașament (opțional)",
+    "attachment_placeholder": "https://… captură de ecran sau videoclip",
+    "submit_report": "Trimite raportul",
+    "only_testers": "Doar testerii pot trimite rapoarte."
+  },
+  "Submissions": {
+    "title": "Trimiteri — {title}",
+    "no_submissions": "Încă nu există trimiteri.",
+    "rated": "Evaluat +1",
+    "plus_to_tester": "+1 testerului",
+    "only_developers": "Doar dezvoltatorii pot vedea trimiterile."
+  },
+  "ModerationReport": {
+    "report": "Raportează",
+    "reason_placeholder": "Motiv…",
+    "reason_spam": "spam",
+    "reason_inappropriate": "neadecvat",
+    "reason_broken": "nu funcționează",
+    "reason_other": "altul",
+    "details_placeholder": "Detalii (obligatoriu)",
+    "email_placeholder": "E-mail (opțional)",
+    "send_report": "Trimite raportarea"
+  },
+  "CookieConsent": {
+    "text": "Folosim cookie-uri pentru analiză și măsurarea reclamelor pentru a îmbunătăți site-ul. Poți accepta sau refuza.",
+    "cookie_policy": "Politica de cookie-uri",
+    "decline": "Refuz",
+    "accept": "Accept",
+    "change": "Schimbă preferințele cookie"
+  },
+  "About": {
+    "meta_title": "Despre — misiunea noastră",
+    "meta_description": "Mystery Customer Insight este un portal non-profit de crowdtesting care face testarea aplicațiilor de către oameni reali, pe dispozitive reale, gratuită și accesibilă oricărui dezvoltator independent.",
+    "eyebrow": "Misiunea noastră",
+    "hero_title_before": "Testarea aplicațiilor ar trebui să fie",
+    "hero_title_highlight": "pentru toți",
+    "hero_subtitle": "Credem că un dezvoltator independent merită același feedback sincer, din lumea reală, pentru care studiourile mari plătesc mii. De aceea am construit un loc unde oricine îl poate obține — gratuit.",
+    "why_title": "De ce existăm",
+    "why_p1": "Înainte, a arăta o aplicație unor utilizatori reali însemna un contract QA de tip enterprise, un panel de testeri plătit sau a cere prietenilor feedback. Testarea reală a utilizabilității — oameni, dispozitive reale, răspunsuri sincere — avea un preț pe care majoritatea dezvoltatorilor independenți pur și simplu nu și-l puteau permite.",
+    "why_p2": "Mystery Customer Insight elimină această barieră. Un dezvoltator adaugă o aplicație cu un scenariu scurt și câteva întrebări; testerii umani o rulează pe propriile telefoane și tablete și raportează ce s-a întâmplat de fapt. Fără abonamente, fără taxe ascunse, fără restricții.",
+    "why_p3": "Platforma este operată de organizația non-profit NGO „POGOVORIMO”. Nu suntem aici să vindem locuri de testare — suntem aici pentru a face din feedbackul sincer despre produse un bun public pentru cei care creează software pe cont propriu.",
+    "principles_title": "Ce susținem",
+    "principles": [
+      {
+        "title": "Gratuit și așa va rămâne",
+        "text": "Fără abonamente, fără taxe per tester, fără rapoarte după paywall. Adăugarea unei aplicații și citirea rezultatelor nu costă nimic — acesta este întregul scop."
+      },
+      {
+        "title": "Oameni reali, dispozitive reale",
+        "text": "Fiecare test este efectuat de un om pe propriul telefon sau tabletă — nu boți, nu emulatoare, nu scripturi sintetice. Primești reacții sincere de la utilizatori adevărați."
+      },
+      {
+        "title": "Creat pentru independenți",
+        "text": "Fondatorii solo și echipele mici rareori au un laborator QA sau buget pentru un panel de testeri plătit. Egalizăm terenul, astfel încât o aplicație de o singură persoană să fie testată ca una finanțată."
+      },
+      {
+        "title": "O comunitate, nu un furnizor",
+        "text": "Testerii încearcă aplicații noi, iar feedbackul lor modelează cu adevărat ceea ce se lansează. Dezvoltatorii și testerii se ajută reciproc — platforma doar îi conectează."
+      }
+    ],
+    "cta_title": "Alătură-te oamenilor din spatele aplicațiilor mai bune",
+    "cta_subtitle": "Fie că creezi aplicații, fie că îți place să încerci altele noi, există un loc pentru tine aici. Începutul este gratuit.",
+    "cta_browse": "Explorează aplicații",
+    "cta_tester": "Devino tester",
+    "cta_how": "Cum funcționează"
+  }
+}

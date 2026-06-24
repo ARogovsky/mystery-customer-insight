@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Promijeni jezik"
+  },
+  "SignIn": {
+    "meta_title": "Prijava",
+    "meta_description": "Jednostavna prijava na vaš račun."
+  },
+  "SignUp": {
+    "meta_title": "Registracija",
+    "meta_description": "Brzo stvaranje računa jednostavnim postupkom registracije."
+  },
+  "DashboardLayout": {
+    "meta_title": "Nadzorna ploča",
+    "meta_description": "Nadzorna ploča Mystery Customer Insight.",
+    "home": "Početna"
+  },
+  "UserProfilePage": {
+    "title_bar": "Korisnički profil",
+    "title_bar_description": "Pregled i upravljanje vašim profilom"
+  },
+  "Nav": {
+    "home": "Početna",
+    "how_it_works": "Kako funkcionira",
+    "browse": "Pregledaj",
+    "toplist": "Ljestvica",
+    "faq": "Česta pitanja",
+    "about": "O nama",
+    "sign_in": "Prijava"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Privatnost",
+    "cookies": "Kolačići",
+    "disclaimer": "Izjava o odricanju"
+  },
+  "Home": {
+    "eyebrow": "Crowdtesting · beta testiranje · testiranje upotrebljivosti",
+    "hero_before": "Testiranje na stvarnim uređajima",
+    "hero_highlight": "stvarnim ljudima",
+    "lede": "Besplatni crowdtesting portal za nezavisne razvojne programere — beta testiranje na stvarnim uređajima i testiranje upotrebljivosti od strane ljudskih testera. Bez pretplata, bez skrivenih naknada.",
+    "browse_apps": "Pregledaj aplikacije",
+    "become_tester": "Postanite tester",
+    "step_label": "Korak",
+    "step1_title": "Dodajte aplikaciju",
+    "step1_text": "Dodajte poveznicu na aplikaciju, ciljane platforme, scenarij testiranja i nekoliko pitanja. Besplatno je.",
+    "step2_title": "Stvarni ljudi je testiraju",
+    "step2_text": "Ljudski testeri pokreću vašu beta verziju na vlastitim telefonima i tabletima — stvarno testiranje upotrebljivosti, ne botovi.",
+    "step3_title": "Dobijte iskrene rezultate",
+    "step3_text": "Čitajte stvarne odgovore, komentare i poveznice od stvarnih korisnika.",
+    "learn_more": "Saznajte kako funkcionira →"
+  },
+  "HowItWorks": {
+    "title": "Kako funkcionira",
+    "subtitle": "Besplatni crowdtesting za nezavisne razvojne programere i ljudske testere. Bez pretplata, bez skrivenih naknada.",
+    "step1_title": "1. Dodajte aplikaciju",
+    "step1_text": "Razvojni programer besplatno dodaje aplikaciju: poveznicu, ciljane platforme, scenarij testiranja i nekoliko jednostavnih pitanja.",
+    "step2_title": "2. Testiranje na stvarnim uređajima",
+    "step2_text": "Ljudski testeri pregledavaju otvorene aplikacije i prolaze scenarij na vlastitim telefonima i tabletima.",
+    "step3_title": "3. Dobijte rezultate",
+    "step3_text": "Razvojni programeri dobivaju stvarne povratne informacije o upotrebljivosti od stvarnih ljudi — odgovore, komentare i poveznice.",
+    "browse_open": "Pregledaj otvorene aplikacije →"
+  },
+  "Faq": {
+    "title": "Česta pitanja",
+    "q1": "Je li doista besplatno?",
+    "a1": "Da. Dodavanje i testiranje aplikacija je besplatno. Bez pretplata, bez skrivenih naknada.",
+    "q2": "Kako testeri dobivaju aplikaciju?",
+    "a2": "Razvojni programeri dijele poveznicu (App Store, Google Play, TestFlight ili web). Ne pohranjujemo prenesene datoteke.",
+    "q3": "Tko može slati izvješća?",
+    "a3": "Prijavljeni testeri prolaze scenarij testiranja na vlastitom uređaju i šalju odgovore i komentare.",
+    "q4": "Kako se priznaje kvaliteta testera?",
+    "a4": "Razvojni programeri mogu testeru dati +1 za korisno izvješće. S vremenom ocjene grade reputaciju testera.",
+    "q5": "Kako se postupa s neprimjerenim sadržajem?",
+    "a5": "Bilo koju aplikaciju, rezultat ili recenziju moguće je prijaviti. Nakon dovoljno prijava sadržaj se automatski skriva."
+  },
+  "Toplist": {
+    "title": "Ljestvica",
+    "subtitle": "Najbolji testeri prema reputaciji.",
+    "empty": "Još nema ocijenjenih testera.",
+    "tester": "Tester",
+    "points": "bod."
+  },
+  "Apps": {
+    "title": "Pregledaj aplikacije",
+    "subtitle": "Odaberite aplikaciju i testirajte je na vlastitom uređaju.",
+    "all": "Sve",
+    "no_open": "Nema otvorenih aplikacija.",
+    "submit_report": "Pošaljite izvješće",
+    "reports": "izvješća"
+  },
+  "AppDetail": {
+    "by": "od",
+    "open_app": "Otvori aplikaciju",
+    "scenario": "Scenarij testiranja",
+    "will_be_asked": "Bit ćete upitani",
+    "submit_report": "Pošaljite izvješće",
+    "reviews": "Recenzije",
+    "no_reviews": "Još nema recenzija.",
+    "leave_review": "Ostavite anonimnu recenziju",
+    "rating_placeholder": "Ocjena…",
+    "post_review": "Objavi recenziju",
+    "sign_in": "Prijavite se",
+    "sign_in_suffix": "za ostavljanje recenzije. Recenzije ostaju anonimne."
+  },
+  "Dashboard": {
+    "choose_role": "Odaberite svoju ulogu",
+    "choose_role_subtitle": "Kako ćete koristiti Mystery Customer Insight?",
+    "display_name": "Prikazano ime (neobavezno)",
+    "i_am_developer": "Ja sam razvojni programer",
+    "i_am_tester": "Ja sam tester",
+    "submit_first_app": "Dodajte svoju prvu aplikaciju",
+    "your_apps": "Vaše aplikacije",
+    "submit_an_app": "Dodajte aplikaciju",
+    "update_status": "Ažuriraj status",
+    "status_for": "Status za {title}",
+    "my_reports": "Moja izvješća",
+    "rating": "Ocjena",
+    "tests_completed": "Završeni testovi",
+    "no_reports": "Još nema izvješća.",
+    "browse_apps": "Pregledaj aplikacije",
+    "plus_received": "+1 primljeno",
+    "only_developers": "Samo razvojni programeri mogu dodavati aplikacije."
+  },
+  "SubmitApp": {
+    "app": "Aplikacija",
+    "app_name": "Naziv aplikacije",
+    "app_url": "https://… poveznica na trgovinu ili web",
+    "description": "Kratak opis (neobavezno)",
+    "platforms": "Platforme:",
+    "test_details": "Detalji testa",
+    "test_title": "Naslov testa",
+    "scenario": "Scenarij testiranja / zadaci za testera",
+    "status": "Status",
+    "starts": "Početak",
+    "ends": "Kraj",
+    "questions": "Pitanja (neobavezno, do 5)",
+    "question": "Pitanje {n}",
+    "options_for_choice": "Opcije za odabir (odvojene zarezom)",
+    "submit_app": "Dodajte aplikaciju",
+    "how_it_works": "Kako funkcionira",
+    "step1_title": "Dodajte aplikaciju",
+    "step1_text": "Odaberite platforme i napišite jedan jasan scenarij.",
+    "step2_title": "Stvarni ljudi je testiraju",
+    "step2_text": "Ljudi je isprobavaju na vlastitim telefonima i tabletima.",
+    "step3_title": "Dobijte iskrene rezultate",
+    "step3_text": "Čitajte stvarne odgovore, komentare i poveznice.",
+    "free_note": "Besplatna objava. Bez pretplata, bez skrivenih naknada."
+  },
+  "NewReport": {
+    "title": "Pošaljite izvješće",
+    "questions": "Pitanja",
+    "overall_comments": "Općeniti komentari",
+    "attachment_link": "Poveznica na privitak (neobavezno)",
+    "attachment_placeholder": "https://… snimka zaslona ili videozapis",
+    "submit_report": "Pošaljite izvješće",
+    "only_testers": "Samo testeri mogu slati izvješća."
+  },
+  "Submissions": {
+    "title": "Predani materijali — {title}",
+    "no_submissions": "Još nema predanih materijala.",
+    "rated": "Ocijenjeno +1",
+    "plus_to_tester": "+1 testeru",
+    "only_developers": "Samo razvojni programeri mogu pregledavati predane materijale."
+  },
+  "ModerationReport": {
+    "report": "Prijavi",
+    "reason_placeholder": "Razlog…",
+    "reason_spam": "neželjena pošta",
+    "reason_inappropriate": "neprimjereno",
+    "reason_broken": "ne radi",
+    "reason_other": "ostalo",
+    "details_placeholder": "Detalji (obavezno)",
+    "email_placeholder": "E-pošta (neobavezno)",
+    "send_report": "Pošalji prijavu"
+  },
+  "CookieConsent": {
+    "text": "Koristimo kolačiće za analitiku i mjerenje oglasa kako bismo poboljšali stranicu. Možete prihvatiti ili odbiti.",
+    "cookie_policy": "Pravila o kolačićima",
+    "decline": "Odbij",
+    "accept": "Prihvati",
+    "change": "Promijeni postavke kolačića"
+  },
+  "About": {
+    "meta_title": "O nama — naša misija",
+    "meta_description": "Mystery Customer Insight neprofitni je crowdtesting portal koji testiranje aplikacija od strane stvarnih ljudi na stvarnim uređajima čini besplatnim i dostupnim svakom nezavisnom razvojnom programeru.",
+    "eyebrow": "Naša misija",
+    "hero_title_before": "Testiranje aplikacija trebalo bi biti",
+    "hero_title_highlight": "za sve",
+    "hero_subtitle": "Vjerujemo da nezavisni razvojni programer zaslužuje jednako iskrene povratne informacije iz stvarnog svijeta za koje veliki studiji plaćaju tisuće. Zato smo stvorili mjesto gdje ih svatko može dobiti — besplatno.",
+    "why_title": "Zašto postojimo",
+    "why_p1": "Nekoć je prikazati aplikaciju stvarnim korisnicima značilo korporativni QA ugovor, plaćeni panel testera ili moljakanje prijatelja za povratne informacije. Stvarno testiranje upotrebljivosti — ljudi, stvarni uređaji, iskreni odgovori — imalo je cijenu koju si većina nezavisnih razvojnih programera jednostavno nije mogla priuštiti.",
+    "why_p2": "Mystery Customer Insight uklanja tu prepreku. Razvojni programer dodaje aplikaciju s kratkim scenarijem i nekoliko pitanja; ljudski testeri je pokreću na vlastitim telefonima i tabletima i izvještavaju što se zaista dogodilo. Bez pretplata, bez skrivenih naknada, bez ograničenja.",
+    "why_p3": "Platformu vodi neprofitna organizacija NGO „POGOVORIMO“. Nismo ovdje da prodajemo mjesta za testiranje — ovdje smo da iskrene povratne informacije o proizvodima učinimo javnim dobrom za one koji softver stvaraju sami.",
+    "principles_title": "Za što se zalažemo",
+    "principles": [
+      {
+        "title": "Besplatno i tako ostaje",
+        "text": "Bez pretplata, bez naknada po testeru, bez izvješća iza naplatnog zida. Dodavanje aplikacije i čitanje rezultata ne stoji ništa — u tome je cijela poanta."
+      },
+      {
+        "title": "Stvarni ljudi, stvarni uređaji",
+        "text": "Svaki test provodi čovjek na vlastitom telefonu ili tabletu — ne botovi, ne emulatori, ne sintetičke skripte. Dobivate iskrene reakcije stvarnih korisnika."
+      },
+      {
+        "title": "Stvoreno za nezavisne",
+        "text": "Samostalni osnivači i mali timovi rijetko imaju QA laboratorij ili proračun za plaćeni panel testera. Izjednačavamo uvjete kako bi se aplikacija jedne osobe testirala kao financirana."
+      },
+      {
+        "title": "Zajednica, ne dobavljač",
+        "text": "Testeri isprobavaju nove aplikacije i njihove povratne informacije uistinu oblikuju ono što izlazi. Razvojni programeri i testeri pomažu jedni drugima — platforma ih samo povezuje."
+      }
+    ],
+    "cta_title": "Pridružite se ljudima iza boljih aplikacija",
+    "cta_subtitle": "Bilo da gradite aplikacije ili volite isprobavati nove, ovdje ima mjesta za vas. Početak je besplatan.",
+    "cta_browse": "Pregledaj aplikacije",
+    "cta_tester": "Postanite tester",
+    "cta_how": "Kako funkcionira"
+  }
+}

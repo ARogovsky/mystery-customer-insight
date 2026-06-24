@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Muuda keelt"
+  },
+  "SignIn": {
+    "meta_title": "Logi sisse",
+    "meta_description": "Mugav sisselogimine oma kontole."
+  },
+  "SignUp": {
+    "meta_title": "Registreeru",
+    "meta_description": "Kiire konto loomine lihtsa registreerimisprotsessi kaudu."
+  },
+  "DashboardLayout": {
+    "meta_title": "Juhtpaneel",
+    "meta_description": "Mystery Customer Insighti juhtpaneel.",
+    "home": "Avaleht"
+  },
+  "UserProfilePage": {
+    "title_bar": "Kasutajaprofiil",
+    "title_bar_description": "Vaata ja halda oma profiili"
+  },
+  "Nav": {
+    "home": "Avaleht",
+    "how_it_works": "Kuidas see töötab",
+    "browse": "Sirvi",
+    "toplist": "Edetabel",
+    "faq": "KKK",
+    "about": "Meist",
+    "sign_in": "Logi sisse"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Privaatsus",
+    "cookies": "Küpsised",
+    "disclaimer": "Vastutusest loobumine"
+  },
+  "Home": {
+    "eyebrow": "Ühistestimine · beetatestimine · kasutatavuse testimine",
+    "hero_before": "Testimine päris seadmetes,",
+    "hero_highlight": "päris inimeste poolt",
+    "lede": "Tasuta ühistestimise portaal sõltumatutele arendajatele — beetatestimine päris seadmetes ja kasutatavuse testimine inimtestijate poolt. Ilma tellimusteta, ilma peidetud tasudeta.",
+    "browse_apps": "Sirvi rakendusi",
+    "become_tester": "Hakka testijaks",
+    "step_label": "Samm",
+    "step1_title": "Lisa rakendus",
+    "step1_text": "Lisa rakenduse link, sihtplatvormid, testistsenaarium ja paar küsimust. See on tasuta.",
+    "step2_title": "Päris inimesed testivad seda",
+    "step2_text": "Inimtestijad käivitavad sinu beetaversiooni oma telefonides ja tahvelarvutites — päris kasutatavuse testimine, mitte robotid.",
+    "step3_title": "Saa ausad tulemused",
+    "step3_text": "Loe päris vastuseid, kommentaare ja linke tegelikelt kasutajatelt.",
+    "learn_more": "Uuri, kuidas see töötab →"
+  },
+  "HowItWorks": {
+    "title": "Kuidas see töötab",
+    "subtitle": "Tasuta ühistestimine sõltumatutele arendajatele ja inimtestijatele. Ilma tellimusteta, ilma peidetud tasudeta.",
+    "step1_title": "1. Lisa rakendus",
+    "step1_text": "Arendaja lisab rakenduse tasuta: link, sihtplatvormid, testistsenaarium ja paar lihtsat küsimust.",
+    "step2_title": "2. Testimine päris seadmetes",
+    "step2_text": "Inimtestijad sirvivad avatud rakendusi ja läbivad stsenaariumi oma telefonides ja tahvelarvutites.",
+    "step3_title": "3. Saa tulemused",
+    "step3_text": "Arendajad saavad päris kasutatavuse tagasisidet tegelikelt inimestelt — vastused, kommentaarid ja lingid.",
+    "browse_open": "Sirvi avatud rakendusi →"
+  },
+  "Faq": {
+    "title": "KKK",
+    "q1": "Kas see on tõesti tasuta?",
+    "a1": "Jah. Rakenduste lisamine ja testimine on tasuta. Ilma tellimusteta, ilma peidetud tasudeta.",
+    "q2": "Kuidas testijad rakenduse saavad?",
+    "a2": "Arendajad jagavad linki (App Store, Google Play, TestFlight või veeb). Me ei majuta üleslaaditud faile.",
+    "q3": "Kes saab aruandeid esitada?",
+    "a3": "Sisseloginud testijad läbivad testistsenaariumi oma seadmes ning esitavad vastused ja kommentaarid.",
+    "q4": "Kuidas tunnustatakse testija kvaliteeti?",
+    "a4": "Arendajad saavad anda testijale kasuliku aruande eest +1. Aja jooksul kujundavad hinnangud testija maine.",
+    "q5": "Kuidas käsitletakse sobimatut sisu?",
+    "a5": "Iga rakenduse, tulemuse või arvustuse kohta saab esitada teate. Pärast piisavat arvu teateid peidetakse sisu automaatselt."
+  },
+  "Toplist": {
+    "title": "Edetabel",
+    "subtitle": "Parimad testijad maine järgi.",
+    "empty": "Hinnatud testijaid veel pole.",
+    "tester": "Testija",
+    "points": "p"
+  },
+  "Apps": {
+    "title": "Sirvi rakendusi",
+    "subtitle": "Vali rakendus ja testi seda oma seadmes.",
+    "all": "Kõik",
+    "no_open": "Avatud rakendusi pole.",
+    "submit_report": "Esita aruanne",
+    "reports": "aruannet"
+  },
+  "AppDetail": {
+    "by": "autor",
+    "open_app": "Ava rakendus",
+    "scenario": "Testistsenaarium",
+    "will_be_asked": "Sinult küsitakse",
+    "submit_report": "Esita aruanne",
+    "reviews": "Arvustused",
+    "no_reviews": "Arvustusi veel pole.",
+    "leave_review": "Jäta anonüümne arvustus",
+    "rating_placeholder": "Hinnang…",
+    "post_review": "Avalda arvustus",
+    "sign_in": "Logi sisse",
+    "sign_in_suffix": "et jätta arvustus. Arvustused jäävad anonüümseks."
+  },
+  "Dashboard": {
+    "choose_role": "Vali oma roll",
+    "choose_role_subtitle": "Kuidas sa Mystery Customer Insighti kasutad?",
+    "display_name": "Kuvatav nimi (valikuline)",
+    "i_am_developer": "Olen arendaja",
+    "i_am_tester": "Olen testija",
+    "submit_first_app": "Lisa oma esimene rakendus",
+    "your_apps": "Sinu rakendused",
+    "submit_an_app": "Lisa rakendus",
+    "update_status": "Värskenda olekut",
+    "status_for": "{title} olek",
+    "my_reports": "Minu aruanded",
+    "rating": "Hinnang",
+    "tests_completed": "Lõpetatud testid",
+    "no_reports": "Aruandeid veel pole.",
+    "browse_apps": "Sirvi rakendusi",
+    "plus_received": "+1 saadud",
+    "only_developers": "Ainult arendajad saavad rakendusi lisada."
+  },
+  "SubmitApp": {
+    "app": "Rakendus",
+    "app_name": "Rakenduse nimi",
+    "app_url": "https://… poe või veebilink",
+    "description": "Lühikirjeldus (valikuline)",
+    "platforms": "Platvormid:",
+    "test_details": "Testi üksikasjad",
+    "test_title": "Testi pealkiri",
+    "scenario": "Testistsenaarium / ülesanded testijale",
+    "status": "Olek",
+    "starts": "Algab",
+    "ends": "Lõpeb",
+    "questions": "Küsimused (valikuline, kuni 5)",
+    "question": "Küsimus {n}",
+    "options_for_choice": "Valikuvõimalused (komaga eraldatud)",
+    "submit_app": "Lisa rakendus",
+    "how_it_works": "Kuidas see töötab",
+    "step1_title": "Lisa rakendus",
+    "step1_text": "Vali platvormid ja kirjuta üks selge stsenaarium.",
+    "step2_title": "Päris inimesed testivad seda",
+    "step2_text": "Inimesed proovivad seda oma telefonides ja tahvelarvutites.",
+    "step3_title": "Saa ausad tulemused",
+    "step3_text": "Loe päris vastuseid, kommentaare ja linke.",
+    "free_note": "Avaldamine on tasuta. Ilma tellimusteta, ilma peidetud tasudeta."
+  },
+  "NewReport": {
+    "title": "Esita aruanne",
+    "questions": "Küsimused",
+    "overall_comments": "Üldised kommentaarid",
+    "attachment_link": "Manuse link (valikuline)",
+    "attachment_placeholder": "https://… ekraanipilt või video",
+    "submit_report": "Esita aruanne",
+    "only_testers": "Ainult testijad saavad aruandeid esitada."
+  },
+  "Submissions": {
+    "title": "Esitused — {title}",
+    "no_submissions": "Esitusi veel pole.",
+    "rated": "Hinnatud +1",
+    "plus_to_tester": "+1 testijale",
+    "only_developers": "Ainult arendajad saavad esitusi vaadata."
+  },
+  "ModerationReport": {
+    "report": "Teata",
+    "reason_placeholder": "Põhjus…",
+    "reason_spam": "rämpspost",
+    "reason_inappropriate": "sobimatu",
+    "reason_broken": "ei tööta",
+    "reason_other": "muu",
+    "details_placeholder": "Üksikasjad (kohustuslik)",
+    "email_placeholder": "E-post (valikuline)",
+    "send_report": "Saada teade"
+  },
+  "CookieConsent": {
+    "text": "Kasutame küpsiseid analüütika ja reklaamide mõõtmise jaoks, et saiti parandada. Sa võid nõustuda või keelduda.",
+    "cookie_policy": "Küpsiste poliitika",
+    "decline": "Keeldu",
+    "accept": "Nõustu",
+    "change": "Muuda küpsiste eelistusi"
+  },
+  "About": {
+    "meta_title": "Meist — meie missioon",
+    "meta_description": "Mystery Customer Insight on mittetulunduslik ühistestimise portaal, mis muudab rakenduste testimise päris inimeste poolt päris seadmetes tasuta ja kättesaadavaks igale sõltumatule arendajale.",
+    "eyebrow": "Meie missioon",
+    "hero_title_before": "Rakenduste testimine peaks olema",
+    "hero_title_highlight": "kõigile",
+    "hero_subtitle": "Usume, et sõltumatu arendaja väärib sama ausat, päriselulist tagasisidet, mille eest suured stuudiod maksavad tuhandeid. Seega lõime koha, kus seda saab igaüks — tasuta.",
+    "why_title": "Miks me olemas oleme",
+    "why_p1": "Varem tähendas rakenduse näitamine päris kasutajatele ettevõtte QA-lepingut, tasulist testijate paneeli või sõpradelt tagasiside palumist. Päris kasutatavuse testimisel — inimesed, päris seadmed, ausad vastused — oli hinnasilt, mida enamik sõltumatuid arendajaid lihtsalt ei saanud endale lubada.",
+    "why_p2": "Mystery Customer Insight kõrvaldab selle takistuse. Arendaja lisab rakenduse lühikese stsenaariumi ja mõne küsimusega; inimtestijad käivitavad selle oma telefonides ja tahvelarvutites ning annavad teada, mis tegelikult juhtus. Ilma tellimusteta, ilma peidetud tasudeta, ilma piiranguteta.",
+    "why_p3": "Platvormi haldab mittetulundusorganisatsioon NGO „POGOVORIMO“. Me ei ole siin selleks, et müüa testimiskohti — oleme siin selleks, et muuta aus tootetagasiside avalikuks hüveks neile, kes loovad tarkvara ise.",
+    "principles_title": "Mille eest me seisame",
+    "principles": [
+      {
+        "title": "Tasuta ja jääb selleks",
+        "text": "Ilma tellimusteta, ilma testijapõhiste tasudeta, ilma aruanneteta maksemüüri taga. Rakenduse lisamine ja tulemuste lugemine ei maksa midagi — selles ongi mõte."
+      },
+      {
+        "title": "Päris inimesed, päris seadmed",
+        "text": "Iga testi teeb inimene oma telefonis või tahvelarvutis — mitte robotid, mitte emulaatorid, mitte sünteetilised skriptid. Saad ausaid reaktsioone tegelikelt kasutajatelt."
+      },
+      {
+        "title": "Loodud sõltumatutele",
+        "text": "Üksikutel asutajatel ja väikestel tiimidel on harva QA-laborit või eelarvet tasulisele testijate paneelile. Ühtlustame mängumaa, et ühe inimese rakendust testitaks nagu rahastatut."
+      },
+      {
+        "title": "Kogukond, mitte tarnija",
+        "text": "Testijad proovivad uusi rakendusi ja nende tagasiside kujundab tõeliselt seda, mis välja antakse. Arendajad ja testijad aitavad üksteist — platvorm vaid ühendab nad."
+      }
+    ],
+    "cta_title": "Liitu inimestega paremate rakenduste taga",
+    "cta_subtitle": "Olgu sa rakenduste looja või uute proovija, siin on koht sinu jaoks. Alustamine on tasuta.",
+    "cta_browse": "Sirvi rakendusi",
+    "cta_tester": "Hakka testijaks",
+    "cta_how": "Kuidas see töötab"
+  }
+}

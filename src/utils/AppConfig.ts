@@ -1,7 +1,17 @@
 import type { LocalizationResource } from '@clerk/shared/types';
 import type { LocalePrefixMode } from 'next-intl/routing';
 import type { AppLocale } from '@/types/I18n';
-import { enUS, ukUA } from '@clerk/localizations';
+import {
+  bgBG,
+  csCZ,
+  enUS,
+  hrHR,
+  huHU,
+  plPL,
+  roRO,
+  skSK,
+  ukUA,
+} from '@clerk/localizations';
 
 /** Locale prefix strategy for next-intl routing. */
 const localePrefix: LocalePrefixMode = 'as-needed';
@@ -22,6 +32,50 @@ const locales = [
     id: 'uk',
     name: 'Українська',
   },
+  {
+    id: 'pl',
+    name: 'Polski',
+  },
+  {
+    id: 'ro',
+    name: 'Română',
+  },
+  {
+    id: 'hu',
+    name: 'Magyar',
+  },
+  {
+    id: 'cs',
+    name: 'Čeština',
+  },
+  {
+    id: 'bg',
+    name: 'Български',
+  },
+  {
+    id: 'sk',
+    name: 'Slovenčina',
+  },
+  {
+    id: 'hr',
+    name: 'Hrvatski',
+  },
+  {
+    id: 'lt',
+    name: 'Lietuvių',
+  },
+  {
+    id: 'sl',
+    name: 'Slovenščina',
+  },
+  {
+    id: 'lv',
+    name: 'Latviešu',
+  },
+  {
+    id: 'et',
+    name: 'Eesti',
+  },
 ] satisfies AppLocale[];
 
 // FIXME: Customize this configuration for your product
@@ -41,6 +95,14 @@ export const AppConfig = {
 const supportedLocales: Record<string, LocalizationResource> = {
   en: enUS,
   uk: ukUA,
+  pl: plPL,
+  ro: roRO,
+  hu: huHU,
+  cs: csCZ,
+  bg: bgBG,
+  sk: skSK,
+  hr: hrHR,
+  // lt, sl, lv, et: no Clerk localization → fall back to default (enUS).
 };
 
 export const ClerkLocalizations = {

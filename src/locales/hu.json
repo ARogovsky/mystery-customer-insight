@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Nyelv váltása"
+  },
+  "SignIn": {
+    "meta_title": "Bejelentkezés",
+    "meta_description": "Kényelmes bejelentkezés a fiókodba."
+  },
+  "SignUp": {
+    "meta_title": "Regisztráció",
+    "meta_description": "Gyors fióklétrehozás egyszerű regisztrációs folyamattal."
+  },
+  "DashboardLayout": {
+    "meta_title": "Irányítópult",
+    "meta_description": "A Mystery Customer Insight irányítópultja.",
+    "home": "Főoldal"
+  },
+  "UserProfilePage": {
+    "title_bar": "Felhasználói profil",
+    "title_bar_description": "Profilod megtekintése és kezelése"
+  },
+  "Nav": {
+    "home": "Főoldal",
+    "how_it_works": "Hogyan működik",
+    "browse": "Böngészés",
+    "toplist": "Toplista",
+    "faq": "GYIK",
+    "about": "Rólunk",
+    "sign_in": "Bejelentkezés"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Adatvédelem",
+    "cookies": "Sütik",
+    "disclaimer": "Felelősség kizárása"
+  },
+  "Home": {
+    "eyebrow": "Crowdtesting · béta tesztelés · használhatósági tesztelés",
+    "hero_before": "Tesztelés valódi eszközökön",
+    "hero_highlight": "valódi emberekkel",
+    "lede": "Ingyenes crowdtesting portál indie fejlesztőknek — béta tesztelés valódi eszközökön és használhatósági tesztelés emberi tesztelőkkel. Előfizetés és rejtett díjak nélkül.",
+    "browse_apps": "Alkalmazások böngészése",
+    "become_tester": "Legyél tesztelő",
+    "step_label": "Lépés",
+    "step1_title": "Adj hozzá egy alkalmazást",
+    "step1_text": "Add meg az alkalmazás linkjét, a célplatformokat, egy tesztforgatókönyvet és néhány kérdést. Ingyenes.",
+    "step2_title": "Valódi emberek tesztelik",
+    "step2_text": "Emberi tesztelők futtatják a bétádat saját telefonjukon és táblagépükön — valódi használhatósági tesztelés, nem botok.",
+    "step3_title": "Kapj őszinte eredményeket",
+    "step3_text": "Olvass valós válaszokat, megjegyzéseket és linkeket valódi felhasználóktól.",
+    "learn_more": "Tudd meg, hogyan működik →"
+  },
+  "HowItWorks": {
+    "title": "Hogyan működik",
+    "subtitle": "Ingyenes crowdtesting indie fejlesztőknek és emberi tesztelőknek. Előfizetés és rejtett díjak nélkül.",
+    "step1_title": "1. Adj hozzá egy alkalmazást",
+    "step1_text": "A fejlesztő ingyen ad hozzá alkalmazást: link, célplatformok, tesztforgatókönyv és néhány egyszerű kérdés.",
+    "step2_title": "2. Tesztelés valódi eszközökön",
+    "step2_text": "Az emberi tesztelők böngészik a nyitott alkalmazásokat, és végigviszik a forgatókönyvet saját telefonjukon és táblagépükön.",
+    "step3_title": "3. Kapj eredményeket",
+    "step3_text": "A fejlesztők valós használhatósági visszajelzést kapnak valódi emberektől — válaszok, megjegyzések és linkek.",
+    "browse_open": "Nyitott alkalmazások böngészése →"
+  },
+  "Faq": {
+    "title": "GYIK",
+    "q1": "Tényleg ingyenes?",
+    "a1": "Igen. Az alkalmazások hozzáadása és tesztelése ingyenes. Előfizetés és rejtett díjak nélkül.",
+    "q2": "Hogyan kapják meg a tesztelők az alkalmazást?",
+    "a2": "A fejlesztők linket osztanak meg (App Store, Google Play, TestFlight vagy web). Nem tárolunk feltöltött fájlokat.",
+    "q3": "Ki küldhet jelentéseket?",
+    "a3": "A bejelentkezett tesztelők saját eszközükön végzik el a tesztforgatókönyvet, és válaszokat, megjegyzéseket küldenek.",
+    "q4": "Hogyan ismerik el a tesztelők minőségét?",
+    "a4": "A fejlesztők +1-et adhatnak egy tesztelőnek hasznos jelentésért. Idővel az értékelések kialakítják a tesztelő hírnevét.",
+    "q5": "Hogyan kezelik a visszaélést tartalmazó tartalmat?",
+    "a5": "Bármely alkalmazás, eredmény vagy értékelés bejelenthető. Elegendő bejelentés után a tartalom automatikusan elrejtődik."
+  },
+  "Toplist": {
+    "title": "Toplista",
+    "subtitle": "A legjobb tesztelők hírnév szerint.",
+    "empty": "Még nincsenek értékelt tesztelők.",
+    "tester": "Tesztelő",
+    "points": "pont"
+  },
+  "Apps": {
+    "title": "Alkalmazások böngészése",
+    "subtitle": "Válassz egy alkalmazást, és teszteld saját eszközödön.",
+    "all": "Mind",
+    "no_open": "Nincs nyitott alkalmazás.",
+    "submit_report": "Jelentés küldése",
+    "reports": "jelentés"
+  },
+  "AppDetail": {
+    "by": "tőle:",
+    "open_app": "Alkalmazás megnyitása",
+    "scenario": "Tesztforgatókönyv",
+    "will_be_asked": "A következőkre kérdezünk rá",
+    "submit_report": "Jelentés küldése",
+    "reviews": "Értékelések",
+    "no_reviews": "Még nincsenek értékelések.",
+    "leave_review": "Hagyj névtelen értékelést",
+    "rating_placeholder": "Értékelés…",
+    "post_review": "Értékelés közzététele",
+    "sign_in": "Jelentkezz be",
+    "sign_in_suffix": "az értékelés írásához. Az értékelések névtelenek maradnak."
+  },
+  "Dashboard": {
+    "choose_role": "Válaszd ki a szereped",
+    "choose_role_subtitle": "Hogyan fogod használni a Mystery Customer Insightot?",
+    "display_name": "Megjelenített név (opcionális)",
+    "i_am_developer": "Fejlesztő vagyok",
+    "i_am_tester": "Tesztelő vagyok",
+    "submit_first_app": "Add hozzá az első alkalmazásod",
+    "your_apps": "Alkalmazásaid",
+    "submit_an_app": "Alkalmazás hozzáadása",
+    "update_status": "Állapot frissítése",
+    "status_for": "{title} állapota",
+    "my_reports": "Jelentéseim",
+    "rating": "Értékelés",
+    "tests_completed": "Befejezett tesztek",
+    "no_reports": "Még nincsenek jelentések.",
+    "browse_apps": "Alkalmazások böngészése",
+    "plus_received": "+1 kapva",
+    "only_developers": "Csak fejlesztők adhatnak hozzá alkalmazásokat."
+  },
+  "SubmitApp": {
+    "app": "Alkalmazás",
+    "app_name": "Alkalmazás neve",
+    "app_url": "https://… áruház vagy webes link",
+    "description": "Rövid leírás (opcionális)",
+    "platforms": "Platformok:",
+    "test_details": "Teszt részletei",
+    "test_title": "Teszt címe",
+    "scenario": "Tesztforgatókönyv / feladatok a tesztelőnek",
+    "status": "Állapot",
+    "starts": "Kezdés",
+    "ends": "Befejezés",
+    "questions": "Kérdések (opcionális, legfeljebb 5)",
+    "question": "{n}. kérdés",
+    "options_for_choice": "Választható lehetőségek (vesszővel elválasztva)",
+    "submit_app": "Alkalmazás hozzáadása",
+    "how_it_works": "Hogyan működik",
+    "step1_title": "Adj hozzá egy alkalmazást",
+    "step1_text": "Válassz platformokat, és írj egy világos forgatókönyvet.",
+    "step2_title": "Valódi emberek tesztelik",
+    "step2_text": "Az emberek saját telefonjukon és táblagépükön próbálják ki.",
+    "step3_title": "Kapj őszinte eredményeket",
+    "step3_text": "Olvass valós válaszokat, megjegyzéseket és linkeket.",
+    "free_note": "Ingyenes közzététel. Előfizetés és rejtett díjak nélkül."
+  },
+  "NewReport": {
+    "title": "Jelentés küldése",
+    "questions": "Kérdések",
+    "overall_comments": "Általános megjegyzések",
+    "attachment_link": "Melléklet link (opcionális)",
+    "attachment_placeholder": "https://… képernyőkép vagy videó",
+    "submit_report": "Jelentés küldése",
+    "only_testers": "Csak tesztelők küldhetnek jelentéseket."
+  },
+  "Submissions": {
+    "title": "Beküldések — {title}",
+    "no_submissions": "Még nincsenek beküldések.",
+    "rated": "Értékelve +1",
+    "plus_to_tester": "+1 a tesztelőnek",
+    "only_developers": "Csak fejlesztők tekinthetik meg a beküldéseket."
+  },
+  "ModerationReport": {
+    "report": "Bejelentés",
+    "reason_placeholder": "Ok…",
+    "reason_spam": "spam",
+    "reason_inappropriate": "nem megfelelő",
+    "reason_broken": "nem működik",
+    "reason_other": "egyéb",
+    "details_placeholder": "Részletek (kötelező)",
+    "email_placeholder": "E-mail (opcionális)",
+    "send_report": "Bejelentés küldése"
+  },
+  "CookieConsent": {
+    "text": "Sütiket használunk analitikához és hirdetésmérséshez, hogy javítsuk az oldalt. Elfogadhatod vagy elutasíthatod.",
+    "cookie_policy": "Süti szabályzat",
+    "decline": "Elutasítás",
+    "accept": "Elfogadás",
+    "change": "Süti beállítások módosítása"
+  },
+  "About": {
+    "meta_title": "Rólunk — küldetésünk",
+    "meta_description": "A Mystery Customer Insight egy non-profit crowdtesting portál, amely ingyenessé és elérhetővé teszi a valódi emberek által, valódi eszközökön végzett alkalmazástesztelést minden indie fejlesztő számára.",
+    "eyebrow": "Küldetésünk",
+    "hero_title_before": "Az alkalmazások tesztelése legyen",
+    "hero_title_highlight": "mindenki számára elérhető",
+    "hero_subtitle": "Hisszük, hogy egy indie fejlesztő ugyanazt az őszinte, valós visszajelzést érdemli, amelyért a nagy stúdiók ezreket fizetnek. Ezért építettünk egy helyet, ahol ezt bárki megkaphatja — ingyen.",
+    "why_title": "Miért létezünk",
+    "why_p1": "Korábban egy alkalmazás valódi felhasználók elé tárása vállalati QA-szerződést, fizetett tesztelői panelt vagy barátok visszajelzésének kérését jelentette. A valódi használhatósági tesztelés — emberek, valódi eszközök, őszinte válaszok — olyan árcédulával rendelkezett, amelyet a legtöbb indie fejlesztő egyszerűen nem engedhetett meg magának.",
+    "why_p2": "A Mystery Customer Insight megszünteti ezt az akadályt. A fejlesztő hozzáad egy alkalmazást rövid forgatókönyvvel és néhány kérdéssel; az emberi tesztelők saját telefonjukon és táblagépükön futtatják, és jelentik, mi történt valójában. Előfizetés, rejtett díjak és korlátozások nélkül.",
+    "why_p3": "A platformot a non-profit NGO „POGOVORIMO” szervezet üzemelteti. Nem tesztelői helyeket akarunk eladni — azért vagyunk itt, hogy az őszinte termékvisszajelzést közjóvá tegyük azoknak, akik egyedül készítenek szoftvert.",
+    "principles_title": "Amiben hiszünk",
+    "principles": [
+      {
+        "title": "Ingyenes, és az is marad",
+        "text": "Előfizetés, tesztelőnkénti díjak és paywall mögötti jelentések nélkül. Egy alkalmazás hozzáadása és az eredmények elolvasása semmibe sem kerül — ez a lényeg."
+      },
+      {
+        "title": "Valódi emberek, valódi eszközök",
+        "text": "Minden tesztet ember végez saját telefonján vagy táblagépén — nem botok, nem emulátorok, nem szintetikus szkriptek. Őszinte reakciókat kapsz valódi felhasználóktól."
+      },
+      {
+        "title": "Indie fejlesztőknek készült",
+        "text": "A szóló alapítóknak és kis csapatoknak ritkán van QA-laborjuk vagy keretük fizetett tesztelői panelre. Kiegyenlítjük a pályát, hogy egy egyszemélyes alkalmazást úgy teszteljenek, mint egy finanszírozottat."
+      },
+      {
+        "title": "Közösség, nem szállító",
+        "text": "A tesztelők új alkalmazásokat próbálnak ki, és visszajelzésük valóban formálja, mi jelenik meg. A fejlesztők és tesztelők segítik egymást — a platform csak összeköti őket."
+      }
+    ],
+    "cta_title": "Csatlakozz a jobb alkalmazások mögött álló emberekhez",
+    "cta_subtitle": "Akár alkalmazásokat építesz, akár szeretsz újakat kipróbálni, itt a helyed. Az indulás ingyenes.",
+    "cta_browse": "Alkalmazások böngészése",
+    "cta_tester": "Legyél tesztelő",
+    "cta_how": "Hogyan működik"
+  }
+}

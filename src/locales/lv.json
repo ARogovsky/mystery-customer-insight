@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Mainīt valodu"
+  },
+  "SignIn": {
+    "meta_title": "Pieteikšanās",
+    "meta_description": "Ērta pieteikšanās savā kontā."
+  },
+  "SignUp": {
+    "meta_title": "Reģistrācija",
+    "meta_description": "Ātra konta izveide ar vienkāršu reģistrācijas procesu."
+  },
+  "DashboardLayout": {
+    "meta_title": "Vadības panelis",
+    "meta_description": "Mystery Customer Insight vadības panelis.",
+    "home": "Sākums"
+  },
+  "UserProfilePage": {
+    "title_bar": "Lietotāja profils",
+    "title_bar_description": "Skatiet un pārvaldiet savu profilu"
+  },
+  "Nav": {
+    "home": "Sākums",
+    "how_it_works": "Kā tas darbojas",
+    "browse": "Pārlūkot",
+    "toplist": "Reitings",
+    "faq": "BUJ",
+    "about": "Par mums",
+    "sign_in": "Pieteikties"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Privātums",
+    "cookies": "Sīkdatnes",
+    "disclaimer": "Atruna"
+  },
+  "Home": {
+    "eyebrow": "Pūļa testēšana · beta testēšana · lietojamības testēšana",
+    "hero_before": "Testēšana reālās ierīcēs, ko veic",
+    "hero_highlight": "reāli cilvēki",
+    "lede": "Bezmaksas pūļa testēšanas portāls neatkarīgiem izstrādātājiem — beta testēšana reālās ierīcēs un lietojamības testēšana, ko veic cilvēki testētāji. Bez abonementiem, bez slēptām maksām.",
+    "browse_apps": "Pārlūkot lietotnes",
+    "become_tester": "Kļūstiet par testētāju",
+    "step_label": "Solis",
+    "step1_title": "Pievienojiet lietotni",
+    "step1_text": "Pievienojiet lietotnes saiti, mērķa platformas, testēšanas scenāriju un dažus jautājumus. Tas ir bez maksas.",
+    "step2_title": "Reāli cilvēki to testē",
+    "step2_text": "Cilvēki testētāji palaiž jūsu beta versiju savos tālruņos un planšetdatoros — īsta lietojamības testēšana, nevis boti.",
+    "step3_title": "Saņemiet godīgus rezultātus",
+    "step3_text": "Lasiet reālas atbildes, komentārus un saites no īstiem lietotājiem.",
+    "learn_more": "Uzziniet, kā tas darbojas →"
+  },
+  "HowItWorks": {
+    "title": "Kā tas darbojas",
+    "subtitle": "Bezmaksas pūļa testēšana neatkarīgiem izstrādātājiem un cilvēkiem testētājiem. Bez abonementiem, bez slēptām maksām.",
+    "step1_title": "1. Pievienojiet lietotni",
+    "step1_text": "Izstrādātājs bez maksas pievieno lietotni: saiti, mērķa platformas, testēšanas scenāriju un dažus vienkāršus jautājumus.",
+    "step2_title": "2. Testēšana reālās ierīcēs",
+    "step2_text": "Cilvēki testētāji pārlūko atvērtās lietotnes un izpilda scenāriju savos tālruņos un planšetdatoros.",
+    "step3_title": "3. Saņemiet rezultātus",
+    "step3_text": "Izstrādātāji saņem reālu lietojamības atsauksmi no īstiem cilvēkiem — atbildes, komentārus un saites.",
+    "browse_open": "Pārlūkot atvērtās lietotnes →"
+  },
+  "Faq": {
+    "title": "BUJ",
+    "q1": "Vai tas tiešām ir bez maksas?",
+    "a1": "Jā. Lietotņu pievienošana un testēšana ir bez maksas. Bez abonementiem, bez slēptām maksām.",
+    "q2": "Kā testētāji saņem lietotni?",
+    "a2": "Izstrādātāji kopīgo saiti (App Store, Google Play, TestFlight vai tīmeklis). Mēs neuzglabājam augšupielādētos failus.",
+    "q3": "Kurš var iesniegt ziņojumus?",
+    "a3": "Pieteikušies testētāji izpilda testēšanas scenāriju savā ierīcē un iesniedz atbildes un komentārus.",
+    "q4": "Kā tiek atzīta testētāju kvalitāte?",
+    "a4": "Izstrādātāji var piešķirt testētājam +1 par noderīgu ziņojumu. Laika gaitā vērtējumi veido testētāja reputāciju.",
+    "q5": "Kā tiek apstrādāts nepiemērots saturs?",
+    "a5": "Par jebkuru lietotni, rezultātu vai atsauksmi var ziņot. Pēc pietiekama ziņojumu skaita saturs tiek automātiski paslēpts."
+  },
+  "Toplist": {
+    "title": "Reitings",
+    "subtitle": "Labākie testētāji pēc reputācijas.",
+    "empty": "Vēl nav novērtētu testētāju.",
+    "tester": "Testētājs",
+    "points": "p."
+  },
+  "Apps": {
+    "title": "Pārlūkot lietotnes",
+    "subtitle": "Izvēlieties lietotni un testējiet to savā ierīcē.",
+    "all": "Visas",
+    "no_open": "Nav atvērtu lietotņu.",
+    "submit_report": "Iesniegt ziņojumu",
+    "reports": "ziņojumi"
+  },
+  "AppDetail": {
+    "by": "autors",
+    "open_app": "Atvērt lietotni",
+    "scenario": "Testēšanas scenārijs",
+    "will_be_asked": "Jums tiks jautāts",
+    "submit_report": "Iesniegt ziņojumu",
+    "reviews": "Atsauksmes",
+    "no_reviews": "Vēl nav atsauksmju.",
+    "leave_review": "Atstājiet anonīmu atsauksmi",
+    "rating_placeholder": "Vērtējums…",
+    "post_review": "Publicēt atsauksmi",
+    "sign_in": "Pieteikties",
+    "sign_in_suffix": "lai atstātu atsauksmi. Atsauksmes paliek anonīmas."
+  },
+  "Dashboard": {
+    "choose_role": "Izvēlieties savu lomu",
+    "choose_role_subtitle": "Kā jūs izmantosiet Mystery Customer Insight?",
+    "display_name": "Attēlojamais vārds (neobligāti)",
+    "i_am_developer": "Esmu izstrādātājs",
+    "i_am_tester": "Esmu testētājs",
+    "submit_first_app": "Pievienojiet savu pirmo lietotni",
+    "your_apps": "Jūsu lietotnes",
+    "submit_an_app": "Pievienot lietotni",
+    "update_status": "Atjaunināt statusu",
+    "status_for": "Statuss lietotnei {title}",
+    "my_reports": "Mani ziņojumi",
+    "rating": "Vērtējums",
+    "tests_completed": "Pabeigtie testi",
+    "no_reports": "Vēl nav ziņojumu.",
+    "browse_apps": "Pārlūkot lietotnes",
+    "plus_received": "+1 saņemts",
+    "only_developers": "Tikai izstrādātāji var pievienot lietotnes."
+  },
+  "SubmitApp": {
+    "app": "Lietotne",
+    "app_name": "Lietotnes nosaukums",
+    "app_url": "https://… veikala vai tīmekļa saite",
+    "description": "Īss apraksts (neobligāti)",
+    "platforms": "Platformas:",
+    "test_details": "Testa informācija",
+    "test_title": "Testa nosaukums",
+    "scenario": "Testēšanas scenārijs / uzdevumi testētājam",
+    "status": "Statuss",
+    "starts": "Sākums",
+    "ends": "Beigas",
+    "questions": "Jautājumi (neobligāti, līdz 5)",
+    "question": "{n}. jautājums",
+    "options_for_choice": "Izvēles iespējas (atdalītas ar komatiem)",
+    "submit_app": "Pievienot lietotni",
+    "how_it_works": "Kā tas darbojas",
+    "step1_title": "Pievienojiet lietotni",
+    "step1_text": "Izvēlieties platformas un uzrakstiet vienu skaidru scenāriju.",
+    "step2_title": "Reāli cilvēki to testē",
+    "step2_text": "Cilvēki to izmēģina savos tālruņos un planšetdatoros.",
+    "step3_title": "Saņemiet godīgus rezultātus",
+    "step3_text": "Lasiet reālas atbildes, komentārus un saites.",
+    "free_note": "Publicēšana ir bez maksas. Bez abonementiem, bez slēptām maksām."
+  },
+  "NewReport": {
+    "title": "Iesniegt ziņojumu",
+    "questions": "Jautājumi",
+    "overall_comments": "Vispārīgi komentāri",
+    "attachment_link": "Pielikuma saite (neobligāti)",
+    "attachment_placeholder": "https://… ekrānuzņēmums vai video",
+    "submit_report": "Iesniegt ziņojumu",
+    "only_testers": "Tikai testētāji var iesniegt ziņojumus."
+  },
+  "Submissions": {
+    "title": "Iesniegumi — {title}",
+    "no_submissions": "Vēl nav iesniegumu.",
+    "rated": "Novērtēts +1",
+    "plus_to_tester": "+1 testētājam",
+    "only_developers": "Tikai izstrādātāji var skatīt iesniegumus."
+  },
+  "ModerationReport": {
+    "report": "Ziņot",
+    "reason_placeholder": "Iemesls…",
+    "reason_spam": "mēstules",
+    "reason_inappropriate": "nepiemērots",
+    "reason_broken": "nedarbojas",
+    "reason_other": "cits",
+    "details_placeholder": "Detaļas (obligāti)",
+    "email_placeholder": "E-pasts (neobligāti)",
+    "send_report": "Nosūtīt ziņojumu"
+  },
+  "CookieConsent": {
+    "text": "Mēs izmantojam sīkdatnes analītikai un reklāmu mērīšanai, lai uzlabotu vietni. Jūs varat piekrist vai atteikties.",
+    "cookie_policy": "Sīkdatņu politika",
+    "decline": "Atteikties",
+    "accept": "Piekrist",
+    "change": "Mainīt sīkdatņu iestatījumus"
+  },
+  "About": {
+    "meta_title": "Par mums — mūsu misija",
+    "meta_description": "Mystery Customer Insight ir bezpeļņas pūļa testēšanas portāls, kas lietotņu testēšanu, ko veic reāli cilvēki reālās ierīcēs, padara bezmaksas un pieejamu ikvienam neatkarīgam izstrādātājam.",
+    "eyebrow": "Mūsu misija",
+    "hero_title_before": "Lietotņu testēšanai vajadzētu būt",
+    "hero_title_highlight": "ikvienam",
+    "hero_subtitle": "Mēs uzskatām, ka neatkarīgs izstrādātājs ir pelnījis tādu pašu godīgu, reālu atsauksmi, par kuru lielas studijas maksā tūkstošus. Tāpēc mēs izveidojām vietu, kur to var iegūt ikviens — bez maksas.",
+    "why_title": "Kāpēc mēs pastāvam",
+    "why_p1": "Agrāk parādīt lietotni reāliem lietotājiem nozīmēja uzņēmuma QA līgumu, maksas testētāju paneli vai draugu lūgšanu pēc atsauksmes. Īsta lietojamības testēšana — cilvēki, reālas ierīces, godīgas atbildes — bija ar cenu, ko lielākā daļa neatkarīgo izstrādātāju vienkārši nevarēja atļauties.",
+    "why_p2": "Mystery Customer Insight novērš šo šķērsli. Izstrādātājs pievieno lietotni ar īsu scenāriju un dažiem jautājumiem; cilvēki testētāji to palaiž savos tālruņos un planšetdatoros un ziņo, kas patiešām notika. Bez abonementiem, bez slēptām maksām, bez ierobežojumiem.",
+    "why_p3": "Platformu pārvalda bezpeļņas organizācija NGO „POGOVORIMO“. Mēs neesam šeit, lai pārdotu testēšanas vietas — mēs esam šeit, lai godīgu atsauksmi par produktiem padarītu par sabiedrisku labumu tiem, kas veido programmatūru paši.",
+    "principles_title": "Par ko mēs iestājamies",
+    "principles": [
+      {
+        "title": "Bez maksas un tā arī paliks",
+        "text": "Bez abonementiem, bez maksas par testētāju, bez ziņojumiem aiz maksas sienas. Lietotnes pievienošana un rezultātu lasīšana neko nemaksā — tāda ir visa būtība."
+      },
+      {
+        "title": "Reāli cilvēki, reālas ierīces",
+        "text": "Katru testu veic cilvēks savā tālrunī vai planšetdatorā — nevis boti, nevis emulatori, nevis sintētiski skripti. Jūs saņemat godīgas reālu lietotāju reakcijas."
+      },
+      {
+        "title": "Izveidots neatkarīgajiem",
+        "text": "Vientuļiem dibinātājiem un mazām komandām reti ir QA laboratorija vai budžets maksas testētāju panelim. Mēs izlīdzinām apstākļus, lai vienas personas lietotne tiktu testēta kā finansēta."
+      },
+      {
+        "title": "Kopiena, nevis pakalpojumu sniedzējs",
+        "text": "Testētāji izmēģina jaunas lietotnes, un viņu atsauksmes patiešām veido to, kas tiek izlaists. Izstrādātāji un testētāji palīdz cits citam — platforma tos tikai savieno."
+      }
+    ],
+    "cta_title": "Pievienojieties cilvēkiem aiz labākām lietotnēm",
+    "cta_subtitle": "Neatkarīgi no tā, vai veidojat lietotnes vai labprāt izmēģināt jaunas, šeit ir vieta jums. Sākt ir bez maksas.",
+    "cta_browse": "Pārlūkot lietotnes",
+    "cta_tester": "Kļūstiet par testētāju",
+    "cta_how": "Kā tas darbojas"
+  }
+}

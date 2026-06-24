@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Zmeniť jazyk"
+  },
+  "SignIn": {
+    "meta_title": "Prihlásenie",
+    "meta_description": "Pohodlné prihlásenie do vášho účtu."
+  },
+  "SignUp": {
+    "meta_title": "Registrácia",
+    "meta_description": "Rýchle vytvorenie účtu vďaka jednoduchému procesu registrácie."
+  },
+  "DashboardLayout": {
+    "meta_title": "Nástenka",
+    "meta_description": "Nástenka Mystery Customer Insight.",
+    "home": "Domov"
+  },
+  "UserProfilePage": {
+    "title_bar": "Profil používateľa",
+    "title_bar_description": "Zobrazenie a správa vášho profilu"
+  },
+  "Nav": {
+    "home": "Domov",
+    "how_it_works": "Ako to funguje",
+    "browse": "Prehľadávať",
+    "toplist": "Rebríček",
+    "faq": "Časté otázky",
+    "about": "O nás",
+    "sign_in": "Prihlásiť sa"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Súkromie",
+    "cookies": "Cookies",
+    "disclaimer": "Vylúčenie zodpovednosti"
+  },
+  "Home": {
+    "eyebrow": "Crowdtesting · beta testovanie · testovanie použiteľnosti",
+    "hero_before": "Testovanie na reálnych zariadeniach",
+    "hero_highlight": "reálnymi ľuďmi",
+    "lede": "Bezplatný crowdtestingový portál pre nezávislých vývojárov — beta testovanie na reálnych zariadeniach a testovanie použiteľnosti ľudskými testermi. Bez predplatného, bez skrytých poplatkov.",
+    "browse_apps": "Prehľadávať aplikácie",
+    "become_tester": "Staňte sa testerom",
+    "step_label": "Krok",
+    "step1_title": "Pridajte aplikáciu",
+    "step1_text": "Pridajte odkaz na aplikáciu, cieľové platformy, testovací scenár a niekoľko otázok. Je to zadarmo.",
+    "step2_title": "Reálni ľudia ju testujú",
+    "step2_text": "Ľudskí testeri spustia vašu betu na vlastných telefónoch a tabletoch — skutočné testovanie použiteľnosti, nie boti.",
+    "step3_title": "Získajte úprimné výsledky",
+    "step3_text": "Čítajte reálne odpovede, komentáre a odkazy od skutočných používateľov.",
+    "learn_more": "Zistite, ako to funguje →"
+  },
+  "HowItWorks": {
+    "title": "Ako to funguje",
+    "subtitle": "Bezplatný crowdtesting pre nezávislých vývojárov a ľudských testerov. Bez predplatného, bez skrytých poplatkov.",
+    "step1_title": "1. Pridajte aplikáciu",
+    "step1_text": "Vývojár zadarmo pridá aplikáciu: odkaz, cieľové platformy, testovací scenár a niekoľko jednoduchých otázok.",
+    "step2_title": "2. Testovanie na reálnych zariadeniach",
+    "step2_text": "Ľudskí testeri prehľadávajú otvorené aplikácie a plnia scenár na vlastných telefónoch a tabletoch.",
+    "step3_title": "3. Získajte výsledky",
+    "step3_text": "Vývojári dostávajú reálnu spätnú väzbu k použiteľnosti od skutočných ľudí — odpovede, komentáre a odkazy.",
+    "browse_open": "Prehľadávať otvorené aplikácie →"
+  },
+  "Faq": {
+    "title": "Časté otázky",
+    "q1": "Je to naozaj zadarmo?",
+    "a1": "Áno. Pridávanie aj testovanie aplikácií je zadarmo. Bez predplatného, bez skrytých poplatkov.",
+    "q2": "Ako testeri získajú aplikáciu?",
+    "a2": "Vývojári zdieľajú odkaz (App Store, Google Play, TestFlight alebo web). Nehostujeme nahrané súbory.",
+    "q3": "Kto môže odosielať správy?",
+    "a3": "Prihlásení testeri prejdú testovací scenár na vlastnom zariadení a odošlú odpovede a komentáre.",
+    "q4": "Ako sa oceňuje kvalita testera?",
+    "a4": "Vývojári môžu testerovi udeliť +1 za užitočnú správu. Hodnotenia postupne budujú reputáciu testera.",
+    "q5": "Ako sa rieši nevhodný obsah?",
+    "a5": "Akúkoľvek aplikáciu, výsledok alebo recenziu možno nahlásiť. Po dostatočnom počte nahlásení sa obsah automaticky skryje."
+  },
+  "Toplist": {
+    "title": "Rebríček",
+    "subtitle": "Najlepší testeri podľa reputácie.",
+    "empty": "Zatiaľ žiadni hodnotení testeri.",
+    "tester": "Tester",
+    "points": "b."
+  },
+  "Apps": {
+    "title": "Prehľadávať aplikácie",
+    "subtitle": "Vyberte aplikáciu a otestujte ju na vlastnom zariadení.",
+    "all": "Všetky",
+    "no_open": "Žiadne otvorené aplikácie.",
+    "submit_report": "Odoslať správu",
+    "reports": "správ"
+  },
+  "AppDetail": {
+    "by": "od",
+    "open_app": "Otvoriť aplikáciu",
+    "scenario": "Testovací scenár",
+    "will_be_asked": "Budete sa pýtať",
+    "submit_report": "Odoslať správu",
+    "reviews": "Recenzie",
+    "no_reviews": "Zatiaľ žiadne recenzie.",
+    "leave_review": "Zanechajte anonymnú recenziu",
+    "rating_placeholder": "Hodnotenie…",
+    "post_review": "Zverejniť recenziu",
+    "sign_in": "Prihláste sa",
+    "sign_in_suffix": "na zanechanie recenzie. Recenzie zostávajú anonymné."
+  },
+  "Dashboard": {
+    "choose_role": "Vyberte si svoju rolu",
+    "choose_role_subtitle": "Ako budete Mystery Customer Insight používať?",
+    "display_name": "Zobrazované meno (voliteľné)",
+    "i_am_developer": "Som vývojár",
+    "i_am_tester": "Som tester",
+    "submit_first_app": "Pridajte svoju prvú aplikáciu",
+    "your_apps": "Vaše aplikácie",
+    "submit_an_app": "Pridať aplikáciu",
+    "update_status": "Aktualizovať stav",
+    "status_for": "Stav pre {title}",
+    "my_reports": "Moje správy",
+    "rating": "Hodnotenie",
+    "tests_completed": "Dokončené testy",
+    "no_reports": "Zatiaľ žiadne správy.",
+    "browse_apps": "Prehľadávať aplikácie",
+    "plus_received": "+1 získané",
+    "only_developers": "Aplikácie môžu pridávať iba vývojári."
+  },
+  "SubmitApp": {
+    "app": "Aplikácia",
+    "app_name": "Názov aplikácie",
+    "app_url": "https://… odkaz na obchod alebo web",
+    "description": "Krátky popis (voliteľné)",
+    "platforms": "Platformy:",
+    "test_details": "Detaily testu",
+    "test_title": "Názov testu",
+    "scenario": "Testovací scenár / úlohy pre testera",
+    "status": "Stav",
+    "starts": "Začiatok",
+    "ends": "Koniec",
+    "questions": "Otázky (voliteľné, až 5)",
+    "question": "Otázka {n}",
+    "options_for_choice": "Možnosti výberu (oddelené čiarkou)",
+    "submit_app": "Pridať aplikáciu",
+    "how_it_works": "Ako to funguje",
+    "step1_title": "Pridajte aplikáciu",
+    "step1_text": "Vyberte platformy a napíšte jeden jasný scenár.",
+    "step2_title": "Reálni ľudia ju testujú",
+    "step2_text": "Ľudia ju vyskúšajú na vlastných telefónoch a tabletoch.",
+    "step3_title": "Získajte úprimné výsledky",
+    "step3_text": "Čítajte reálne odpovede, komentáre a odkazy.",
+    "free_note": "Zverejnenie zadarmo. Bez predplatného, bez skrytých poplatkov."
+  },
+  "NewReport": {
+    "title": "Odoslať správu",
+    "questions": "Otázky",
+    "overall_comments": "Celkové komentáre",
+    "attachment_link": "Odkaz na prílohu (voliteľné)",
+    "attachment_placeholder": "https://… snímka obrazovky alebo video",
+    "submit_report": "Odoslať správu",
+    "only_testers": "Správy môžu odosielať iba testeri."
+  },
+  "Submissions": {
+    "title": "Odoslané správy — {title}",
+    "no_submissions": "Zatiaľ žiadne odoslané správy.",
+    "rated": "Hodnotené +1",
+    "plus_to_tester": "+1 testerovi",
+    "only_developers": "Odoslané správy môžu zobraziť iba vývojári."
+  },
+  "ModerationReport": {
+    "report": "Nahlásiť",
+    "reason_placeholder": "Dôvod…",
+    "reason_spam": "spam",
+    "reason_inappropriate": "nevhodné",
+    "reason_broken": "nefunkčné",
+    "reason_other": "iné",
+    "details_placeholder": "Podrobnosti (povinné)",
+    "email_placeholder": "E-mail (voliteľné)",
+    "send_report": "Odoslať nahlásenie"
+  },
+  "CookieConsent": {
+    "text": "Používame cookies na analytiku a meranie reklám, aby sme web vylepšili. Môžete prijať alebo odmietnuť.",
+    "cookie_policy": "Zásady cookies",
+    "decline": "Odmietnuť",
+    "accept": "Prijať",
+    "change": "Zmeniť nastavenia cookies"
+  },
+  "About": {
+    "meta_title": "O nás — naše poslanie",
+    "meta_description": "Mystery Customer Insight je neziskový crowdtestingový portál, ktorý zadarmo a dostupne sprístupňuje testovanie aplikácií reálnymi ľuďmi na reálnych zariadeniach každému nezávislému vývojárovi.",
+    "eyebrow": "Naše poslanie",
+    "hero_title_before": "Testovanie aplikácií by malo byť",
+    "hero_title_highlight": "pre všetkých",
+    "hero_subtitle": "Veríme, že nezávislý vývojár si zaslúži rovnako úprimnú spätnú väzbu z reálneho sveta, za akú veľké štúdiá platia tisíce. Preto sme vytvorili miesto, kde ju môže získať každý — zadarmo.",
+    "why_title": "Prečo existujeme",
+    "why_p1": "Kedysi ukázať aplikáciu reálnym používateľom znamenalo podnikovú QA zmluvu, platený panel testerov alebo prosbu o spätnú väzbu od priateľov. Skutočné testovanie použiteľnosti — ľudia, reálne zariadenia, úprimné odpovede — bolo za cenou, ktorú si väčšina nezávislých vývojárov jednoducho nemohla dovoliť.",
+    "why_p2": "Mystery Customer Insight túto bariéru odstraňuje. Vývojár pridá aplikáciu s krátkym scenárom a niekoľkými otázkami; ľudskí testeri ju spustia na vlastných telefónoch a tabletoch a nahlásia, čo sa skutočne stalo. Bez predplatného, bez skrytých poplatkov, bez obmedzení.",
+    "why_p3": "Platformu prevádzkuje nezisková organizácia NGO „POGOVORIMO“. Nie sme tu, aby sme predávali testovacie miesta — sme tu, aby sme z úprimnej spätnej väzby k produktom urobili verejné dobro pre tých, ktorí tvoria softvér sami.",
+    "principles_title": "Za čím si stojíme",
+    "principles": [
+      {
+        "title": "Zadarmo a tak to aj zostane",
+        "text": "Bez predplatného, bez poplatkov za testera, bez správ za paywallom. Pridanie aplikácie a prečítanie výsledkov nič nestojí — o to práve ide."
+      },
+      {
+        "title": "Reálni ľudia, reálne zariadenia",
+        "text": "Každý test vykonáva človek na vlastnom telefóne alebo tablete — nie boti, nie emulátory, nie syntetické skripty. Získate úprimné reakcie skutočných používateľov."
+      },
+      {
+        "title": "Vytvorené pre nezávislých",
+        "text": "Sólo zakladatelia a malé tímy málokedy majú QA laboratórium alebo rozpočet na platený panel testerov. Vyrovnávame podmienky, aby sa aplikácia jedného človeka testovala ako financovaná."
+      },
+      {
+        "title": "Komunita, nie dodávateľ",
+        "text": "Testeri skúšajú nové aplikácie a ich spätná väzba skutočne formuje to, čo sa vydáva. Vývojári a testeri si pomáhajú navzájom — platforma ich len prepája."
+      }
+    ],
+    "cta_title": "Pridajte sa k ľuďom, ktorí stoja za lepšími aplikáciami",
+    "cta_subtitle": "Či už tvoríte aplikácie, alebo radi skúšate nové, je tu miesto aj pre vás. Začať je zadarmo.",
+    "cta_browse": "Prehľadávať aplikácie",
+    "cta_tester": "Staňte sa testerom",
+    "cta_how": "Ako to funguje"
+  }
+}

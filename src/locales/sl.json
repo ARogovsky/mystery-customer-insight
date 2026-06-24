@@ -1,0 +1,220 @@
+{
+  "LocaleSwitcher": {
+    "button_label": "Spremeni jezik"
+  },
+  "SignIn": {
+    "meta_title": "Prijava",
+    "meta_description": "Preprosta prijava v vaš račun."
+  },
+  "SignUp": {
+    "meta_title": "Registracija",
+    "meta_description": "Hitro ustvarjanje računa s preprostim postopkom registracije."
+  },
+  "DashboardLayout": {
+    "meta_title": "Nadzorna plošča",
+    "meta_description": "Nadzorna plošča Mystery Customer Insight.",
+    "home": "Domov"
+  },
+  "UserProfilePage": {
+    "title_bar": "Uporabniški profil",
+    "title_bar_description": "Ogled in upravljanje vašega profila"
+  },
+  "Nav": {
+    "home": "Domov",
+    "how_it_works": "Kako deluje",
+    "browse": "Prebrskaj",
+    "toplist": "Lestvica",
+    "faq": "Pogosta vprašanja",
+    "about": "O nas",
+    "sign_in": "Prijava"
+  },
+  "Footer": {
+    "rights": "© Mystery Customer Insight · NGO \"POGOVORIMO\" (EDRPOU 44818137)",
+    "privacy": "Zasebnost",
+    "cookies": "Piškotki",
+    "disclaimer": "Izjava o omejitvi odgovornosti"
+  },
+  "Home": {
+    "eyebrow": "Množično testiranje · beta testiranje · testiranje uporabnosti",
+    "hero_before": "Testiranje na pravih napravah",
+    "hero_highlight": "pravih ljudi",
+    "lede": "Brezplačni portal za množično testiranje za neodvisne razvijalce — beta testiranje na pravih napravah in testiranje uporabnosti, ki ga izvajajo ljudje testerji. Brez naročnin, brez skritih stroškov.",
+    "browse_apps": "Prebrskaj aplikacije",
+    "become_tester": "Postanite tester",
+    "step_label": "Korak",
+    "step1_title": "Dodajte aplikacijo",
+    "step1_text": "Dodajte povezavo do aplikacije, ciljne platforme, testni scenarij in nekaj vprašanj. Brezplačno je.",
+    "step2_title": "Pravi ljudje jo testirajo",
+    "step2_text": "Ljudje testerji zaženejo vašo beta različico na svojih telefonih in tablicah — pravo testiranje uporabnosti, ne boti.",
+    "step3_title": "Pridobite iskrene rezultate",
+    "step3_text": "Berite prave odgovore, komentarje in povezave pravih uporabnikov.",
+    "learn_more": "Izvedite, kako deluje →"
+  },
+  "HowItWorks": {
+    "title": "Kako deluje",
+    "subtitle": "Brezplačno množično testiranje za neodvisne razvijalce in ljudi testerje. Brez naročnin, brez skritih stroškov.",
+    "step1_title": "1. Dodajte aplikacijo",
+    "step1_text": "Razvijalec brezplačno doda aplikacijo: povezavo, ciljne platforme, testni scenarij in nekaj preprostih vprašanj.",
+    "step2_title": "2. Testiranje na pravih napravah",
+    "step2_text": "Ljudje testerji brskajo po odprtih aplikacijah in izvedejo scenarij na svojih telefonih in tablicah.",
+    "step3_title": "3. Pridobite rezultate",
+    "step3_text": "Razvijalci prejmejo prave povratne informacije o uporabnosti pravih ljudi — odgovore, komentarje in povezave.",
+    "browse_open": "Prebrskaj odprte aplikacije →"
+  },
+  "Faq": {
+    "title": "Pogosta vprašanja",
+    "q1": "Je res brezplačno?",
+    "a1": "Da. Dodajanje in testiranje aplikacij je brezplačno. Brez naročnin, brez skritih stroškov.",
+    "q2": "Kako testerji dobijo aplikacijo?",
+    "a2": "Razvijalci delijo povezavo (App Store, Google Play, TestFlight ali splet). Naloženih datotek ne gostimo.",
+    "q3": "Kdo lahko oddaja poročila?",
+    "a3": "Prijavljeni testerji izvedejo testni scenarij na svoji napravi ter oddajo odgovore in komentarje.",
+    "q4": "Kako se priznava kakovost testerja?",
+    "a4": "Razvijalci lahko testerju dodelijo +1 za koristno poročilo. Ocene sčasoma gradijo ugled testerja.",
+    "q5": "Kako se obravnava neprimerna vsebina?",
+    "a5": "Vsako aplikacijo, rezultat ali oceno je mogoče prijaviti. Po dovolj prijavah se vsebina samodejno skrije."
+  },
+  "Toplist": {
+    "title": "Lestvica",
+    "subtitle": "Najboljši testerji po ugledu.",
+    "empty": "Še ni ocenjenih testerjev.",
+    "tester": "Tester",
+    "points": "tč."
+  },
+  "Apps": {
+    "title": "Prebrskaj aplikacije",
+    "subtitle": "Izberite aplikacijo in jo testirajte na svoji napravi.",
+    "all": "Vse",
+    "no_open": "Ni odprtih aplikacij.",
+    "submit_report": "Oddajte poročilo",
+    "reports": "poročil"
+  },
+  "AppDetail": {
+    "by": "avtor",
+    "open_app": "Odpri aplikacijo",
+    "scenario": "Testni scenarij",
+    "will_be_asked": "Vprašani boste",
+    "submit_report": "Oddajte poročilo",
+    "reviews": "Ocene",
+    "no_reviews": "Še ni ocen.",
+    "leave_review": "Pustite anonimno oceno",
+    "rating_placeholder": "Ocena…",
+    "post_review": "Objavi oceno",
+    "sign_in": "Prijavite se",
+    "sign_in_suffix": "za oddajo ocene. Ocene ostanejo anonimne."
+  },
+  "Dashboard": {
+    "choose_role": "Izberite svojo vlogo",
+    "choose_role_subtitle": "Kako boste uporabljali Mystery Customer Insight?",
+    "display_name": "Prikazno ime (neobvezno)",
+    "i_am_developer": "Sem razvijalec",
+    "i_am_tester": "Sem tester",
+    "submit_first_app": "Dodajte svojo prvo aplikacijo",
+    "your_apps": "Vaše aplikacije",
+    "submit_an_app": "Dodajte aplikacijo",
+    "update_status": "Posodobi stanje",
+    "status_for": "Stanje za {title}",
+    "my_reports": "Moja poročila",
+    "rating": "Ocena",
+    "tests_completed": "Opravljeni testi",
+    "no_reports": "Še ni poročil.",
+    "browse_apps": "Prebrskaj aplikacije",
+    "plus_received": "+1 prejeto",
+    "only_developers": "Aplikacije lahko dodajajo samo razvijalci."
+  },
+  "SubmitApp": {
+    "app": "Aplikacija",
+    "app_name": "Ime aplikacije",
+    "app_url": "https://… povezava do trgovine ali spleta",
+    "description": "Kratek opis (neobvezno)",
+    "platforms": "Platforme:",
+    "test_details": "Podrobnosti testa",
+    "test_title": "Naslov testa",
+    "scenario": "Testni scenarij / naloge za testerja",
+    "status": "Stanje",
+    "starts": "Začetek",
+    "ends": "Konec",
+    "questions": "Vprašanja (neobvezno, do 5)",
+    "question": "Vprašanje {n}",
+    "options_for_choice": "Možnosti izbire (ločene z vejico)",
+    "submit_app": "Dodajte aplikacijo",
+    "how_it_works": "Kako deluje",
+    "step1_title": "Dodajte aplikacijo",
+    "step1_text": "Izberite platforme in napišite en jasen scenarij.",
+    "step2_title": "Pravi ljudje jo testirajo",
+    "step2_text": "Ljudje jo preizkusijo na svojih telefonih in tablicah.",
+    "step3_title": "Pridobite iskrene rezultate",
+    "step3_text": "Berite prave odgovore, komentarje in povezave.",
+    "free_note": "Objava je brezplačna. Brez naročnin, brez skritih stroškov."
+  },
+  "NewReport": {
+    "title": "Oddajte poročilo",
+    "questions": "Vprašanja",
+    "overall_comments": "Splošni komentarji",
+    "attachment_link": "Povezava do priloge (neobvezno)",
+    "attachment_placeholder": "https://… posnetek zaslona ali videoposnetek",
+    "submit_report": "Oddajte poročilo",
+    "only_testers": "Poročila lahko oddajajo samo testerji."
+  },
+  "Submissions": {
+    "title": "Oddaje — {title}",
+    "no_submissions": "Še ni oddaj.",
+    "rated": "Ocenjeno +1",
+    "plus_to_tester": "+1 testerju",
+    "only_developers": "Oddaje lahko pregledujejo samo razvijalci."
+  },
+  "ModerationReport": {
+    "report": "Prijavi",
+    "reason_placeholder": "Razlog…",
+    "reason_spam": "neželena vsebina",
+    "reason_inappropriate": "neprimerno",
+    "reason_broken": "ne deluje",
+    "reason_other": "drugo",
+    "details_placeholder": "Podrobnosti (obvezno)",
+    "email_placeholder": "E-pošta (neobvezno)",
+    "send_report": "Pošlji prijavo"
+  },
+  "CookieConsent": {
+    "text": "Piškotke uporabljamo za analitiko in merjenje oglasov, da izboljšamo spletno mesto. Lahko sprejmete ali zavrnete.",
+    "cookie_policy": "Pravilnik o piškotkih",
+    "decline": "Zavrni",
+    "accept": "Sprejmi",
+    "change": "Spremeni nastavitve piškotkov"
+  },
+  "About": {
+    "meta_title": "O nas — naše poslanstvo",
+    "meta_description": "Mystery Customer Insight je neprofitni portal za množično testiranje, ki testiranje aplikacij s pravimi ljudmi na pravih napravah naredi brezplačno in dostopno vsakemu neodvisnemu razvijalcu.",
+    "eyebrow": "Naše poslanstvo",
+    "hero_title_before": "Testiranje aplikacij bi moralo biti",
+    "hero_title_highlight": "za vse",
+    "hero_subtitle": "Verjamemo, da si neodvisni razvijalec zasluži enako iskrene povratne informacije iz resničnega sveta, za katere veliki studii plačajo na tisoče. Zato smo ustvarili kraj, kjer jih lahko dobi vsak — brezplačno.",
+    "why_title": "Zakaj obstajamo",
+    "why_p1": "Nekoč je prikaz aplikacije pravim uporabnikom pomenil korporativno pogodbo za QA, plačljiv panel testerjev ali prošnjo prijateljem za povratne informacije. Pravo testiranje uporabnosti — ljudje, prave naprave, iskreni odgovori — je imelo ceno, ki si je večina neodvisnih razvijalcev preprosto ni mogla privoščiti.",
+    "why_p2": "Mystery Customer Insight odpravlja to oviro. Razvijalec doda aplikacijo s kratkim scenarijem in nekaj vprašanji; ljudje testerji jo zaženejo na svojih telefonih in tablicah ter poročajo, kaj se je dejansko zgodilo. Brez naročnin, brez skritih stroškov, brez omejitev.",
+    "why_p3": "Platformo upravlja neprofitna organizacija NGO „POGOVORIMO“. Nismo tu, da bi prodajali mesta za testiranje — tu smo, da iskrene povratne informacije o izdelkih naredimo javno dobro za tiste, ki ustvarjajo programsko opremo sami.",
+    "principles_title": "Za kaj se zavzemamo",
+    "principles": [
+      {
+        "title": "Brezplačno in tako bo ostalo",
+        "text": "Brez naročnin, brez stroškov na testerja, brez poročil za plačljivim zidom. Dodajanje aplikacije in branje rezultatov ne stane nič — v tem je celotno bistvo."
+      },
+      {
+        "title": "Pravi ljudje, prave naprave",
+        "text": "Vsak test izvede človek na svojem telefonu ali tablici — ne boti, ne emulatorji, ne sintetične skripte. Dobite iskrene odzive pravih uporabnikov."
+      },
+      {
+        "title": "Ustvarjeno za neodvisne",
+        "text": "Samostojni ustanovitelji in majhne ekipe le redko imajo QA laboratorij ali proračun za plačljiv panel testerjev. Izenačujemo pogoje, da se aplikacija ene osebe testira kot financirana."
+      },
+      {
+        "title": "Skupnost, ne ponudnik",
+        "text": "Testerji preizkušajo nove aplikacije in njihove povratne informacije resnično oblikujejo, kaj pride v uporabo. Razvijalci in testerji si pomagajo med seboj — platforma jih le povezuje."
+      }
+    ],
+    "cta_title": "Pridružite se ljudem za boljšimi aplikacijami",
+    "cta_subtitle": "Ne glede na to, ali ustvarjate aplikacije ali radi preizkušate nove, je tu prostor za vas. Začetek je brezplačen.",
+    "cta_browse": "Prebrskaj aplikacije",
+    "cta_tester": "Postanite tester",
+    "cta_how": "Kako deluje"
+  }
+}

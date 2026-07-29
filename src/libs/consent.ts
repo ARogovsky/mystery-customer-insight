@@ -1,6 +1,8 @@
 // Хранение согласия на аналитику/рекламу + проброс в Google Consent Mode v2.
 // Используется баннером (CookieConsent) и страницей Cookie.
 
+import { loadClarity } from '@/libs/clarity';
+
 declare global {
   // eslint-disable-next-line vars-on-top
   var gtag: ((...args: unknown[]) => void) | undefined;
@@ -55,6 +57,11 @@ export function applyConsent(analytics: boolean) {
     ad_user_data: value,
     ad_personalization: value,
   });
+
+  // Microsoft Clarity — грузим тег только после согласия на аналитику.
+  if (analytics) {
+    loadClarity();
+  }
 }
 
 /** Сохранить выбор и применить его. */

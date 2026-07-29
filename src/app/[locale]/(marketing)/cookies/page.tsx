@@ -17,7 +17,7 @@ export default async function CookiesPage(props: PageProps) {
   return (
     <article className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="text-3xl font-semibold">Cookie Policy</h1>
-      <p className="mt-2 text-sm text-muted-foreground">Last updated: June 2026</p>
+      <p className="mt-2 text-sm text-muted-foreground">Last updated: July 2026</p>
 
       <div className="mt-8 space-y-8 leading-relaxed">
         <section>
@@ -57,8 +57,11 @@ export default async function CookiesPage(props: PageProps) {
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
                 Google Analytics (GA4) and Google Ads measurement, loaded first-party through
-                Cloudflare. They help us understand traffic and campaign performance. Loaded
-                only after you accept; denied by default (Google Consent Mode v2).
+                Cloudflare, and Microsoft Clarity (aggregated usage analytics such as heatmaps
+                and session statistics). They help us understand traffic, product usage, and
+                campaign performance. Loaded only after you accept; analytics and ads are
+                denied by default (Google Consent Mode v2) and Clarity is not loaded until
+                you consent.
               </p>
             </div>
           </div>

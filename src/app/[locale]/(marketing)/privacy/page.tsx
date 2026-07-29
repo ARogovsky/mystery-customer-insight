@@ -16,7 +16,7 @@ export default async function PrivacyPage(props: PageProps) {
   return (
     <article className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="text-3xl font-semibold">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-muted-foreground">Last updated: June 2026</p>
+      <p className="mt-2 text-sm text-muted-foreground">Last updated: July 2026</p>
 
       <div className="mt-8 space-y-8 leading-relaxed">
         <section>
@@ -49,8 +49,10 @@ export default async function PrivacyPage(props: PageProps) {
             <li>
               <b className="text-foreground">Usage & analytics</b>
               {' '}
-              — pages visited, device and browser info, and approximate location, collected
-              via Google Analytics / Google Ads measurement, only after you consent.
+              — pages visited, device and browser info, approximate location, and
+              interaction patterns (heatmaps and session statistics), collected via Google
+              Analytics / Google Ads measurement and Microsoft Clarity, only after you
+              consent.
             </li>
           </ul>
         </section>
@@ -86,9 +88,10 @@ export default async function PrivacyPage(props: PageProps) {
         <section>
           <h2 className="text-xl font-medium">Third-party services</h2>
           <p className="mt-3 text-muted-foreground">
-            We rely on Clerk (authentication), Supabase (database hosting), and Google
+            We rely on Clerk (authentication), Supabase (database hosting), Google
             Analytics / Google Ads (measurement, loaded first-party via Cloudflare and gated
-            by your consent). Each processes data under its own privacy policy. We do not sell
+            by your consent), and Microsoft Clarity (usage analytics, loaded only after you
+            consent). Each processes data under its own privacy policy. We do not sell
             your personal information.
           </p>
         </section>

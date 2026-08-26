@@ -64,6 +64,7 @@ export function SubmitAppForm() {
           <textarea
             name="scenario"
             required
+            minLength={40}
             placeholder={t('scenario')}
             className={inputClass}
             rows={4}

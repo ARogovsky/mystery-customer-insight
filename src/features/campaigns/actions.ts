@@ -21,7 +21,7 @@ const CampaignSchema = z.object({
   description: z.string().max(2000).optional(),
   platforms: z.array(z.enum(PLATFORMS)).min(1),
   title: z.string().min(1).max(160),
-  scenario: z.string().min(1).max(5000),
+  scenario: z.string().trim().min(40).max(5000),
   status: z.enum(TEST_STATUSES).default('open'),
   startsAt: z.string().optional(),
   endsAt: z.string().optional(),

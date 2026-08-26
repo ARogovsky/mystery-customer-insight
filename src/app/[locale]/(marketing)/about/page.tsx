@@ -13,6 +13,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   return {
     title: t('meta_title'),
     description: t('meta_description'),
+    alternates: { canonical: '/about' },
   };
 }
 
@@ -88,6 +89,83 @@ export default async function AboutPage(props: PageProps) {
                 <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t">
+        <div className="mx-auto max-w-4xl px-4 py-14">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            How we differ from paid user testing platforms
+          </h2>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
+            Most user testing, usability testing, and app testing services run on
+            a commercial model. Here is how that compares to Mystery Customer
+            Insight, point by point — differences of model, not claims about quality.
+          </p>
+
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-3 pr-4 font-medium text-muted-foreground">
+                    &nbsp;
+                  </th>
+                  <th className="px-4 py-3 font-medium">
+                    Paid user testing platforms
+                  </th>
+                  <th className="px-4 py-3 font-medium text-primary">
+                    Mystery Customer Insight
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="align-top">
+                <tr className="border-b">
+                  <th scope="row" className="py-3 pr-4 font-medium">
+                    Price
+                  </th>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    Subscriptions, per-tester fees, or paywalled reports
+                  </td>
+                  <td className="px-4 py-3">
+                    Free — no subscriptions, no per-tester fees
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <th scope="row" className="py-3 pr-4 font-medium">
+                    Who tests
+                  </th>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    A paid, recruited testing panel or commercial testing panels
+                  </td>
+                  <td className="px-4 py-3">
+                    Real people running your app on their own devices
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <th scope="row" className="py-3 pr-4 font-medium">
+                    Who operates it
+                  </th>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    A commercial company
+                  </td>
+                  <td className="px-4 py-3">
+                    The non-profit NGO “POGOVORIMO” (EDRPOU 44818137)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" className="py-3 pr-4 font-medium">
+                    Report access
+                  </th>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    Results kept behind a paywall
+                  </td>
+                  <td className="px-4 py-3">
+                    Read every report for free
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

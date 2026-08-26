@@ -52,13 +52,13 @@
   },
   "HowItWorks": {
     "title": "How it works",
-    "subtitle": "Free crowdtesting for indie developers and human testers. No subscriptions, no hidden fees.",
+    "subtitle": "Free user testing and usability testing for indie apps — real people, real devices. No subscriptions, no hidden fees.",
     "step1_title": "1. Submit an app",
     "step1_text": "A developer submits an app for free: app link, target platforms, a test scenario, and a few simple questions.",
     "step2_title": "2. Test on real devices",
-    "step2_text": "Human testers browse open apps and complete the scenario on their own phones and tablets.",
+    "step2_text": "This is remote user testing: human testers browse open apps and complete the scenario themselves on their own phones and tablets — no facilitator, no session to schedule.",
     "step3_title": "3. Get results",
-    "step3_text": "Developers receive real-world usability feedback from actual people — answers, comments, and links.",
+    "step3_text": "Developers receive real-world usability feedback from real users — answers, comments, and links.",
     "browse_open": "Browse open apps →"
   },
   "Faq": {

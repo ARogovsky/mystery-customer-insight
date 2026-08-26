@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 export const metadata: Metadata = {
   title: 'FAQ',
   description: 'Frequently asked questions about Mystery Customer Insight crowdtesting.',
+  alternates: { canonical: '/faq' },
 };
 
 type PageProps = {

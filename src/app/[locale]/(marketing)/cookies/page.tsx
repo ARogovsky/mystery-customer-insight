@@ -6,6 +6,7 @@ import { CookieSettings } from '@/features/marketing/CookieSettings';
 export const metadata: Metadata = {
   title: 'Cookie Policy',
   robots: { index: true, follow: true },
+  alternates: { canonical: '/cookies' },
 };
 
 type PageProps = { params: Promise<{ locale: string }> };

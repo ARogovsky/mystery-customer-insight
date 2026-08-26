@@ -17,6 +17,9 @@ export async function getOpenCampaigns(platform?: Platform) {
     eq(tests.status, 'open'),
     eq(tests.isHidden, false),
     eq(apps.isHidden, false),
+    // Не показывать в публичной ленте кампании с пустым/заглушечным сценарием
+    // (валидация публикации: сценарий не короче 40 символов).
+    sql`length(btrim(${tests.scenario})) >= 40`,
   ];
 
   if (platform) {

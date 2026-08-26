@@ -5,6 +5,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   robots: { index: true, follow: true },
+  alternates: { canonical: '/privacy' },
 };
 
 type PageProps = { params: Promise<{ locale: string }> };

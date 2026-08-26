@@ -73,7 +73,39 @@ export default async function CampaignsFeedPage(props: CampaignsFeedProps) {
       </nav>
 
       {campaigns.length === 0
-        ? <p className="mt-8 text-muted-foreground">{t('no_open')}</p>
+        ? (
+            <div className="
+              mt-10 rounded-xl border bg-card p-8 text-center shadow-sm
+            "
+            >
+              <h2 className="text-xl font-medium">No open apps right now</h2>
+              <p className="mx-auto mt-2 max-w-md text-muted-foreground">
+                New apps appear here as developers submit them for user testing.
+                Be the first — from either side.
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                <Link
+                  href="/dashboard/apps/new"
+                  className="
+                    rounded-lg bg-primary px-5 py-2.5 font-medium
+                    text-primary-foreground shadow-sm transition
+                    hover:opacity-90
+                  "
+                >
+                  Submit an app
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="
+                    rounded-lg border bg-card px-5 py-2.5 font-medium
+                    hover:bg-secondary
+                  "
+                >
+                  Become a tester
+                </Link>
+              </div>
+            </div>
+          )
         : (
             <ul className="
               mt-6 grid gap-4

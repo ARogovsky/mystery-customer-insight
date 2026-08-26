@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 export const metadata: Metadata = {
   title: 'Disclaimer',
   robots: { index: true, follow: true },
+  alternates: { canonical: '/disclaimer' },
 };
 
 type PageProps = { params: Promise<{ locale: string }> };

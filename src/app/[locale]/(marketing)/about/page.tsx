@@ -96,12 +96,12 @@ export default async function AboutPage(props: PageProps) {
       <section className="border-t">
         <div className="mx-auto max-w-4xl px-4 py-14">
           <h2 className="text-2xl font-semibold tracking-tight">
-            How we differ from paid user testing platforms
+            Free alternative to paid user testing platforms
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Most user testing, usability testing, and app testing services run on
-            a commercial model. Here is how that compares to Mystery Customer
-            Insight, point by point — differences of model, not claims about quality.
+            If you are comparing us with UserTesting, TryMyUI, Userfeel, Testapic,
+            Userbrain or Maze, here is the difference in plain terms. These are
+            differences of model, not claims about quality.
           </p>
 
           <div className="mt-8 overflow-x-auto">
@@ -120,6 +120,17 @@ export default async function AboutPage(props: PageProps) {
                 </tr>
               </thead>
               <tbody className="align-top">
+                <tr className="border-b">
+                  <th scope="row" className="py-3 pr-4 font-medium">
+                    Model
+                  </th>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    A paid testing panel on a subscription or per-test plan
+                  </td>
+                  <td className="px-4 py-3">
+                    A free platform run by a non-profit NGO
+                  </td>
+                </tr>
                 <tr className="border-b">
                   <th scope="row" className="py-3 pr-4 font-medium">
                     Price
@@ -167,6 +178,44 @@ export default async function AboutPage(props: PageProps) {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-8 space-y-3 text-sm text-muted-foreground">
+            <p>
+              <b className="text-foreground">UserTesting</b>
+              {' '}
+              is a commercial platform sold on paid subscription plans.
+            </p>
+            <p>
+              <b className="text-foreground">TryMyUI</b>
+              {' '}
+              sells user testing through paid plans and per-test pricing.
+            </p>
+            <p>
+              <b className="text-foreground">Userfeel</b>
+              {' '}
+              charges a fee for each tester you order.
+            </p>
+            <p>
+              <b className="text-foreground">Testapic</b>
+              {' '}
+              is a commercial user testing service billed on paid plans.
+            </p>
+            <p>
+              <b className="text-foreground">Userbrain</b>
+              {' '}
+              is subscription-based, billed per tester or test.
+            </p>
+            <p>
+              <b className="text-foreground">Maze</b>
+              {' '}
+              offers its testing features on paid subscription tiers.
+            </p>
+          </div>
+
+          <p className="mt-6 text-xs text-muted-foreground">
+            Trademarks belong to their respective owners. Mystery Customer Insight
+            is not affiliated with these services.
+          </p>
         </div>
       </section>
 
